@@ -43,7 +43,7 @@ public class Movement : MonoBehaviour
     }
 
     // Mouse position input.
-    private void OnMouse(InputValue inputValue)
+    private void OnMousePos(InputValue inputValue)
     {
         // Set rotation towards mouse position.
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(inputValue.Get<Vector2>());
