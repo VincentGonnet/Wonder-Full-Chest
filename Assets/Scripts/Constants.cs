@@ -1,4 +1,4 @@
-public class Constants
+public static class Constants
 {
-    public static float SCROLLING_SPEED = 5;
+    public const float SCROLLING_SPEED = 1;
 }

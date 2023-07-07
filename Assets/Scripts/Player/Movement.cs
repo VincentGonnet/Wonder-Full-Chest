@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 5f;
     private Rigidbody2D rb;
-    private Vector2 movementInputSmoothedVelocity;
 
     private void Start()
     {
@@ -13,6 +11,6 @@ public class Movement : MonoBehaviour
     
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movementSpeed * Time.fixedDeltaTime * Vector2.left);
+        rb.MovePosition(rb.position + Constants.SCROLLING_SPEED * Time.fixedDeltaTime * Vector2.left);
     }
 }
