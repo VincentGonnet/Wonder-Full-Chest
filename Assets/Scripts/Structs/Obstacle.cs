@@ -2,31 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle
+public class Obstacle : MonoBehaviour
 {
     private ObstacleScriptable data;
-    private GameObject gameObject;
-    private string name;
-    private Vector2 position;
-    public Obstacle(string obstacleName, Vector2 worldPos)
+    public static Obstacle Instanciate(string name, Vector2 worldPos)
     {
-        this.data = Resources.Load<ObstacleScriptable>("ScriptableObjects/"+obstacleName);
-        this.name = obstacleName;
-        this.position = worldPos;
-        Init();
+        GameObject gameObject = Object.Instantiate(Resources.Load("Prefabs/Obstacle") as GameObject, worldPos, Quaternion.identity);
+        Obstacle obstacle = gameObject.GetComponent<Obstacle>();
+        obstacle.data = Resources.Load<ObstacleScriptable>("ScriptableObjects/"+name);;
+        return obstacle;
     }
 
-    public void Init()
+    private void Start()
     {
-        if (this.data == null) {
-            Debug.LogError("Couldn't load obstacle : ScriptableObject not found");
-            return;
-        }
-
-        GameObject go = new GameObject(this.name);
-        go.AddComponent<SpriteRenderer>().sprite = this.data.sprite;
-        go.transform.localScale = this.data.spriteSize;
-        go.AddComponent<BoxCollider2D>();
-        go.transform.position = new Vector3(this.position.x, this.position.y, 0);
+        GetComponent<SpriteRenderer>().sprite = data.sprite;
+        gameObject.transform.localScale = data.spriteSize;
+        // GetComponent<BoxCollider2D>().size = data.spriteSize;
+        GetComponent<Rigidbody2D>().gravityScale = 0;
+        gameObject.name = data.name;
     }
 }
