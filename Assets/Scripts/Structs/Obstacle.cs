@@ -9,7 +9,7 @@ public class Obstacle : MonoBehaviour
     {
         GameObject gameObject = Object.Instantiate(Resources.Load("Prefabs/Obstacle") as GameObject, worldPos, Quaternion.identity);
         Obstacle obstacle = gameObject.GetComponent<Obstacle>();
-        obstacle.data = Resources.Load<ObstacleScriptable>("ScriptableObjects/"+name);;
+        obstacle.data = Resources.Load<ObstacleScriptable>("ScriptableObjects/"+name);
         return obstacle;
     }
 
@@ -17,7 +17,7 @@ public class Obstacle : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = data.sprite;
         gameObject.transform.localScale = data.spriteSize;
-        // GetComponent<BoxCollider2D>().size = data.spriteSize;
+        // GetComponent<Animator>().SetInteger("EnemyId", data.enemyId);
         GetComponent<Rigidbody2D>().gravityScale = 0;
         gameObject.name = data.name;
     }
