@@ -11,7 +11,7 @@ public class Item : MonoBehaviour {
 
     public ItemType type;
 
-    private void Awake() {
+    private void Start() {
         GetComponent<SpriteRenderer>().sprite = type.texture;
     }
     
