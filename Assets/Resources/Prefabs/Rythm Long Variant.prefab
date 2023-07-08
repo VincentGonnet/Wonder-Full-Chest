@@ -253,6 +253,10 @@ PrefabInstance:
       value: Rythm Long Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3676965312464392602, guid: a2bcc0d10c5c9f741a7b5d4ab682febb, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676965312464392602, guid: a2bcc0d10c5c9f741a7b5d4ab682febb, type: 3}
       propertyPath: m_TagString
       value: Long
       objectReference: {fileID: 0}

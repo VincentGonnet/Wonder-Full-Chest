@@ -5,52 +5,72 @@ using UnityEngine;
 
 public class RythmManager : MonoBehaviour
 {
-    private bool buttonPressed;
-    private bool buttonHold;
     public TriggerExit exit;
-    public int score = 0;
 
+    public int score = 0;
     private int failed = 0;
 
-    void OnTriggerStay2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Circle") && buttonPressed) {
-            Destroy(other.gameObject);
-            score = score++;
-        } else if(other.gameObject.CompareTag("Long") && !buttonPressed) {
-            buttonHold = false;
+    private bool canBeActivated = false;
+    private bool canBeDeactivated = false;
+    private bool isActivated = false;
+    private GameObject circle = null;
+    private bool skipFail = false;
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        skipFail = false;
+        if (other.gameObject.CompareTag("Circle")) {
+            canBeActivated = canBeDeactivated = true;
+        } else if (other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RythmCircleTrigger")) {
+            canBeActivated = true;
+        } else if (!other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RythmCircleTrigger")) {
+            canBeDeactivated = true;
         }
 
-        if (buttonHold && failed == 0) {
-            failed = 1;
-        }
-
-        if (failed == 1 && buttonHold) {
-            failed = 2;
-        }
-
-        Debug.Log("Exit:"+exit.exit);
-        Debug.Log("buttonHold :"+buttonHold);
-        Debug.Log("failed :"+failed);
-
-
-        if (other.gameObject.CompareTag("Long") && exit.exit && buttonHold && failed == 1) {
-            Debug.Log("gg");
-            score++;
-            Destroy(other.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("RythmCircle")) {
+            circle = other.gameObject;
         }
     }
 
-    // void OnTriggerExit2D(Collider2D other) {
-    //     Destroy(other.gameObject);
-    //     if (buttonHold) {
-    //         score++;
-    //     }
-    // }
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Circle")) {
+            canBeActivated = canBeDeactivated = false;
+            if (!skipFail) OnFail();
+            else skipFail = false;
+        } else if (!other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RythmCircleTrigger")) {
+            canBeDeactivated = false;
+        } else if (other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RythmCircleTrigger")) {
+            canBeActivated = false;
+            if (!isActivated) OnFail();
+        }
+    }
 
     public void OnButtonPressed(InputAction.CallbackContext context) {
-        buttonPressed = context.started;
-        if (buttonPressed) {
-            buttonHold = true;
+        if (context.started) {
+            if (canBeActivated) isActivated = true;
+            else OnFail();
+        } else if (context.canceled) {
+            if (canBeDeactivated) OnSuccess();
+            else if (isActivated) OnFail();
         }
+    }
+
+    public void OnFail() {
+        // Animate as failed
+        skipFail = true;
+        Destroy(circle);
+        circle = null;
+        isActivated = false;
+        failed++;
+        Debug.Log("Failed !");
+    }
+
+    public void OnSuccess() {
+        // Animate as succeeded
+        skipFail = true;
+        Destroy(circle);
+        circle = null;
+        isActivated = false;
+        score++;
+        Debug.Log("GG !");
     }
 }
