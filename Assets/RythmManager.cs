@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class RythmManager : MonoBehaviour
 {
-    public TriggerExit exit;
-
     public int score = 0;
     private int failed = 0;
 
