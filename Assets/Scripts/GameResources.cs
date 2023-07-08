@@ -14,7 +14,9 @@ public static class GameResources
     public static GameObject PREFAB_OBSTACLE_SLIME = Resources.Load<GameObject>("Prefabs/Obstacles/Slime");
     
     public static PrefabWithWidth PREFAB_RYTHM_CIRCLE = new PrefabWithWidth("Prefabs/Rythm/RythmCircle");
-    public static PrefabWithWidth PREFAB_RYTHM_LONG_CIRCLE = new PrefabWithWidth("Prefabs/Rythm/RythmLongVariant");
+    public static GameObject PREFAB_RYTHM_HOLD_CIRCLE = Resources.Load<GameObject>("Prefabs/Rythm/RythmLongVariant");
+    public static GameObject PREFAB_RYTHM_HOLD_CIRCLE_SHORT = Resources.Load<GameObject>("Prefabs/Rythm/RythmLongVariant Short");
+    public static GameObject PREFAB_RYTHM_HOLD_CIRCLE_LONG = Resources.Load<GameObject>("Prefabs/Rythm/RythmLongVariant Long");
 }
 
 public class PrefabWithWidth

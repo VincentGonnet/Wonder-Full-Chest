@@ -1,12 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
-using System;
-using System.Linq;
-using UnityEngine.Rendering;
+using TMPro;
 
 public class CraftRecipes : MonoBehaviour
 {
@@ -16,6 +10,9 @@ public class CraftRecipes : MonoBehaviour
 
     [SerializeField] public GameObject prefabGridImage;
 
+    void Start() {
+        BuildRecipes(Resources.LoadAll<ItemCraft>("Recipes"));
+    }
 
     // Start is called before the first frame update
     void BuildRecipes(ItemCraft[] objs)
@@ -45,7 +42,7 @@ public class CraftRecipes : MonoBehaviour
             rt2.anchorMin = new Vector2(0, 0.5f);
             rt2.anchorMax = new Vector2(0, 0.5f);
             rt2.anchoredPosition = new Vector2(20, 0);
-            image.GetComponent<Image>().sprite = foundItem.outputTexture;
+            image.GetComponent<Image>().sprite = foundItem.output.texture;
 
             int maxI = 3;
             for (int j = 0; j < foundItem.inputs.Length; j++)
