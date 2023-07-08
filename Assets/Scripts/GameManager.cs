@@ -19,12 +19,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void SpawnWave()
     {
+        foreach(Obstacle obstacle in obstacles)
+        {
+            Destroy(obstacle.gameObject);
+        }
         obstacles.Clear();
         for (int i = 0; i < 5; i++) {
-            obstacles.Add(Obstacle.Instanciate("Door", new Vector2(11 + i*3, 1)));
+            obstacles.Add(Obstacle.Instanciate("Rabbit", new Vector2(11 + i*3, 1)));
         }
     }
 }

@@ -7,6 +7,10 @@ public class MovingObject : MonoBehaviour
     
     private void FixedUpdate()
     {
-        this.transform.position -= Constants.SCROLLING_SPEED * Time.fixedDeltaTime * relativeSpeed * Vector3.right;
+        if (this.TryGetComponent<Rigidbody2D>(out Rigidbody2D component)) {
+            component.velocity = new Vector2(-1, 0);
+        } else {
+            this.transform.position -= Constants.SCROLLING_SPEED * Time.fixedDeltaTime * relativeSpeed * Vector3.right;
+        }
     }
 }
