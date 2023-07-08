@@ -8,7 +8,7 @@ using Random = System.Random;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
-    public List<GameObject> obstacles = new();
+    private List<GameObject> obstacles = new();
     private Random random = new();
 
     [SerializeField] private int obstaclesPerWave;
