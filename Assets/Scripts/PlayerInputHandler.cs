@@ -66,11 +66,11 @@ public class PlayerInputHandler : MonoBehaviour
         if (btnS && modifier1) craftInventory.GetComponent<CraftInventory>().OnCase11();
         else if (btnS && modifier2) craftInventory.GetComponent<CraftInventory>().OnCase12();
         else if (btnS) craftInventory.GetComponent<CraftInventory>().OnCase10();
-        else if (btnE && modifier1) craftInventory.GetComponent<CraftInventory>().OnCase9();
-        else if (btnE && modifier2) craftInventory.GetComponent<CraftInventory>().OnCase8();
+        else if (btnE && modifier1) craftInventory.GetComponent<CraftInventory>().OnCase8();
+        else if (btnE && modifier2) craftInventory.GetComponent<CraftInventory>().OnCase9();
         else if (btnE) craftInventory.GetComponent<CraftInventory>().OnCase7();
-        else if (btnW && modifier1) craftInventory.GetComponent<CraftInventory>().OnCase6();
-        else if (btnW && modifier2) craftInventory.GetComponent<CraftInventory>().OnCase5();
+        else if (btnW && modifier1) craftInventory.GetComponent<CraftInventory>().OnCase5();
+        else if (btnW && modifier2) craftInventory.GetComponent<CraftInventory>().OnCase6();
         else if (btnW) craftInventory.GetComponent<CraftInventory>().OnCase4();
         else if (btnN && modifier1) craftInventory.GetComponent<CraftInventory>().OnCase2();
         else if (btnN && modifier2) craftInventory.GetComponent<CraftInventory>().OnCase3();
