@@ -10,12 +10,15 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] public int index = 0;
     private GameObject topCircleTargetOSU;
     private GameObject bottomCircleTargetOSU;
+    private GameObject craftInventory;
 
     void Awake()
     {
         // Cannot use GameObject serialize field bc of type mismatch.
         topCircleTargetOSU = GameObject.Find("CircleTargetTop");
         bottomCircleTargetOSU = GameObject.Find("CircleTargetBottom");
+
+        craftInventory = GameObject.Find("CraftInventory");
     }
     
     void Start()
@@ -23,6 +26,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (GameObject.Find("PlayerInput(Clone)") != null) {
             if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 0) {
                 index = 1;
+                this.GetComponent<PlayerInput>().defaultActionMap = "Craft";
             }
         }
     }
@@ -50,5 +54,33 @@ public class PlayerInputHandler : MonoBehaviour
             // Debug.Log("OSU BOT");
         }
     }
+
+
+    public void Case1(CallbackContext context)
+    {
+        Debug.Log(index);
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase1(context);
+        }
+    }
+
+    public void Case2(CallbackContext context)
+    {
+        Debug.Log(index);
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase2(context);
+        }
+    }
+
+    public void Case3(CallbackContext context)
+    {
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase3(context);
+        }
+    }
+
 
 }

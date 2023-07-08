@@ -1030,17 +1030,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "d5b59489-efa0-44cf-b791-5d481017396e",
-                    "path": "<Keyboard>/anyKey",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Case1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "GG + East",
                     "id": "c775adfc-84e2-41a6-beee-d0279f3baf84",
                     "path": "OneModifier",

@@ -9,7 +9,7 @@ using System.Linq;
 using UnityEngine.Rendering;
 using UnityEngine.InputSystem;
 
-public class CraftGrid : MonoBehaviour
+public class CraftInventory : MonoBehaviour
 {
     [SerializeField] public GameObject prefabGridCell;
 
@@ -95,6 +95,11 @@ public class CraftGrid : MonoBehaviour
 
     public void OnCase2(InputAction.CallbackContext context) {
         Debug.Log(2);
+        Debug.Log(context.performed);
+    }
+
+    public void OnCase3(InputAction.CallbackContext context) {
+        Debug.Log(3);
         Debug.Log(context.performed);
     }
 }
