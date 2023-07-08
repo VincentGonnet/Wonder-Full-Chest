@@ -23,7 +23,7 @@ public class RhythmManager : MonoBehaviour
 
     public void GenerateRhythm()
     {
-        float inBetweenDistance = Mathf.Pow(1.05f, -this.gameManager.wave) + Constants.MIN_BASE_CIRCLE_RHYTHM_DISTANCE;
+        float inBetweenDistance = Mathf.Pow(3f, -this.gameManager.wave) + Constants.MIN_BASE_CIRCLE_RHYTHM_DISTANCE;
         this.GenerateRhythmRow(circleTargetTransforms[0], inBetweenDistance);
         this.GenerateRhythmRow(circleTargetTransforms[1], inBetweenDistance);
     }
@@ -38,8 +38,8 @@ public class RhythmManager : MonoBehaviour
         for (float x = 0; x < Constants.RHYTHM_DISTANCE; x += inBetweenDistance) {
             int offset = Mathf.FloorToInt((float) this.random.NextDouble() * 10f);
             offset = this.random.Next() == 0 ? offset : -offset;
-            x += inBetweenDistance * offset / 10;
-            if (this.random.NextDouble() < 0.5) {
+            x += inBetweenDistance * offset / 30;
+            if (this.random.NextDouble() < 0.4) {
                 // Make the left of the long circle be at x
                 x += GameResources.PREFAB_RYTHM_LONG_CIRCLE.width / 2;
                 this.circles.Add(Object.Instantiate(

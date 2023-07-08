@@ -30,6 +30,7 @@ public class Interact : MonoBehaviour
                 //Kill the enemy
                 Debug.Log("enemy kill");
                 Destroy(waveManager.obstacles[0]);
+                waveManager.obstacles.RemoveAt(0);
                 enteringRange = false;
                 rhythmManager.nbCircles = 0;
                 circlesHit = 0;

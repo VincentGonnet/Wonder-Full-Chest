@@ -45,10 +45,16 @@ public class CircleTarget : MonoBehaviour
     public void OnButtonPressed(InputAction.CallbackContext context) {
         if (context.started) {
             if (canBeActivated) isActivated = true;
-            else OnFail();
+            // else {
+            //     Debug.Log("started");
+            //     OnFail();
+            // }
         } else if (context.canceled) {
             if (canBeDeactivated) OnSuccess();
-            else if (isActivated) OnFail();
+            // else if (isActivated) {
+            //     Debug.Log("canceled");
+            //     OnFail();
+            // } 
         }
     }
 
