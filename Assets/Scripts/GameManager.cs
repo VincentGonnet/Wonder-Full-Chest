@@ -36,9 +36,10 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GameObject.Find("Terrain").GetComponent<Volume>().profile.TryGet<Vignette>(out vg);
-        inputManagerP1 = GameObject.FindGameObjectsWithTag("PlayerInput")[0];
-        inputManagerP2 = GameObject.FindGameObjectsWithTag("PlayerInput")[1];
-        
+        if (GameObject.FindGameObjectsWithTag("PlayerInput").Count() > 0) {
+            inputManagerP1 = GameObject.FindGameObjectsWithTag("PlayerInput")[0];
+            inputManagerP2 = GameObject.FindGameObjectsWithTag("PlayerInput")[1];
+        }       
     }
 
     private void SendReverseCommand()
@@ -89,7 +90,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Took damage");
         this.playerHearts -= 1;
         if (this.playerHearts <= 0) {
-            
+
         }
     }
 

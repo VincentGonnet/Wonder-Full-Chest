@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionDistance: 5
-  rhythmManager: {fileID: 0}
+  rhythmManager: {fileID: 2920480785959265116, guid: e916448a64b81c70db96469625a62e72, type: 3}
   circleTargetTop: {fileID: 0}
   circleTargetBottom: {fileID: 0}
   waveManager: {fileID: 0}
