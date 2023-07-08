@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Interact : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class Interact : MonoBehaviour
             } else {
                 Debug.Log("enemy killed you");
                 Destroy(this.gameObject);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
