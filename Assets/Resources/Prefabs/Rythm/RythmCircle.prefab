@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 9139762184582089344}
   - component: {fileID: 1328453992330467439}
   - component: {fileID: 549142094980929363}
-  - component: {fileID: 478794074873848027}
   - component: {fileID: 5655570735100468381}
   - component: {fileID: 6757174679733404946}
   - component: {fileID: 1987073874838516779}
@@ -31,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3676965312464392602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.2, y: 3.2, z: 3.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,19 +115,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 6
---- !u!114 &478794074873848027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3676965312464392602}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd8ad400f6c5464382bc764de9a177c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &5655570735100468381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relativeSpeed: 1
+  isAffectedBySlowdown: 0
 --- !u!95 &6757174679733404946
 Animator:
   serializedVersion: 5
