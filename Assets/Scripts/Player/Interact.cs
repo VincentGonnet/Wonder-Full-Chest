@@ -20,8 +20,10 @@ public class Interact : MonoBehaviour
             Debug.Log("Start QTE Challenge here !");
             rhythmManager.GenerateRhythm();
             GameManager.instance.SlowDownTime();
+            GameManager.instance.ZoomCamera();
+            GameManager.instance.ShowVignette();
             enteringRange = true;
-            // gameObject.GetComponent<Inventory>().UseCurrentItem(hit.collider.gameObject);
+            // gameObject.GetComponent<Inventory>().UseCurrentItem(hit.collider.gameObject);    
         }
 
         totalScore = circleTargetBottom.score + circleTargetTop.score;
@@ -40,10 +42,13 @@ public class Interact : MonoBehaviour
                 circleTargetBottom.failed = 0;
                 circleTargetTop.failed = 0;
                 GameManager.instance.ResetTimeSpeed();
+                GameManager.instance.UnZoomCamera();
+                GameManager.instance.HideVignette();
             } else {
                 Debug.Log("enemy killed you");
                 Destroy(this.gameObject);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                // TODO: uncomment this line
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }
