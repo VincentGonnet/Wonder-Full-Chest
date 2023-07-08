@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.SceneManagement;
 
 public class Interact : MonoBehaviour
 {
     public float detectionDistance = 10f;
     [SerializeField] private RhythmManager rhythmManager;
-    [SerializeField] private CircleTarget circleTargetTop;
-    [SerializeField] private CircleTarget circleTargetBottom;
+    [SerializeField] private CircleTarget circleTargetFirst;
+    [SerializeField] private CircleTarget circleTargetSecond;
+    [SerializeField] private CircleTarget circleTargetThird;
+    [SerializeField] private CircleTarget circleTargetFourth;
     [SerializeField] private WaveManager waveManager;
     public int totalScore = 0;
     public int circlesHit = 0;
@@ -28,8 +29,8 @@ public class Interact : MonoBehaviour
             }
         }
 
-        totalScore = circleTargetBottom.score + circleTargetTop.score;
-        circlesHit = totalScore + circleTargetBottom.failed + circleTargetTop.failed;
+        totalScore = circleTargetFirst.score + circleTargetSecond.score + circleTargetThird.score + circleTargetFourth.score;
+        circlesHit = totalScore + circleTargetFirst.failed + circleTargetSecond.failed + circleTargetThird.failed + circleTargetFourth.failed;
         if (circlesHit == rhythmManager.nbCircles && rhythmManager.nbCircles != 0) {
             if (waveManager.obstacles[waveManager.currentObstacleIndex] == waveManager.obstacles.Last()){
                 waveManager.SpawnWave();
@@ -40,12 +41,8 @@ public class Interact : MonoBehaviour
                 Destroy(waveManager.obstacles[0]);
                 waveManager.obstacles.RemoveAt(0);
                 enteringRange = false;
-                rhythmManager.nbCircles = 0;
-                circlesHit = 0;
-                circleTargetBottom.score = 0;
-                circleTargetTop.score = 0;
-                circleTargetBottom.failed = 0;
-                circleTargetTop.failed = 0;
+                rhythmManager.nbCircles = circlesHit = circleTargetFirst.score = circleTargetSecond.score = circleTargetThird.score = circleTargetFourth.score
+                    = circleTargetFirst.failed = circleTargetSecond.failed = circleTargetThird.failed = circleTargetFourth.failed = 0;
                 GameManager.instance.ResetTimeSpeed();
                 GameManager.instance.UnZoomCamera();
                 GameManager.instance.HideVignette();
@@ -58,18 +55,13 @@ public class Interact : MonoBehaviour
                     Destroy(waveManager.obstacles[waveManager.currentObstacleIndex]); 
                 }
             } else {
-                Destroy(this.gameObject);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                GameManager.instance.DamagePlayer();
                 Destroy(waveManager.obstacles[waveManager.currentObstacleIndex]);
             }
 
             enteringRange = false;
-            rhythmManager.nbCircles = 0;
-            circlesHit = 0;
-            circleTargetBottom.score = 0;
-            circleTargetTop.score = 0;
-            circleTargetBottom.failed = 0;
-            circleTargetTop.failed = 0;
+            rhythmManager.nbCircles = circlesHit = circleTargetFirst.score = circleTargetSecond.score = circleTargetThird.score = circleTargetFourth.score 
+                = circleTargetFirst.failed = circleTargetSecond.failed = circleTargetThird.failed = circleTargetFourth.failed = 0;
             waveManager.currentObstacleIndex++;
         }
     }
