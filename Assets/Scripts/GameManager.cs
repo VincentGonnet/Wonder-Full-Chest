@@ -22,10 +22,12 @@ public class GameManager : MonoBehaviour
     private float timeDilationSpeed;
     private Vignette vg;
 
-    private float currentFieldOfView = 20f;
+    private float currentFieldOfView = 38f;
     private float fovVelocity;
     private float vgVelocity;
-    private float currentVignetteIntensity = 0f;
+    private float currentVignetteIntensity;
+    private float currentYPosition = 0.52f;
+    private float yPositionVelocity = 0.52f;
 
     private GameManager()
     {
@@ -40,18 +42,23 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         terrainCamera.fieldOfView = Mathf.SmoothDamp(terrainCamera.fieldOfView, currentFieldOfView, ref fovVelocity, 0.3f);
-
+        terrainCamera.transform.localPosition = new Vector3(
+            terrainCamera.transform.localPosition.x,
+            Mathf.SmoothDamp(terrainCamera.transform.localPosition.y, currentYPosition, ref yPositionVelocity, 0.3f),
+            terrainCamera.transform.localPosition.z);
         vg.intensity.value = Mathf.SmoothDamp(vg.intensity.value, currentVignetteIntensity, ref vgVelocity, 0.5f) ;
     }
 
     public void ZoomCamera()
     {
         currentFieldOfView = 15f;
+        currentYPosition = -1.67f;
     }
 
     public void UnZoomCamera()
     {
-        currentFieldOfView = 20f;
+        currentFieldOfView = 38f;
+        currentYPosition = 0.52f;
     }
 
     public void ShowVignette()

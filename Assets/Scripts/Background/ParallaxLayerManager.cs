@@ -16,25 +16,25 @@ public class ParallaxLayerManager : MonoBehaviour
         // We need at least one background to avoid crashes in Update
         this.backgrounds.Add(Object.Instantiate(
             this.prefab.gameObject,
-            new Vector3(-11, 0) + this.transform.position,
+            new Vector3(-20, 0) + this.transform.position,
             Quaternion.identity,
             this.transform));
     }
 
     private void FixedUpdate()
     {
-        if (this.backgrounds.Last().transform.position.x + this.prefab.width / 2 < 11) {
+        if (this.backgrounds.Last().transform.localPosition.x + this.prefab.width / 2 < 100) {
             float position = this.backgrounds.Last().transform.position.x + this.prefab.width;
             GameObject gameObject = Object.Instantiate(
                 this.prefab.gameObject,
-                new Vector3(position, 0) + this.transform.position,
+                new Vector3(position, this.transform.position.y, this.transform.position.z),
                 Quaternion.identity,
                 this.transform);
             // Because it won't update this frame
             gameObject.GetComponent<MovingObject>().FixedUpdate();
             this.backgrounds.Add(gameObject);
         }
-        if (this.backgrounds.First().transform.position.x + this.prefab.width / 2 < -11) {
+        if (this.backgrounds.First().transform.localPosition.x + this.prefab.width / 2 < -20) {
             Object.Destroy(backgrounds[0]);
             this.backgrounds.RemoveAt(0);
         }
