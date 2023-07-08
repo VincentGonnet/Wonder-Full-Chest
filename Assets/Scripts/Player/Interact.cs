@@ -47,18 +47,17 @@ public class Interact : MonoBehaviour
                 GameManager.instance.ResetTimeSpeed();
                 GameManager.instance.UnZoomCamera();
                 GameManager.instance.HideVignette();
-            } else {
+
                 // Check if the right ItemCraft is in hand
                 if (gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[waveManager.currentObstacleIndex]))
                 {
                     Debug.Log("enemy kill");
-                    Destroy(this.gameObject);
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 } else {
                     Destroy(waveManager.obstacles[waveManager.currentObstacleIndex]); 
                 }
             } else {
-                GameObject.Find("GameManager").GetComponent<GameManager>().DamagePlayer();
+                Destroy(this.gameObject);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 Destroy(waveManager.obstacles[waveManager.currentObstacleIndex]);
             }
 
