@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4567c04998c73cc49a65d03d3b5624f3, type: 3}
-  m_Name: Air_6
+  m_Script: {fileID: 11500000, guid: 660d419c2c30a1547825965474990530, type: 3}
+  m_Name: FishingRod
   m_EditorClassIdentifier: 
-  itemName: air6
-  texture: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  gridPosition: 5
+  itemName: fishingrod
+  texture: {fileID: 21300000, guid: 8b55cf96ea6216443bbbda850207725f, type: 3}
