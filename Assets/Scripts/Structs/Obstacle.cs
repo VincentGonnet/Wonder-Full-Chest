@@ -17,7 +17,7 @@ public class Obstacle : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = data.sprite;
         gameObject.transform.localScale = data.spriteSize;
-        // GetComponent<Animator>().SetInteger("EnemyId", data.enemyId);
+        GetComponent<Animator>().SetInteger("EnemyId", data.enemyId);
         GetComponent<Rigidbody2D>().gravityScale = 0;
         gameObject.name = data.name;
     }
