@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.InputSystem;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = System.Random;
 
-public class RythmManager : MonoBehaviour
+public class RhythmManager : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Transform[] circleTargetTransforms;
@@ -16,20 +14,28 @@ public class RythmManager : MonoBehaviour
 
     private void Start()
     {
-        GenerateRythm();
+        GenerateRhythm();
     }
 
-
-    private void GenerateRythm()
+    private void FixedUpdate()
     {
-        float inBetweenDistance = Mathf.Pow(1.05f, -this.gameManager.wave) + Constants.MIN_BASE_CIRCLE_RYTHM_DISTANCE;
-        this.GenerateRythmRow(circleTargetTransforms[0], inBetweenDistance);
-        this.GenerateRythmRow(circleTargetTransforms[1], inBetweenDistance);
     }
 
-    private void GenerateRythmRow(Transform targetTransform, float inBetweenDistance)
+    private void GenerateRhythm()
     {
-        for (float x = 0; x < Constants.RYTHM_DISTANCE; x += inBetweenDistance) {
+        float inBetweenDistance = Mathf.Pow(1.05f, -this.gameManager.wave) + Constants.MIN_BASE_CIRCLE_RHYTHM_DISTANCE;
+        this.GenerateRhythmRow(circleTargetTransforms[0], inBetweenDistance);
+        this.GenerateRhythmRow(circleTargetTransforms[1], inBetweenDistance);
+    }
+
+    public void DeleteCircle(GameObject circle)
+    {
+        circles.Remove(circle);
+    }
+
+    private void GenerateRhythmRow(Transform targetTransform, float inBetweenDistance)
+    {
+        for (float x = 0; x < Constants.RHYTHM_DISTANCE; x += inBetweenDistance) {
             int offset = Mathf.FloorToInt((float) this.random.NextDouble() * 10f);
             offset = this.random.Next() == 0 ? offset : -offset;
             x += inBetweenDistance * offset / 10;

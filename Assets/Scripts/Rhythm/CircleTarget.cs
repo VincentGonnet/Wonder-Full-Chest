@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class CircleTarget : MonoBehaviour
 {
+    [SerializeField] private RhythmManager rhythmManager;
+    
     public int score = 0;
     private int failed = 0;
 
@@ -53,7 +55,7 @@ public class CircleTarget : MonoBehaviour
     public void OnFail() {
         // Animate as failed
         skipFail = true;
-        Object.Destroy(circle);
+        this.rhythmManager.DeleteCircle(circle);
         circle = null;
         isActivated = false;
         failed++;
@@ -63,7 +65,7 @@ public class CircleTarget : MonoBehaviour
     public void OnSuccess() {
         // Animate as succeeded
         skipFail = true;
-        Object.Destroy(circle);
+        this.rhythmManager.DeleteCircle(circle);
         circle = null;
         isActivated = false;
         score++;
