@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
+using System;
 
 public class CraftRecipes : MonoBehaviour
 {
@@ -10,21 +12,69 @@ public class CraftRecipes : MonoBehaviour
 
     [SerializeField] public GameObject prefabGridImage;
 
+    [SerializeField] public GameObject prefabGridArrow;
+
+    [SerializeField] public Sprite spriteSelectedCell;
+
+    public int position = 0;
+    private ItemCraft[] objs;
+    private ItemCraft[] objsFiltered;
+
     void Start() {
-        BuildRecipes(Resources.LoadAll<ItemCraft>("Recipes"));
+        objs = Resources.LoadAll<ItemCraft>("Recipes");
+
+        SwitchPage(0);
+    }
+
+    public ItemCraft[] filterItems(ItemType[] it){
+        // TODO: make it work for more than 1 it item
+        return it != null ? objs.Where(b => b.inputs.Where(c => it.All(d => d.itemName == c.itemName)).ToArray().Length > 0).OrderBy(c => c.inputs.Length).ToArray() : objs;
+    }
+
+    public void SwitchPage(int value, ItemType[] filter = null)
+    {
+        objsFiltered = filterItems(filter);
+
+        position += value;
+
+        if (position < 0)
+        {
+            position += objsFiltered.Length;
+        } else {
+            position %= objsFiltered.Length;
+        }
+
+        if (objsFiltered.Length > 0) BuildRecipes(objsFiltered, position);
     }
 
     // Start is called before the first frame update
-    void BuildRecipes(ItemCraft[] objs)
+    void BuildRecipes(ItemCraft[] objs, int position)
     {
-        // Pass from scale to grid 3*4 with all children
+        // Clear current build (delete all children from parent)
+        int x = 0;
+        GameObject[] allChildren = new GameObject[this.transform.childCount];
+
+        // Find all child obj and store to that array
+        foreach (Transform child in this.transform)
+        {
+            allChildren[x] = child.gameObject;
+            x += 1;
+        }
+
+        // Now destroy them
+        foreach (GameObject child in allChildren)
+        {
+            DestroyImmediate(child.gameObject);
+        }
+
+        // Pass from scale to grid 1 * 7 with all children
         float scaleX = this.GetComponent<RectTransform>().sizeDelta.x;
-        float scaleY = this.GetComponent<RectTransform>().sizeDelta.y / 8;
+        float scaleY = this.GetComponent<RectTransform>().sizeDelta.y / 7;
 
         // Create column items
         for (int i = 0; i < objs.Length; i++)
         {
-            ItemCraft foundItem = objs[i];
+            ItemCraft foundItem = objs[(position + i) % objs.Length];
 
             GameObject item = Instantiate(prefabGridCell);
             item.name = "Item" + (i + 1).ToString();
@@ -34,6 +84,7 @@ public class CraftRecipes : MonoBehaviour
             rt.anchorMin = new Vector2(0.5f, 1);
             rt.anchorMax = new Vector2(0.5f, 1);
             rt.anchoredPosition = new Vector2(0, (-(scaleY / 2) - scaleY * i));
+            if(((objs.Length - 1) / 2) == i) item.GetComponent<Image>().sprite = spriteSelectedCell;
 
             GameObject image = Instantiate(prefabGridImage);
             image.name = "Image";
@@ -41,10 +92,10 @@ public class CraftRecipes : MonoBehaviour
             RectTransform rt2 = image.GetComponent<RectTransform>();
             rt2.anchorMin = new Vector2(0, 0.5f);
             rt2.anchorMax = new Vector2(0, 0.5f);
-            rt2.anchoredPosition = new Vector2(20, 0);
+            rt2.anchoredPosition = new Vector2(30, 0);
             image.GetComponent<Image>().sprite = foundItem.output.texture;
+            image.transform.localScale = new Vector2(0.8f, 0.8f);
 
-            int maxI = 3;
             for (int j = 0; j < foundItem.inputs.Length; j++)
             {
                 GameObject image2 = Instantiate(prefabGridImage);
@@ -53,19 +104,19 @@ public class CraftRecipes : MonoBehaviour
                 RectTransform rt3 = image2.GetComponent<RectTransform>();
                 rt3.anchorMin = new Vector2(1, 0.5f);
                 rt3.anchorMax = new Vector2(1, 0.5f);
-                rt3.anchoredPosition = new Vector2(-20 - (44 * (foundItem.inputs.Length - j - 1)), 0);
+                rt3.anchoredPosition = new Vector2(- 20 - (44 * (foundItem.inputs.Length - j - 1)) - 10, 0);
                 image2.GetComponent<Image>().sprite = foundItem.inputs[j].texture;
+                image2.transform.localScale = new Vector2(0.8f, 0.8f);
 
-                if (j != (maxI - 1)) { 
-                    GameObject text = Instantiate(prefabGridText);
-                    text.name = "Text";
-                    text.transform.SetParent(item.transform);
-                    RectTransform rt4 = text.GetComponent<RectTransform>();
+                if (j != (foundItem.inputs.Length - 1)) {
+                    GameObject image3 = Instantiate(prefabGridArrow);
+                    image3.name = "Arrow";
+                    image3.transform.SetParent(item.transform);
+                    RectTransform rt4 = image3.GetComponent<RectTransform>();
                     rt4.anchorMin = new Vector2(1, 0.5f);
                     rt4.anchorMax = new Vector2(1, 0.5f);
-                    rt4.anchoredPosition = new Vector2(-43 * (foundItem.inputs.Length - j - 1), 0);
-                    text.GetComponent<TextMeshProUGUI>().text = "+";
-                    text.GetComponent<TextMeshProUGUI>().fontSize = 10;
+                    rt4.anchoredPosition = new Vector2(-43 * (foundItem.inputs.Length - j - 1) - 10, 0);
+                    image3.transform.localScale = new Vector2(0.8f, 0.8f);
                 }
             }
         }
