@@ -28,10 +28,10 @@ public class LayerManager : MonoBehaviour
             this.backgrounds.RemoveAt(0);
         }
         if (this.backgrounds.Last().transform.position.x + this.prefab.width / 2 < 11) {
-            float position = this.backgrounds.Last().transform.position.x + this.prefab.width / 2;
+            float position = this.backgrounds.Last().transform.position.x + this.prefab.width;
             this.backgrounds.Add(Object.Instantiate(
                 this.prefab.gameObject,
-                new Vector3(position, 0),
+                new Vector3(position, 0) + this.transform.position,
                 Quaternion.identity,
                 this.transform));
         }
