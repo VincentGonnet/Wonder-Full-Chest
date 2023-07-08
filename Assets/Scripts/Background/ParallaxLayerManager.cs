@@ -23,7 +23,7 @@ public class ParallaxLayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (this.backgrounds.Last().transform.position.x + this.prefab.width / 2 < 100) {
+        if (this.backgrounds.Last().transform.position.x + this.prefab.width / 2 < 11) {
             float position = this.backgrounds.Last().transform.position.x + this.prefab.width;
             GameObject gameObject = Object.Instantiate(
                 this.prefab.gameObject,
