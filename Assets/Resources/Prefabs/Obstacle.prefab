@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8044017703661892603}
   - component: {fileID: 5874403058473365580}
   - component: {fileID: 5707826985678107247}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a5b007ced78e44e98bf712d309e008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  relativeSpeed: 1
 --- !u!50 &6680385056195031728
 Rigidbody2D:
   serializedVersion: 4
