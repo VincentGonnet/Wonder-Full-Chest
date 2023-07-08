@@ -222,9 +222,9 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 015bd292-8a42-4715-8d1f-a2f3fa87095e
     m_ActionName: Craft/Case12[/XInputControllerWindows/rightShoulder,/XInputControllerWindows/buttonWest]
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Rythm
+  m_DefaultActionMap: Craft
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &6729008430313457792
@@ -239,4 +239,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543fc6f600a703f4c8163fb9d7c870d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 0
+  index: 1

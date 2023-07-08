@@ -1327,26 +1327,15 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "South",
-                    "id": "4016f247-432d-4fbf-8249-ccb1503e13e0",
-                    "path": "OneModifier",
+                    "name": "",
+                    "id": "f5acffb7-cecc-49c9-8fc1-1cef42d2063c",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Case2",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "binding",
-                    "id": "194c9304-a4a4-4cce-b573-7462c6053914",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Case2",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }

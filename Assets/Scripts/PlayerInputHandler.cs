@@ -7,7 +7,7 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    [SerializeField] public int index = 0;
+    [SerializeField] public int index = 1;
     private GameObject topCircleTargetOSU;
     private GameObject bottomCircleTargetOSU;
     private GameObject craftInventory;
@@ -24,9 +24,9 @@ public class PlayerInputHandler : MonoBehaviour
     void Start()
     {
         if (GameObject.Find("PlayerInput(Clone)") != null) {
-            if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 0) {
-                index = 1;
-                this.GetComponent<PlayerInput>().defaultActionMap = "Craft";
+            if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 1) {
+                index = 0;
+                this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
             }
         }
     }
@@ -58,7 +58,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void Case1(CallbackContext context)
     {
-        Debug.Log(index);
         if (index == 1)
         {
             craftInventory.GetComponent<CraftInventory>().OnCase1(context);
@@ -67,7 +66,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void Case2(CallbackContext context)
     {
-        Debug.Log(index);
         if (index == 1)
         {
             craftInventory.GetComponent<CraftInventory>().OnCase2(context);
