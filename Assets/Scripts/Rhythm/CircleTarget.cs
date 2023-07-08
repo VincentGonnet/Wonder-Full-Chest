@@ -55,12 +55,8 @@ public class CircleTarget : MonoBehaviour
     public void OnFail() {
         // Animate as failed
         skipFail = true;
-<<<<<<<< HEAD:Assets/Scripts/Rhythm/CircleTarget.cs
         this.rhythmManager.DeleteCircle(circle);
         Destroy(circle);
-========
-        Object.Destroy(circle);
->>>>>>>> 005901b (added a rythm generator):Assets/Scripts/Rythm/CircleTarget.cs
         circle = null;
         isActivated = false;
         failed++;
@@ -70,12 +66,8 @@ public class CircleTarget : MonoBehaviour
     public void OnSuccess() {
         // Animate as succeeded
         skipFail = true;
-<<<<<<<< HEAD:Assets/Scripts/Rhythm/CircleTarget.cs
         this.rhythmManager.DeleteCircle(circle);
         Destroy(circle);
-========
-        Object.Destroy(circle);
->>>>>>>> 005901b (added a rythm generator):Assets/Scripts/Rythm/CircleTarget.cs
         circle = null;
         isActivated = false;
         score++;

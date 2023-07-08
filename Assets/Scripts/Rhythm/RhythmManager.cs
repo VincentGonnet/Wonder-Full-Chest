@@ -21,7 +21,7 @@ public class RhythmManager : MonoBehaviour
     {
     }
 
-    public void GenerateRhythm()
+    private void GenerateRhythm()
     {
         float inBetweenDistance = Mathf.Pow(1.05f, -this.gameManager.wave) + Constants.MIN_BASE_CIRCLE_RHYTHM_DISTANCE;
         this.GenerateRhythmRow(circleTargetTransforms[0], inBetweenDistance);
