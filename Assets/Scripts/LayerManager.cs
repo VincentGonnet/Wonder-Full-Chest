@@ -29,11 +29,14 @@ public class LayerManager : MonoBehaviour
         }
         if (this.backgrounds.Last().transform.position.x + this.prefab.width / 2 < 21) {
             float position = this.backgrounds.Last().transform.position.x + this.prefab.width;
-            this.backgrounds.Add(Object.Instantiate(
+            GameObject gameObject = Object.Instantiate(
                 this.prefab.gameObject,
                 new Vector3(position, 0) + this.transform.position,
                 Quaternion.identity,
-                this.transform));
+                this.transform);
+            // Because it won't update this frame
+            gameObject.GetComponent<MovingObject>().FixedUpdate();
+            this.backgrounds.Add(gameObject);
         }
     }
 }
