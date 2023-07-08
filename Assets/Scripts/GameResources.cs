@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public static class GameResources
@@ -10,6 +8,10 @@ public static class GameResources
         new PrefabWithWidth("Prefabs/Background/Layer1"),
         new PrefabWithWidth("Prefabs/Background/Layer2")
     };
+
+    public static readonly GameObject PREFAB_OBSTACLE_RABBIT = Resources.Load<GameObject>("Prefabs/Obstacles/Rabbit");
+
+    public static readonly ObstacleScriptable SCRIPTABLE_RABBIT = Resources.Load<ObstacleScriptable>("ScriptableObjects/Rabbit");
 
 
 }
@@ -24,6 +26,5 @@ public class PrefabWithWidth
         this.gameObject = Resources.Load<GameObject>(path);
         SpriteRenderer spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         this.width = spriteRenderer.bounds.size.x;
-        Debug.Log(this.width);
     }
 }
