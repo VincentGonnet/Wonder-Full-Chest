@@ -4,4 +4,5 @@ using UnityEngine;
 public class ItemType : ScriptableObject {
     public string itemName;
     public Sprite texture;
+    public int gridPosition;
 }
