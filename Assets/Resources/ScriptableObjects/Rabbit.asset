@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ba5dbd16786c7448b3899d8b9a1798e, type: 3}
-  m_Name: Door
+  m_Name: Rabbit
   m_EditorClassIdentifier: 
-  name: Door
   resolvers: []
   drops: []
-  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  spriteSize: {x: 3, y: 6, z: 0}
-  colliderSize: {x: 1, y: 2, z: 0}
+  sprite: {fileID: 1165821250, guid: 3ea466cab13fe204dbf3eb4983b79ee4, type: 3}
+  spriteSize: {x: 1, y: 1, z: 0}
+  enemyId: 2
