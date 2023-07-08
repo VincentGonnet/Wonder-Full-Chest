@@ -811,6 +811,84 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PlayerOSU",
+            "id": "fced1f9a-b4d6-4360-bdc4-eb545ec1a7b2",
+            "actions": [
+                {
+                    "name": "TestJ1",
+                    "type": "Button",
+                    "id": "17f3f71e-0eaa-4c78-bc2e-431ecd02d736",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cfb924d8-d83a-48a9-94b8-013d2933ae02",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "TestJ1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12fb501f-8731-4460-a013-986930c8861c",
+                    "path": "<Keyboard>/#(Q)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TestJ1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PlayerCraft",
+            "id": "c64ee446-1e26-4abb-b187-6ce5dbe3f263",
+            "actions": [
+                {
+                    "name": "TestJ2",
+                    "type": "Button",
+                    "id": "72078636-6480-4606-af25-26458b192361",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7f69885f-a044-481d-94b7-269fb74d878e",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "TestJ2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b627d651-f9b7-4abf-aef8-f8796f3e5aaa",
+                    "path": "<Keyboard>/#(Q)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TestJ2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
