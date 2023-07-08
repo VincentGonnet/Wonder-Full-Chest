@@ -544,10 +544,10 @@
                 {
                     "name": "",
                     "id": "60ddc167-bb8c-4c00-9fc5-82b755d8f1c1",
-                    "path": "<Keyboard>/#(Z)",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad",
+                    "groups": "Keyboard&Mouse",
                     "action": "2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -566,10 +566,10 @@
                 {
                     "name": "",
                     "id": "2c0a29af-dd86-44bb-bd09-61bc109a05b4",
-                    "path": "<Keyboard>/#(A)",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad",
+                    "groups": "Keyboard&Mouse",
                     "action": "1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -660,11 +660,33 @@
                 },
                 {
                     "name": "",
+                    "id": "4c53bee7-efd9-47eb-9a32-ab1ef1f4ef26",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Modifier1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "40656b46-ceeb-4a37-b0f5-1f2d977ac5d8",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "Modifer2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e18a532f-7e2c-43e7-8d97-01792872d288",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Modifer2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -682,11 +704,33 @@
                 },
                 {
                     "name": "",
+                    "id": "6e9f7996-cb41-4929-b8de-958755e0d1f9",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "BtnS",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d4ae6db7-80a8-4789-9df0-95c140483a3e",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "BtnE",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5ba7f76-b412-46d1-a33e-4aa9a453fa8f",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "BtnE",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -704,11 +748,33 @@
                 },
                 {
                     "name": "",
+                    "id": "5fddc7a9-40ab-4e05-aa2d-518edd4b01c0",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "BtnW",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a886d2b2-4c79-4672-97f2-42075ad6d863",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "BtnN",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "734f5ad5-acea-4eb2-8c29-6f509955921e",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "BtnN",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -854,7 +920,7 @@
                 {
                     "name": "",
                     "id": "31ff9663-cb10-4652-ba7c-d7fa0f5f2126",
-                    "path": "<Keyboard>/#(Z)",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -865,7 +931,7 @@
                 {
                     "name": "",
                     "id": "7d19c70d-f484-48a0-a89c-e49449a16644",
-                    "path": "<Keyboard>/#(Q)",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -876,7 +942,7 @@
                 {
                     "name": "",
                     "id": "730b1c34-f251-44db-a285-0c8e8a767177",
-                    "path": "<Keyboard>/#(S)",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -887,7 +953,7 @@
                 {
                     "name": "",
                     "id": "97684e62-5bc4-473d-9dd2-a03c5bc2f633",
-                    "path": "<Keyboard>/#(D)",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -898,7 +964,7 @@
                 {
                     "name": "",
                     "id": "7a82f7f7-8f1d-439b-bd4c-c255cbde3d06",
-                    "path": "<Keyboard>/#(I)",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -909,7 +975,7 @@
                 {
                     "name": "",
                     "id": "700b32be-ea34-4571-8970-4a51435a4f15",
-                    "path": "<Keyboard>/#(J)",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -920,7 +986,7 @@
                 {
                     "name": "",
                     "id": "536aa664-bdd3-4bd8-b1b2-c4b460dff1e7",
-                    "path": "<Keyboard>/#(K)",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -931,7 +997,7 @@
                 {
                     "name": "",
                     "id": "05e04b1d-370c-4733-b2e0-a791794feca1",
-                    "path": "<Keyboard>/#(L)",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -942,7 +1008,7 @@
                 {
                     "name": "",
                     "id": "f7a3b597-e08c-4e84-aadd-1afa1fa68b1c",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/b",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
