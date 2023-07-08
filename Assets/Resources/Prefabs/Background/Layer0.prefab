@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6043727611699175796}
   - component: {fileID: 2843071905698540352}
   - component: {fileID: 1254122539760729492}
-  - component: {fileID: 1363707665002277620}
+  - component: {fileID: -3676697627714494255}
   m_Layer: 0
   m_Name: Layer0
   m_TagString: Untagged
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relativeSpeed: 1
---- !u!68 &1363707665002277620
+--- !u!68 &-3676697627714494255
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,8 +134,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.4808082, y: 0.38274577}
-  - {x: 0.46916494, y: 0.37237674}
+  - {x: -0.5321714, y: 0.3559276}
+  - {x: 0.5267961, y: 0.45743698}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
