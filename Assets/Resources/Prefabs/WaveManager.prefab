@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c9a93dd27e440ebcf922b868b6d197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 1775250360028389523, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
+  obstacles: []
+  currentObstacleIndex: 0
   obstaclesPerWave: 5
   populationSize: 1
   mutationRate: 1
