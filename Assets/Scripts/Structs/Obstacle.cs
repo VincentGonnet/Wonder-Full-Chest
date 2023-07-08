@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Obstacle : MovingObject
 {
-    private ObstacleScriptable data;
+    public ObstacleScriptable data;
     public static Obstacle Instanciate(string name, Vector2 worldPos)
     {
         GameObject gameObject = Object.Instantiate(Resources.Load("Prefabs/Obstacle") as GameObject, worldPos, Quaternion.identity);
