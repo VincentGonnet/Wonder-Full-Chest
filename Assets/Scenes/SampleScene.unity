@@ -1024,10 +1024,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1775250360028389523, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
-      propertyPath: obstacleSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4616664547781848996, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
       propertyPath: m_Name
       value: GameManager

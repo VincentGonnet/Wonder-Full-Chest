@@ -19,6 +19,7 @@ public class Interact : MonoBehaviour
         if (hit.collider != null && !enteringRange) {
             Debug.Log("Start QTE Challenge here !");
             rhythmManager.GenerateRhythm();
+            GameManager.instance.SlowDownTime();
             enteringRange = true;
             // gameObject.GetComponent<Inventory>().UseCurrentItem(hit.collider.gameObject);
         }
@@ -38,6 +39,7 @@ public class Interact : MonoBehaviour
                 circleTargetTop.score = 0;
                 circleTargetBottom.failed = 0;
                 circleTargetTop.failed = 0;
+                GameManager.instance.ResetTimeSpeed();
             } else {
                 Debug.Log("enemy killed you");
                 Destroy(this.gameObject);

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relativeSpeed: 3
+  isAffectedBySlowdown: 1
   data: {fileID: 11400000, guid: c692c50dffdd2ef49a65759c9c4dcb4e, type: 2}
 --- !u!50 &6680385056195031728
 Rigidbody2D:
