@@ -10,7 +10,7 @@ public class LayerManager : MonoBehaviour
     [SerializeField] private int layerId;
     private PrefabWithWidth prefab;
 
-    void Start()
+    private void Start()
     {
         this.prefab = GameResources.PREFAB_BACKGROUND_LAYERS[layerId];
         // We need at least one background to avoid crashes in Update
@@ -21,12 +21,8 @@ public class LayerManager : MonoBehaviour
             this.transform));
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        if (this.backgrounds.First().transform.position.x + this.prefab.width / 2 < -11) {
-            Object.Destroy(backgrounds[0]);
-            this.backgrounds.RemoveAt(0);
-        }
         if (this.backgrounds.Last().transform.position.x + this.prefab.width / 2 < 21) {
             float position = this.backgrounds.Last().transform.position.x + this.prefab.width;
             GameObject gameObject = Object.Instantiate(
@@ -37,6 +33,10 @@ public class LayerManager : MonoBehaviour
             // Because it won't update this frame
             gameObject.GetComponent<MovingObject>().FixedUpdate();
             this.backgrounds.Add(gameObject);
+        }
+        if (this.backgrounds.First().transform.position.x + this.prefab.width / 2 < -11) {
+            Object.Destroy(backgrounds[0]);
+            this.backgrounds.RemoveAt(0);
         }
     }
 }

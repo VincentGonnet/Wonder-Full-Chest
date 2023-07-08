@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5874403058473365580}
   - component: {fileID: 5707826985678107247}
   m_Layer: 6
-  m_Name: Rabbit
+  m_Name: GenericObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relativeSpeed: 1
-  data: {fileID: 11400000, guid: 34c2eb57f1b3a9041b66bebaf96ab903, type: 2}
+  data: {fileID: 0}
 --- !u!50 &6680385056195031728
 Rigidbody2D:
   serializedVersion: 4

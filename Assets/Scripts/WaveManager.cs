@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
 {
     private List<GameObject> obstacles = new();
     private int wave;
-    private Random random;
+    private Random random = new();
 
     [SerializeField] private int obstaclesPerWave;
     // Used for the genetic thingy
@@ -46,8 +46,20 @@ public class WaveManager : MonoBehaviour
     private ObstacleMetadata[] GenerateObstacleOrder(int waveDifficulty)
     {
         ObstacleMetadata[] possibleObstacles = ObstacleMetadata.OBSTACLES.Where(obstacle => obstacle.minWaveSpawn <= this.wave).ToArray();
+        int numberOfMaxDifficulty = 1;
+        for (int i = possibleObstacles.Length - 2; i >= 0; i--) {
+            if (possibleObstacles[i].difficulty == possibleObstacles.Last().difficulty) {
+                numberOfMaxDifficulty++;
+            }
+        }
         // At the beginning we take the most difficult obstacle that can spawn
-        int[][] population = Enumerable.Repeat(Enumerable.Repeat(possibleObstacles.Length - 1, this.obstaclesPerWave).ToArray(), this.populationSize).ToArray();
+        int[][] population = new int[this.populationSize][];
+        for (int i = 0; i < this.populationSize; i++) {
+            population[i] = new int[this.obstaclesPerWave];
+            for (int j = 0; j < this.obstaclesPerWave; j++) {
+                population[i][j] = possibleObstacles.Length - 1 - this.random.Next(numberOfMaxDifficulty);
+            }
+        }
         int bestSolution = 0;
         int bestSolutionFitness;
         do {

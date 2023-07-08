@@ -9,11 +9,9 @@ public static class GameResources
         new PrefabWithWidth("Prefabs/Background/Layer2")
     };
 
-    public static readonly GameObject PREFAB_OBSTACLE_RABBIT = Resources.Load<GameObject>("Prefabs/Obstacles/Rabbit");
-
-    public static readonly ObstacleScriptable SCRIPTABLE_RABBIT = Resources.Load<ObstacleScriptable>("ScriptableObjects/Rabbit");
-
-
+    public static GameObject PREFAB_OBSTACLE_RABBIT = Resources.Load<GameObject>("Prefabs/Obstacles/Rabbit");
+    public static GameObject PREFAB_OBSTACLE_FISH = Resources.Load<GameObject>("Prefabs/Obstacles/Fish");
+    public static GameObject PREFAB_OBSTACLE_SLIME = Resources.Load<GameObject>("Prefabs/Obstacles/Slime");
 }
 
 public class PrefabWithWidth
@@ -21,7 +19,7 @@ public class PrefabWithWidth
     public readonly GameObject gameObject;
     public readonly float width;
 
-    public PrefabWithWidth(String path)
+    public PrefabWithWidth(string path)
     {
         this.gameObject = Resources.Load<GameObject>(path);
         SpriteRenderer spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
