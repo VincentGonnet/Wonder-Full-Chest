@@ -3,7 +3,7 @@ using UnityEngine;
 public class MovingObject : MonoBehaviour
 {
     // Used for a parallax effect
-    [SerializeField] private float relativeSpeed = 1;
+    [SerializeField] private float relativeSpeed = 2f;
     
     public void FixedUpdate()
     {

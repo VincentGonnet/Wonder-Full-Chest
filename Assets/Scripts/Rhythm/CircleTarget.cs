@@ -6,7 +6,7 @@ public class CircleTarget : MonoBehaviour
     [SerializeField] private RhythmManager rhythmManager;
     
     public int score = 0;
-    private int failed = 0;
+    public int failed = 0;
 
     private bool canBeActivated = false;
     private bool canBeDeactivated = false;
@@ -56,6 +56,7 @@ public class CircleTarget : MonoBehaviour
         // Animate as failed
         skipFail = true;
         this.rhythmManager.DeleteCircle(circle);
+        Destroy(circle);
         circle = null;
         isActivated = false;
         failed++;
@@ -66,6 +67,7 @@ public class CircleTarget : MonoBehaviour
         // Animate as succeeded
         skipFail = true;
         this.rhythmManager.DeleteCircle(circle);
+        Destroy(circle);
         circle = null;
         isActivated = false;
         score++;

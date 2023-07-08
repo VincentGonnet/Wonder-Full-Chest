@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac75a8be8a6b49bb8f5124667f7d612b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rhythmManager: {fileID: 2920480785959265116}
   score: 0
 --- !u!212 &4205579777954306914
 SpriteRenderer:
@@ -235,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac75a8be8a6b49bb8f5124667f7d612b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rhythmManager: {fileID: 2920480785959265116}
   score: 0
 --- !u!212 &3905837159274368399
 SpriteRenderer:

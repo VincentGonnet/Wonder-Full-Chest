@@ -11,17 +11,17 @@ public class RhythmManager : MonoBehaviour
 
     private List<GameObject> circles = new();
     private Random random = new();
+    public int nbCircles = 0;
 
     private void Start()
     {
-        GenerateRhythm();
     }
 
     private void FixedUpdate()
     {
     }
 
-    private void GenerateRhythm()
+    public void GenerateRhythm()
     {
         float inBetweenDistance = Mathf.Pow(1.05f, -this.gameManager.wave) + Constants.MIN_BASE_CIRCLE_RHYTHM_DISTANCE;
         this.GenerateRhythmRow(circleTargetTransforms[0], inBetweenDistance);
@@ -39,7 +39,7 @@ public class RhythmManager : MonoBehaviour
             int offset = Mathf.FloorToInt((float) this.random.NextDouble() * 10f);
             offset = this.random.Next() == 0 ? offset : -offset;
             x += inBetweenDistance * offset / 10;
-            if (this.random.NextDouble() < 1) {
+            if (this.random.NextDouble() < 0.5) {
                 // Make the left of the long circle be at x
                 x += GameResources.PREFAB_RYTHM_LONG_CIRCLE.width / 2;
                 this.circles.Add(Object.Instantiate(
@@ -49,6 +49,7 @@ public class RhythmManager : MonoBehaviour
                     targetTransform));
                 // And then set x to the right of the long circle
                 x += GameResources.PREFAB_RYTHM_LONG_CIRCLE.width / 2;
+                nbCircles++;
             }
             else {
                 // Make the left of the circle be at x
@@ -60,6 +61,7 @@ public class RhythmManager : MonoBehaviour
                     targetTransform));
                 // And then set x to the right of the circle
                 x += GameResources.PREFAB_RYTHM_CIRCLE.width / 2;
+                nbCircles++;
             }
         }
     }
