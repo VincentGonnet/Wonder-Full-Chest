@@ -903,6 +903,485 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Craft"",
+            ""id"": ""bd2b3ac3-1671-4bf8-ae1d-9a465956af1e"",
+            ""actions"": [
+                {
+                    ""name"": ""Case1"",
+                    ""type"": ""Button"",
+                    ""id"": ""0e738836-113e-46c8-8b32-f112155aa9f7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case2"",
+                    ""type"": ""Button"",
+                    ""id"": ""6aa6b2d0-1fa6-4ef8-8f7e-627c4547372b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case3"",
+                    ""type"": ""Button"",
+                    ""id"": ""84eb8456-6a88-4b9c-888e-f23a59757aa1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case4"",
+                    ""type"": ""Button"",
+                    ""id"": ""6342e57a-9e04-4f2c-b80a-1491d7f6ca70"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case5"",
+                    ""type"": ""Button"",
+                    ""id"": ""80f61820-f3ff-42a2-8945-2ed52fa7bef0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case6"",
+                    ""type"": ""Button"",
+                    ""id"": ""9c017950-e1ac-4b8d-83f1-35a362fde03c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case7"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba8bcabf-7d03-4cea-badd-78bce85a37d6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case8"",
+                    ""type"": ""Button"",
+                    ""id"": ""42938a93-66d3-4b12-9ba1-7423a172b8af"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case9"",
+                    ""type"": ""Button"",
+                    ""id"": ""aa4ece28-d9d4-445d-b2b1-0c048bdc3b68"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case10"",
+                    ""type"": ""Button"",
+                    ""id"": ""9ea6ebc9-12bf-4a69-93de-c7b558524fff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case11"",
+                    ""type"": ""Button"",
+                    ""id"": ""d70513bb-a248-4bda-9fdd-2e95afc72c2d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Case12"",
+                    ""type"": ""Button"",
+                    ""id"": ""015bd292-8a42-4715-8d1f-a2f3fa87095e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold(duration=0.01)"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""GG + South"",
+                    ""id"": ""70201556-ba38-4ac5-90cc-98ba8efe1733"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case1"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""2e4a50b6-fae1-42b5-b9b3-d56ebace209b"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""9ef44727-e8cf-426f-8cd7-d4e4ecef8e50"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d5b59489-efa0-44cf-b791-5d481017396e"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Case1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""GG + East"",
+                    ""id"": ""c775adfc-84e2-41a6-beee-d0279f3baf84"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case4"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""0efb1dd4-a275-4f8c-9fa4-08205fd78b2b"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""43dfad3b-f063-4498-8c62-b2cf48794378"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""GG + North"",
+                    ""id"": ""5cd38c23-2c4c-4d32-a1f9-107a438938af"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case7"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""509e6254-f5ef-471d-8f20-e7ad3767b8bd"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""1ac52b3c-62b6-4668-9557-ce726f19c313"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""GG + West"",
+                    ""id"": ""46fd7ef8-da8f-41bb-8153-9ee46e31b2b9"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case10"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""f5279851-6c84-4d92-b2c7-ad64b8f7fa04"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case10"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""ac3cbc3c-95d6-440e-b255-d823570c9ca8"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case10"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""GD + South"",
+                    ""id"": ""2b82bfb5-d111-4eaa-af34-c56942163c6d"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case3"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""a826d460-5d69-4a13-ad79-c79875ffe845"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""e325d874-5543-4a02-8b3f-a50f161c5c4a"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""GD + East"",
+                    ""id"": ""82577f1c-36fe-4f9d-b697-5bd71f929237"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case6"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""2f9f60bd-1035-416b-87d7-c1457006ea76"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""7f1efc4a-10ac-45b3-a84f-59b44a494b1d"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""GD + North"",
+                    ""id"": ""1fab04bc-d80f-456c-89e4-2692f601fee6"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case9"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""a4c07315-2330-4965-81cb-42156d4e4d55"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""bea7a5e5-16ab-449e-a3fc-32d4542f1370"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""GD + West"",
+                    ""id"": ""c086f4db-c05a-4ce0-8f23-3b37876de9c2"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case12"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""7a1faf9e-69cc-4ff8-abd9-0bbcb3e63747"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case12"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""0ea96a88-e49d-456b-b9b0-b7fef7fc94f9"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case12"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""West"",
+                    ""id"": ""d83cbfe2-196f-4d2f-804f-13ffd9364844"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case11"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""be19fc0c-02e4-48e8-b776-69cfb86dd40d"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case11"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""North"",
+                    ""id"": ""82b3be33-043b-46e8-be39-7505227eadce"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case8"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""730666f7-ab73-456b-9137-e2c41ece7ea9"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""East"",
+                    ""id"": ""bbf5983a-af88-4f8a-bd6a-85fb01942ca6"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case5"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""eea3708a-f667-4527-b1f9-aa49e6d9513f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""South"",
+                    ""id"": ""4016f247-432d-4fbf-8249-ccb1503e13e0"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Case2"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""194c9304-a4a4-4cce-b573-7462c6053914"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Case2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -991,6 +1470,20 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Rythm = asset.FindActionMap("Rythm", throwIfNotFound: true);
         m_Rythm__1 = m_Rythm.FindAction("1", throwIfNotFound: true);
         m_Rythm__2 = m_Rythm.FindAction("2", throwIfNotFound: true);
+        // Craft
+        m_Craft = asset.FindActionMap("Craft", throwIfNotFound: true);
+        m_Craft_Case1 = m_Craft.FindAction("Case1", throwIfNotFound: true);
+        m_Craft_Case2 = m_Craft.FindAction("Case2", throwIfNotFound: true);
+        m_Craft_Case3 = m_Craft.FindAction("Case3", throwIfNotFound: true);
+        m_Craft_Case4 = m_Craft.FindAction("Case4", throwIfNotFound: true);
+        m_Craft_Case5 = m_Craft.FindAction("Case5", throwIfNotFound: true);
+        m_Craft_Case6 = m_Craft.FindAction("Case6", throwIfNotFound: true);
+        m_Craft_Case7 = m_Craft.FindAction("Case7", throwIfNotFound: true);
+        m_Craft_Case8 = m_Craft.FindAction("Case8", throwIfNotFound: true);
+        m_Craft_Case9 = m_Craft.FindAction("Case9", throwIfNotFound: true);
+        m_Craft_Case10 = m_Craft.FindAction("Case10", throwIfNotFound: true);
+        m_Craft_Case11 = m_Craft.FindAction("Case11", throwIfNotFound: true);
+        m_Craft_Case12 = m_Craft.FindAction("Case12", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1298,6 +1791,140 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         }
     }
     public RythmActions @Rythm => new RythmActions(this);
+
+    // Craft
+    private readonly InputActionMap m_Craft;
+    private List<ICraftActions> m_CraftActionsCallbackInterfaces = new List<ICraftActions>();
+    private readonly InputAction m_Craft_Case1;
+    private readonly InputAction m_Craft_Case2;
+    private readonly InputAction m_Craft_Case3;
+    private readonly InputAction m_Craft_Case4;
+    private readonly InputAction m_Craft_Case5;
+    private readonly InputAction m_Craft_Case6;
+    private readonly InputAction m_Craft_Case7;
+    private readonly InputAction m_Craft_Case8;
+    private readonly InputAction m_Craft_Case9;
+    private readonly InputAction m_Craft_Case10;
+    private readonly InputAction m_Craft_Case11;
+    private readonly InputAction m_Craft_Case12;
+    public struct CraftActions
+    {
+        private @InputActions m_Wrapper;
+        public CraftActions(@InputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Case1 => m_Wrapper.m_Craft_Case1;
+        public InputAction @Case2 => m_Wrapper.m_Craft_Case2;
+        public InputAction @Case3 => m_Wrapper.m_Craft_Case3;
+        public InputAction @Case4 => m_Wrapper.m_Craft_Case4;
+        public InputAction @Case5 => m_Wrapper.m_Craft_Case5;
+        public InputAction @Case6 => m_Wrapper.m_Craft_Case6;
+        public InputAction @Case7 => m_Wrapper.m_Craft_Case7;
+        public InputAction @Case8 => m_Wrapper.m_Craft_Case8;
+        public InputAction @Case9 => m_Wrapper.m_Craft_Case9;
+        public InputAction @Case10 => m_Wrapper.m_Craft_Case10;
+        public InputAction @Case11 => m_Wrapper.m_Craft_Case11;
+        public InputAction @Case12 => m_Wrapper.m_Craft_Case12;
+        public InputActionMap Get() { return m_Wrapper.m_Craft; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CraftActions set) { return set.Get(); }
+        public void AddCallbacks(ICraftActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CraftActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CraftActionsCallbackInterfaces.Add(instance);
+            @Case1.started += instance.OnCase1;
+            @Case1.performed += instance.OnCase1;
+            @Case1.canceled += instance.OnCase1;
+            @Case2.started += instance.OnCase2;
+            @Case2.performed += instance.OnCase2;
+            @Case2.canceled += instance.OnCase2;
+            @Case3.started += instance.OnCase3;
+            @Case3.performed += instance.OnCase3;
+            @Case3.canceled += instance.OnCase3;
+            @Case4.started += instance.OnCase4;
+            @Case4.performed += instance.OnCase4;
+            @Case4.canceled += instance.OnCase4;
+            @Case5.started += instance.OnCase5;
+            @Case5.performed += instance.OnCase5;
+            @Case5.canceled += instance.OnCase5;
+            @Case6.started += instance.OnCase6;
+            @Case6.performed += instance.OnCase6;
+            @Case6.canceled += instance.OnCase6;
+            @Case7.started += instance.OnCase7;
+            @Case7.performed += instance.OnCase7;
+            @Case7.canceled += instance.OnCase7;
+            @Case8.started += instance.OnCase8;
+            @Case8.performed += instance.OnCase8;
+            @Case8.canceled += instance.OnCase8;
+            @Case9.started += instance.OnCase9;
+            @Case9.performed += instance.OnCase9;
+            @Case9.canceled += instance.OnCase9;
+            @Case10.started += instance.OnCase10;
+            @Case10.performed += instance.OnCase10;
+            @Case10.canceled += instance.OnCase10;
+            @Case11.started += instance.OnCase11;
+            @Case11.performed += instance.OnCase11;
+            @Case11.canceled += instance.OnCase11;
+            @Case12.started += instance.OnCase12;
+            @Case12.performed += instance.OnCase12;
+            @Case12.canceled += instance.OnCase12;
+        }
+
+        private void UnregisterCallbacks(ICraftActions instance)
+        {
+            @Case1.started -= instance.OnCase1;
+            @Case1.performed -= instance.OnCase1;
+            @Case1.canceled -= instance.OnCase1;
+            @Case2.started -= instance.OnCase2;
+            @Case2.performed -= instance.OnCase2;
+            @Case2.canceled -= instance.OnCase2;
+            @Case3.started -= instance.OnCase3;
+            @Case3.performed -= instance.OnCase3;
+            @Case3.canceled -= instance.OnCase3;
+            @Case4.started -= instance.OnCase4;
+            @Case4.performed -= instance.OnCase4;
+            @Case4.canceled -= instance.OnCase4;
+            @Case5.started -= instance.OnCase5;
+            @Case5.performed -= instance.OnCase5;
+            @Case5.canceled -= instance.OnCase5;
+            @Case6.started -= instance.OnCase6;
+            @Case6.performed -= instance.OnCase6;
+            @Case6.canceled -= instance.OnCase6;
+            @Case7.started -= instance.OnCase7;
+            @Case7.performed -= instance.OnCase7;
+            @Case7.canceled -= instance.OnCase7;
+            @Case8.started -= instance.OnCase8;
+            @Case8.performed -= instance.OnCase8;
+            @Case8.canceled -= instance.OnCase8;
+            @Case9.started -= instance.OnCase9;
+            @Case9.performed -= instance.OnCase9;
+            @Case9.canceled -= instance.OnCase9;
+            @Case10.started -= instance.OnCase10;
+            @Case10.performed -= instance.OnCase10;
+            @Case10.canceled -= instance.OnCase10;
+            @Case11.started -= instance.OnCase11;
+            @Case11.performed -= instance.OnCase11;
+            @Case11.canceled -= instance.OnCase11;
+            @Case12.started -= instance.OnCase12;
+            @Case12.performed -= instance.OnCase12;
+            @Case12.canceled -= instance.OnCase12;
+        }
+
+        public void RemoveCallbacks(ICraftActions instance)
+        {
+            if (m_Wrapper.m_CraftActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICraftActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CraftActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CraftActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CraftActions @Craft => new CraftActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1368,5 +1995,20 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     {
         void On_1(InputAction.CallbackContext context);
         void On_2(InputAction.CallbackContext context);
+    }
+    public interface ICraftActions
+    {
+        void OnCase1(InputAction.CallbackContext context);
+        void OnCase2(InputAction.CallbackContext context);
+        void OnCase3(InputAction.CallbackContext context);
+        void OnCase4(InputAction.CallbackContext context);
+        void OnCase5(InputAction.CallbackContext context);
+        void OnCase6(InputAction.CallbackContext context);
+        void OnCase7(InputAction.CallbackContext context);
+        void OnCase8(InputAction.CallbackContext context);
+        void OnCase9(InputAction.CallbackContext context);
+        void OnCase10(InputAction.CallbackContext context);
+        void OnCase11(InputAction.CallbackContext context);
+        void OnCase12(InputAction.CallbackContext context);
     }
 }

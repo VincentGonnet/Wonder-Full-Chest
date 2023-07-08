@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using System;
 using System.Linq;
 using UnityEngine.Rendering;
+using UnityEngine.InputSystem;
 
 public class CraftGrid : MonoBehaviour
 {
@@ -87,9 +88,13 @@ public class CraftGrid : MonoBehaviour
         currentHightlight = column;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnCase1(InputAction.CallbackContext context) {
+        Debug.Log(1);
+        Debug.Log(context.performed);
+    }
+
+    public void OnCase2(InputAction.CallbackContext context) {
+        Debug.Log(2);
+        Debug.Log(context.performed);
     }
 }

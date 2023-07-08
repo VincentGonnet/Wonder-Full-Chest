@@ -56,7 +56,7 @@ public class CraftRecipes : MonoBehaviour
                 RectTransform rt3 = image2.GetComponent<RectTransform>();
                 rt3.anchorMin = new Vector2(1, 0.5f);
                 rt3.anchorMax = new Vector2(1, 0.5f);
-                rt3.anchoredPosition = new Vector2(-20 - (32 * (maxI - j - 1)) - 12 * (maxI - j - 1), 0);
+                rt3.anchoredPosition = new Vector2(-20 - (44 * (foundItem.inputs.Length - j - 1)), 0);
                 image2.GetComponent<Image>().sprite = foundItem.inputs[j].texture;
 
                 if (j != (maxI - 1)) { 
@@ -66,7 +66,7 @@ public class CraftRecipes : MonoBehaviour
                     RectTransform rt4 = text.GetComponent<RectTransform>();
                     rt4.anchorMin = new Vector2(1, 0.5f);
                     rt4.anchorMax = new Vector2(1, 0.5f);
-                    rt4.anchoredPosition = new Vector2(-43 * (maxI - j - 1), 0);
+                    rt4.anchoredPosition = new Vector2(-43 * (foundItem.inputs.Length - j - 1), 0);
                     text.GetComponent<TextMeshProUGUI>().text = "+";
                     text.GetComponent<TextMeshProUGUI>().fontSize = 10;
                 }
