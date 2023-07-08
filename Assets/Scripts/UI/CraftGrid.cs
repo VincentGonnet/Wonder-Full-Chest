@@ -4,6 +4,9 @@ using UnityEditor.Rendering;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
+using System.Linq;
+using UnityEngine.Rendering;
 
 public class CraftGrid : MonoBehaviour
 {
@@ -18,6 +21,9 @@ public class CraftGrid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get Obj List to display
+        ItemType[] objs = Resources.LoadAll<ItemType>("Items");
+
         // Pass from scale to grid 3*4 with all children
         float scaleX = this.GetComponent<RectTransform>().sizeDelta.x / 3;
         float scaleY = this.GetComponent<RectTransform>().sizeDelta.y / 4;
@@ -36,6 +42,8 @@ public class CraftGrid : MonoBehaviour
             // Create column items
             for (int j = 0; j < 3; j++)
             {
+                ItemType foundItem = objs.SingleOrDefault(item => item.gridPosition == i*3 + j);
+
                 GameObject item = Instantiate(prefabGridCell);
                 item.name = "Item" + (j + 1).ToString();
                 item.transform.SetParent(row.transform);
@@ -48,12 +56,14 @@ public class CraftGrid : MonoBehaviour
                 text.transform.SetParent(item.transform);
                 RectTransform rt3 = text.GetComponent<RectTransform>();
                 rt3.anchoredPosition = new Vector2(0, 20);
+                text.GetComponent<TextMeshProUGUI>().text = foundItem.itemName;
 
                 GameObject image = Instantiate(prefabGridImage);
                 image.name = "Image";
                 image.transform.SetParent(item.transform);
                 RectTransform rt4 = image.GetComponent<RectTransform>();
                 rt4.anchoredPosition = new Vector2(0, -26);
+                image.GetComponent<Image>().sprite = foundItem.texture;
             }
         }
 
