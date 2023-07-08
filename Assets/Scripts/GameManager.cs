@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] public int playerHearts = 3;
     private List<Obstacle> obstacles = new();
     
     private void Start()
@@ -28,6 +29,14 @@ public class GameManager : MonoBehaviour
         obstacles.Clear();
         for (int i = 0; i < 5; i++) {
             obstacles.Add(Obstacle.Instanciate("Rabbit", new Vector2(11 + i*3, 1)));
+        }
+    }
+
+    public void DamagePlayer()
+    {
+        this.playerHearts -= 1;
+        if (this.playerHearts <= 0) {
+            // TODO: Game Over
         }
     }
 }
