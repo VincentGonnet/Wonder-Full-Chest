@@ -16,7 +16,7 @@ public class Obstacle : MovingObject
         GetComponent<SpriteRenderer>().sprite = data.sprite;
         gameObject.transform.localScale = data.spriteSize;
         GetComponent<Animator>().SetInteger("EnemyId", data.enemyId);
-        GetComponent<Rigidbody2D>().gravityScale = 0;
+        GetComponent<Rigidbody2D>().gravityScale = 5;
         gameObject.name = data.name;
     }
 }
