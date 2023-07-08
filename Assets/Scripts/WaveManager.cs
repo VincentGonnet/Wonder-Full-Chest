@@ -7,8 +7,8 @@ using Random = System.Random;
 
 public class WaveManager : MonoBehaviour
 {
-    private List<GameObject> obstacles = new();
-    private int wave;
+    [SerializeField] private GameManager gameManager;
+    public List<GameObject> obstacles = new();
     private Random random = new();
 
     [SerializeField] private int obstaclesPerWave;
@@ -31,13 +31,13 @@ public class WaveManager : MonoBehaviour
 
     private void SpawnWave()
     {
-        this.wave++;
+        this.gameManager.wave++;
         foreach(GameObject obstacle in obstacles)
         {
             Object.Destroy(obstacle);
         }
         this.obstacles.Clear();
-        ObstacleMetadata[] obstacleMetadatas = this.GenerateObstacleOrder(this.wave + 5);
+        ObstacleMetadata[] obstacleMetadatas = this.GenerateObstacleOrder(this.gameManager.wave + 5);
         for (int i = 0; i < this.obstaclesPerWave; i++) {
             obstacles.Add(obstacleMetadatas[i].Spawn(new Vector3(11 + i*3, 1) + this.transform.position, this.transform));
         }
@@ -45,7 +45,7 @@ public class WaveManager : MonoBehaviour
 
     private ObstacleMetadata[] GenerateObstacleOrder(int waveDifficulty)
     {
-        ObstacleMetadata[] possibleObstacles = ObstacleMetadata.OBSTACLES.Where(obstacle => obstacle.minWaveSpawn <= this.wave).ToArray();
+        ObstacleMetadata[] possibleObstacles = ObstacleMetadata.OBSTACLES.Where(obstacle => obstacle.minWaveSpawn <= this.gameManager.wave).ToArray();
         int numberOfMaxDifficulty = 1;
         for (int i = possibleObstacles.Length - 2; i >= 0; i--) {
             if (possibleObstacles[i].difficulty == possibleObstacles.Last().difficulty) {

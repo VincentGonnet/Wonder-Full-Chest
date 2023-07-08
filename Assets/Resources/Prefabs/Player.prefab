@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &532117537877644557
 SpriteRenderer:
@@ -144,7 +144,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 3
 --- !u!114 &3756530375049773263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +158,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionDistance: 5
+  rhythmManager: {fileID: 0}
+  circleTargetTop: {fileID: 0}
+  circleTargetBottom: {fileID: 0}
+  waveManager: {fileID: 0}
+  totalScore: 0
+  circlesHit: 0
 --- !u!61 &3191626892578956348
 BoxCollider2D:
   m_ObjectHideFlags: 0

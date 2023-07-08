@@ -1,19 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class RythmManager : MonoBehaviour
+public class CircleTarget : MonoBehaviour
 {
+    [SerializeField] private RhythmManager rhythmManager;
+    
     public int score = 0;
-    private int failed = 0;
+    public int failed = 0;
 
     private bool canBeActivated = false;
     private bool canBeDeactivated = false;
     private bool isActivated = false;
     private GameObject circle = null;
     private bool skipFail = false;
-
+    
     private void OnTriggerEnter2D(Collider2D other) {
         skipFail = false;
         if (other.gameObject.CompareTag("Circle")) {
@@ -55,6 +55,7 @@ public class RythmManager : MonoBehaviour
     public void OnFail() {
         // Animate as failed
         skipFail = true;
+        this.rhythmManager.DeleteCircle(circle);
         Destroy(circle);
         circle = null;
         isActivated = false;
@@ -65,6 +66,7 @@ public class RythmManager : MonoBehaviour
     public void OnSuccess() {
         // Animate as succeeded
         skipFail = true;
+        this.rhythmManager.DeleteCircle(circle);
         Destroy(circle);
         circle = null;
         isActivated = false;
