@@ -892,7 +892,7 @@
                     "id": "0e738836-113e-46c8-8b32-f112155aa9f7",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -901,7 +901,7 @@
                     "id": "6aa6b2d0-1fa6-4ef8-8f7e-627c4547372b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -910,7 +910,7 @@
                     "id": "84eb8456-6a88-4b9c-888e-f23a59757aa1",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -919,7 +919,7 @@
                     "id": "6342e57a-9e04-4f2c-b80a-1491d7f6ca70",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -928,7 +928,7 @@
                     "id": "80f61820-f3ff-42a2-8945-2ed52fa7bef0",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -937,7 +937,7 @@
                     "id": "9c017950-e1ac-4b8d-83f1-35a362fde03c",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -946,7 +946,7 @@
                     "id": "ba8bcabf-7d03-4cea-badd-78bce85a37d6",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -955,7 +955,7 @@
                     "id": "42938a93-66d3-4b12-9ba1-7423a172b8af",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -964,7 +964,7 @@
                     "id": "aa4ece28-d9d4-445d-b2b1-0c048bdc3b68",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -973,7 +973,7 @@
                     "id": "9ea6ebc9-12bf-4a69-93de-c7b558524fff",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -982,7 +982,7 @@
                     "id": "d70513bb-a248-4bda-9fdd-2e95afc72c2d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -991,7 +991,7 @@
                     "id": "015bd292-8a42-4715-8d1f-a2f3fa87095e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 }
             ],
@@ -999,7 +999,7 @@
                 {
                     "name": "GG + South",
                     "id": "70201556-ba38-4ac5-90cc-98ba8efe1733",
-                    "path": "OneModifier",
+                    "path": "ButtonWithOneModifier",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1008,7 +1008,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
+                    "name": "Modifier",
                     "id": "2e4a50b6-fae1-42b5-b9b3-d56ebace209b",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
@@ -1019,7 +1019,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "binding",
+                    "name": "Button",
                     "id": "9ef44727-e8cf-426f-8cd7-d4e4ecef8e50",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -1032,7 +1032,7 @@
                 {
                     "name": "GG + East",
                     "id": "c775adfc-84e2-41a6-beee-d0279f3baf84",
-                    "path": "OneModifier",
+                    "path": "ButtonWithOneModifier",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1041,7 +1041,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
+                    "name": "Modifier",
                     "id": "0efb1dd4-a275-4f8c-9fa4-08205fd78b2b",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
@@ -1052,7 +1052,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "binding",
+                    "name": "Button",
                     "id": "43dfad3b-f063-4498-8c62-b2cf48794378",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -1131,7 +1131,7 @@
                 {
                     "name": "GD + South",
                     "id": "2b82bfb5-d111-4eaa-af34-c56942163c6d",
-                    "path": "OneModifier",
+                    "path": "ButtonWithOneModifier",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1140,7 +1140,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
+                    "name": "Modifier",
                     "id": "a826d460-5d69-4a13-ad79-c79875ffe845",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
@@ -1151,7 +1151,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "binding",
+                    "name": "Button",
                     "id": "e325d874-5543-4a02-8b3f-a50f161c5c4a",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
@@ -1164,7 +1164,7 @@
                 {
                     "name": "GD + East",
                     "id": "82577f1c-36fe-4f9d-b697-5bd71f929237",
-                    "path": "OneModifier",
+                    "path": "ButtonWithOneModifier",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1173,7 +1173,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
+                    "name": "Modifier",
                     "id": "2f9f60bd-1035-416b-87d7-c1457006ea76",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
@@ -1184,7 +1184,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "binding",
+                    "name": "Button",
                     "id": "7f1efc4a-10ac-45b3-a84f-59b44a494b1d",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -1328,11 +1328,11 @@
                 },
                 {
                     "name": "",
-                    "id": "f5acffb7-cecc-49c9-8fc1-1cef42d2063c",
+                    "id": "ff4df6b0-bac6-4f10-b3e0-0a0514d30e02",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Case2",
                     "isComposite": false,
                     "isPartOfComposite": false

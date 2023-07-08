@@ -23,12 +23,12 @@ public class PlayerInputHandler : MonoBehaviour
     
     void Start()
     {
-        if (GameObject.Find("PlayerInput(Clone)") != null) {
-            if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 1) {
-                index = 0;
-                this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
-            }
-        }
+        //if (GameObject.Find("PlayerInput(Clone)") != null) {
+        //    if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 1) {
+        //        index = 0;
+        //        this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
+        //    }
+        //}
     }
 
     // Use index to differenciate players.
@@ -80,5 +80,75 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void Case4(CallbackContext context)
+    {
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase4(context);
+        }
+    }
 
+    public void Case5(CallbackContext context)
+    {
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase5(context);
+        }
+    }
+
+    public void Case6(CallbackContext context)
+    {
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase6(context);
+        }
+    }
+
+    public void Case7(CallbackContext context)
+    {
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase7(context);
+        }
+    }
+
+    public void Case8(CallbackContext context)
+    {
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase8(context);
+        }
+    }
+
+    public void Case9(CallbackContext context)
+    {
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase9(context);
+        }
+    }
+
+    public void Case10(CallbackContext context)
+    {
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase10(context);
+        }
+    }
+
+    public void Case11(CallbackContext context)
+    {
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase11(context);
+        }
+    }
+
+    public void Case12(CallbackContext context)
+    {
+        if (index == 1)
+        {
+            craftInventory.GetComponent<CraftInventory>().OnCase12(context);
+        }
+    }
 }
