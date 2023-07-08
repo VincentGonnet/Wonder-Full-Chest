@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba5dbd16786c7448b3899d8b9a1798e, type: 3}
   m_Name: Rabbit
   m_EditorClassIdentifier: 
-  resolvers: []
+  resolvers:
+  - Sword
   drops: []
   sprite: {fileID: 1165821250, guid: 3ea466cab13fe204dbf3eb4983b79ee4, type: 3}
   spriteSize: {x: 1, y: 1, z: 0}
