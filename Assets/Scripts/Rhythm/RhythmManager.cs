@@ -38,7 +38,7 @@ public class RhythmManager : MonoBehaviour
         for (float x = 0; x < Constants.RHYTHM_DISTANCE; x += inBetweenDistance) {
             int offset = Mathf.FloorToInt((float) this.random.NextDouble() * 10f);
             offset = this.random.Next() == 0 ? offset : -offset;
-            x += inBetweenDistance * offset / 30;
+            x += inBetweenDistance * offset / 10f;
             if (this.random.NextDouble() < 0.4) {
 
                 // Make the left of the long circle be at x
