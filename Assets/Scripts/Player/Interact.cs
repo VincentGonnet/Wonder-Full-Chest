@@ -13,17 +13,19 @@ public class Interact : MonoBehaviour
     [SerializeField] private WaveManager waveManager;
     public int totalScore = 0;
     public int circlesHit = 0;
-    private bool enteringRange = false;    
-    private void LateUpdate() {
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.right, this.detectionDistance, LayerMask.GetMask("Obstacles"));
-        if (hit.collider != null && !enteringRange) {
-            Debug.Log("Start QTE Challenge here !");
-            rhythmManager.GenerateRhythm();
-            GameManager.instance.SlowDownTime();
-            GameManager.instance.ZoomCamera();
-            GameManager.instance.ShowVignette();
-            enteringRange = true;
-            // gameObject.GetComponent<Inventory>().UseCurrentItem(hit.collider.gameObject);    
+    private bool enteringRange = false;
+    private void LateUpdate()
+    {
+        if (waveManager.obstacles.Count != 0 && !enteringRange) {
+            Transform firstEnemyTransform = waveManager.obstacles.First().transform;
+            if (firstEnemyTransform.position.x - this.transform.position.x < detectionDistance) {
+                rhythmManager.GenerateRhythm();
+                GameManager.instance.SlowDownTime();
+                GameManager.instance.ZoomCamera();
+                GameManager.instance.ShowVignette();
+                enteringRange = true;
+                // gameObject.GetComponent<Inventory>().UseCurrentItem(hit.collider.gameObject);
+            }
         }
 
         totalScore = circleTargetBottom.score + circleTargetTop.score;
