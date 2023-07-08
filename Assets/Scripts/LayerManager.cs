@@ -27,7 +27,7 @@ public class LayerManager : MonoBehaviour
             Object.Destroy(backgrounds[0]);
             this.backgrounds.RemoveAt(0);
         }
-        if (this.backgrounds.Last().transform.position.x + this.prefab.width / 2 < 11) {
+        if (this.backgrounds.Last().transform.position.x + this.prefab.width / 2 < 21) {
             float position = this.backgrounds.Last().transform.position.x + this.prefab.width;
             this.backgrounds.Add(Object.Instantiate(
                 this.prefab.gameObject,
