@@ -40,6 +40,7 @@ public class RhythmManager : MonoBehaviour
             offset = this.random.Next() == 0 ? offset : -offset;
             x += inBetweenDistance * offset / 30;
             if (this.random.NextDouble() < 0.4) {
+
                 // Make the left of the long circle be at x
                 x += GameResources.PREFAB_RYTHM_LONG_CIRCLE.width / 2;
                 this.circles.Add(Object.Instantiate(
@@ -47,10 +48,12 @@ public class RhythmManager : MonoBehaviour
                     new Vector3(x + 5, 0) + targetTransform.position,
                     Quaternion.identity,
                     targetTransform));
+
                 // And then set x to the right of the long circle
                 x += GameResources.PREFAB_RYTHM_LONG_CIRCLE.width / 2;
                 nbCircles++;
             }
+            
             else {
                 // Make the left of the circle be at x
                 x += GameResources.PREFAB_RYTHM_CIRCLE.width / 2;
