@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Obstacle : MovingObject
 {
     private ObstacleScriptable data;
     public static Obstacle Instanciate(string name, Vector2 worldPos)

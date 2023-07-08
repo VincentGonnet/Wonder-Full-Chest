@@ -1,8 +1,9 @@
 using UnityEngine;
 
-class Parallax : MonoBehaviour
+public class MovingObject : MonoBehaviour
 {
-    [SerializeField] private float relativeSpeed;
+    // Used for a parallax effect
+    [SerializeField] private float relativeSpeed = 1;
     
     private void FixedUpdate()
     {
