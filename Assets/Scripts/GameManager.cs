@@ -76,9 +76,10 @@ public class GameManager : MonoBehaviour
     
     public void DamagePlayer()
     {
+        Debug.Log("Took damage");
         this.playerHearts -= 1;
         if (this.playerHearts <= 0) {
-            
+
         }
     }
 

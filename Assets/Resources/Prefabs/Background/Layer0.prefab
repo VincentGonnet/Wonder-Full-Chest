@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6043727611699175796}
   - component: {fileID: 2843071905698540352}
   - component: {fileID: 1254122539760729492}
-  - component: {fileID: 1363707665002277620}
+  - component: {fileID: -3676697627714494255}
   m_Layer: 0
   m_Name: Layer0
   m_TagString: Untagged
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 5700315454304812993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relativeSpeed: 1
-  isAffectedBySlowdown: 1
---- !u!68 &1363707665002277620
+--- !u!68 &-3676697627714494255
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,8 +134,19 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.4808082, y: 0.38274577}
-  - {x: 0.46916494, y: 0.37237674}
+  - {x: -4.67816, y: -1.1893976}
+  - {x: -4.0008516, y: -1.308604}
+  - {x: -3.1959476, y: -1.3433095}
+  - {x: -1.9440112, y: -1.3009897}
+  - {x: -1.442532, y: -1.2221036}
+  - {x: -0.25069532, y: -1.1735543}
+  - {x: 1.731224, y: -1.1545178}
+  - {x: 2.428556, y: -1.1644619}
+  - {x: 2.8712244, y: -1.221576}
+  - {x: 3.5625315, y: -1.2424421}
+  - {x: 4.0826726, y: -1.2474759}
+  - {x: 4.304685, y: -1.2622608}
+  - {x: 4.708732, y: -1.1759112}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

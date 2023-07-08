@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-public class LayerManager : MonoBehaviour
+public class ParallaxLayerManager : MonoBehaviour
 {
     private readonly List<GameObject> backgrounds = new();
     [SerializeField] private int layerId;
@@ -16,14 +16,14 @@ public class LayerManager : MonoBehaviour
         // We need at least one background to avoid crashes in Update
         this.backgrounds.Add(Object.Instantiate(
             this.prefab.gameObject,
-            new Vector3(-11, 0),
+            new Vector3(-11, 0) + this.transform.position,
             Quaternion.identity,
             this.transform));
     }
 
     private void FixedUpdate()
     {
-        if (this.backgrounds.Last().transform.position.x + this.prefab.width / 2 < 21) {
+        if (this.backgrounds.Last().transform.position.x + this.prefab.width / 2 < 11) {
             float position = this.backgrounds.Last().transform.position.x + this.prefab.width;
             GameObject gameObject = Object.Instantiate(
                 this.prefab.gameObject,

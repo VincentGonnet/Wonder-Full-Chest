@@ -9,7 +9,7 @@ using System.Linq;
 using UnityEngine.Rendering;
 using UnityEngine.InputSystem;
 
-public class CraftGrid : MonoBehaviour
+public class CraftInventory : MonoBehaviour
 {
     [SerializeField] public GameObject prefabGridCell;
 
@@ -67,10 +67,6 @@ public class CraftGrid : MonoBehaviour
                 image.GetComponent<Image>().sprite = foundItem.texture;
             }
         }
-
-        HighlightGridCell(0, 2);
-
-        HighlightGridCell(2, 1);
     }
 
     // Highlight Grid Cell (gridRow & gridColumn start at 0)
@@ -88,13 +84,60 @@ public class CraftGrid : MonoBehaviour
         currentHightlight = column;
     }
 
-    public void OnCase1(InputAction.CallbackContext context) {
-        Debug.Log(1);
-        Debug.Log(context.performed);
+    public void OnCase1() {
+        HighlightGridCell(0, 0);
     }
 
-    public void OnCase2(InputAction.CallbackContext context) {
-        Debug.Log(2);
-        Debug.Log(context.performed);
+    public void OnCase2() {
+         HighlightGridCell(0, 1);
+    }
+
+    public void OnCase3() {
+        HighlightGridCell(0, 2);
+    }
+
+    public void OnCase4()
+    {
+        HighlightGridCell(1, 0);
+    }
+
+    public void OnCase5()
+    {
+        HighlightGridCell(1, 1);
+    }
+
+    public void OnCase6()
+    {
+        HighlightGridCell(1, 2);
+    }
+
+    public void OnCase7()
+    {
+        HighlightGridCell(2, 0);
+    }
+
+    public void OnCase8()
+    {
+        HighlightGridCell(2, 1);
+    }
+
+    public void OnCase9()
+    {
+        HighlightGridCell(2, 2);
+    }
+
+    public void OnCase10()
+    {
+        HighlightGridCell(3, 0);
+    }
+
+    public void OnCase11()
+    {
+        HighlightGridCell(3, 1);
+    }
+
+    public void OnCase12()
+    {
+        HighlightGridCell(3, 2);
     }
 }
