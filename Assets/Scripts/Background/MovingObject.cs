@@ -5,7 +5,7 @@ public class MovingObject : MonoBehaviour
     // Used for a parallax effect
     [SerializeField] private float relativeSpeed = 1;
     
-    private void FixedUpdate()
+    public void FixedUpdate()
     {
         if (this.TryGetComponent<Rigidbody2D>(out Rigidbody2D component)) {
             component.velocity = new Vector2(-1, 0);
