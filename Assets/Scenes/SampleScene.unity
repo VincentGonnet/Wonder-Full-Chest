@@ -424,7 +424,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 648452029157923070, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2676100538183662311, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
       propertyPath: m_RootOrder
@@ -443,22 +443,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2676100538183662311, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676100538183662311, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676100538183662311, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676100538183662311, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676100538183662311, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -469,6 +453,14 @@ PrefabInstance:
     - target: {fileID: 2676100538183662311, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191626892578956348, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7224666
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191626892578956348, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.29714304
       objectReference: {fileID: 0}
     - target: {fileID: 3756530375049773263, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
       propertyPath: waveManager
@@ -1128,6 +1120,10 @@ PrefabInstance:
       propertyPath: terrainCamera
       value: 
       objectReference: {fileID: 253937500}
+    - target: {fileID: 1775250360028389523, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1627829273}
     - target: {fileID: 4616664547781848996, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
       propertyPath: m_Name
       value: GameManager

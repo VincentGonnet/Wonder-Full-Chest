@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float obstacleSpeed = 1f;
     [SerializeField] public float osuSpeed = 2;
     [SerializeField] public Camera terrainCamera;
+    [SerializeField] public Transform playerTransform;
     public int wave;
 
     public float timeDilation = 1;
@@ -26,8 +27,9 @@ public class GameManager : MonoBehaviour
     private float fovVelocity;
     private float vgVelocity;
     private float currentVignetteIntensity;
-    private float currentYPosition = 0.52f;
-    private float yPositionVelocity = 0.52f;
+    private float currentCameraYPosition = 0.52f;
+    private float cameraYPositionVelocity = 0.52f;
+    private bool cameraZoomed = false;
 
     private GameManager()
     {
@@ -41,24 +43,29 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (cameraZoomed) {
+            currentCameraYPosition = -1.3f + playerTransform.localPosition.y - -1.213943f;
+        }
         terrainCamera.fieldOfView = Mathf.SmoothDamp(terrainCamera.fieldOfView, currentFieldOfView, ref fovVelocity, 0.3f);
         terrainCamera.transform.localPosition = new Vector3(
             terrainCamera.transform.localPosition.x,
-            Mathf.SmoothDamp(terrainCamera.transform.localPosition.y, currentYPosition, ref yPositionVelocity, 0.3f),
+            Mathf.SmoothDamp(terrainCamera.transform.localPosition.y, currentCameraYPosition, ref cameraYPositionVelocity, 0.3f),
             terrainCamera.transform.localPosition.z);
-        vg.intensity.value = Mathf.SmoothDamp(vg.intensity.value, currentVignetteIntensity, ref vgVelocity, 0.5f) ;
+        vg.intensity.value = Mathf.SmoothDamp(vg.intensity.value, currentVignetteIntensity, ref vgVelocity, 0.5f);
     }
 
     public void ZoomCamera()
     {
-        currentFieldOfView = 15f;
-        currentYPosition = -1.67f;
+        currentFieldOfView = 16.6f;
+        currentCameraYPosition = -1.3f;
+        cameraZoomed = true;
     }
 
     public void UnZoomCamera()
     {
         currentFieldOfView = 38f;
-        currentYPosition = 0.52f;
+        currentCameraYPosition = 0.52f;
+        cameraZoomed = false;
     }
 
     public void ShowVignette()
