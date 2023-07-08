@@ -17,6 +17,7 @@ public class PlayerInputHandler : MonoBehaviour
     private bool btnE;
     private bool btnN;
     private bool btnW;
+    private bool kb;
 
     void Awake()
     {
@@ -29,12 +30,19 @@ public class PlayerInputHandler : MonoBehaviour
     
     void Start()
     {
-        if (GameObject.Find("PlayerInput(Clone)") != null) {
-           if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 1) {
-               index = 0;
-               this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
-           }
+        if (gameObject.TryGetComponent<MainSettings>(out MainSettings component)) {
+            kb = true;
+        } else {
+            kb = false;
+            if (GameObject.Find("PlayerInput(Clone)") != null && !kb) {
+                if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 1) {
+                    index = 0;
+                    this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
+                    this.GetComponent<PlayerInput>().actions.FindActionMap("Rythm").Enable();
+                }
+            }
         }
+        
     }
 
     // Use index to differenciate players.
@@ -43,6 +51,14 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (index == 1) index = 0;
         else index = 1;
+
+        if (index == 0) {
+            this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
+            this.GetComponent<PlayerInput>().actions.FindActionMap("Rythm").Enable();
+        } else {
+            this.GetComponent<PlayerInput>().defaultActionMap = "Craft";
+            this.GetComponent<PlayerInput>().actions.FindActionMap("Craft").Enable(); 
+        }
     }
 
     public void TestIndex(CallbackContext context) {
@@ -51,20 +67,17 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OSUButton2(CallbackContext context)
     {
-        if (index == 0)
-        {
-            topCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
-            // Debug.Log("OSU TOP");
-        }
+        if (index == 1 && !kb) return;
+        topCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
+        Debug.Log("OSU TOP");
     }
 
     public void OSUButton1(CallbackContext context)
     {
-        if (index == 0)
-        {
-            bottomCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
-            // Debug.Log("OSU BOT");
-        }
+        if (index == 1 && !kb) return;
+        bottomCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
+        Debug.Log("OSU BOT");
+        GameObject.Find("GameManager").GetComponent<GameManager>().SendReverseCommand();
     }
 
     private void PerformAction()
@@ -114,13 +127,12 @@ public class PlayerInputHandler : MonoBehaviour
     IEnumerator DelayPress()
     {
         yield return new WaitForSeconds(0.1f);
-        Debug.Log("pressed delayed");
         PerformAction();
     }
 
     public void Modifier1Input(CallbackContext context)
     {
-        if (index != 1) return;
+        if (index == 0 && !kb ) return;
 
         if (context.canceled) {
             StartCoroutine(Unpress("md1"));
@@ -132,7 +144,7 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void Modifier2Input(CallbackContext context)
     {
-        if (index != 1) return;
+        if (index == 0 && !kb ) return;
 
         if (context.canceled) {
             StartCoroutine(Unpress("md2"));
@@ -145,7 +157,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void BtnS(CallbackContext context)
     {
-        if (index != 1) return;
+        if (index == 0 && !kb ) return;
         if (context.canceled) {
             StartCoroutine(Unpress("btnS"));
         } else if(context.started){
@@ -156,7 +168,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void BtnE(CallbackContext context)
     {
-        if (index != 1) return;
+        if (index == 0 && !kb ) return;
         if (context.canceled) {
             StartCoroutine(Unpress("btnE"));
         } else if(context.started){
@@ -167,7 +179,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void BtnW(CallbackContext context)
     {
-        if (index != 1) return;
+        if (index == 0 && !kb ) return;
         if (context.canceled) {
             StartCoroutine(Unpress("btnW"));
         } else if(context.started){
@@ -178,7 +190,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void BtnN(CallbackContext context)
     {
-        if (index != 1) return;
+        if (index == 0 && !kb ) return;
         if (context.canceled) {
             StartCoroutine(Unpress("btnN"));
         } else if(context.started){

@@ -36,16 +36,19 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GameObject.Find("Terrain").GetComponent<Volume>().profile.TryGet<Vignette>(out vg);
-        if (GameObject.FindGameObjectsWithTag("PlayerInput").Count() > 0) {
-            inputManagerP1 = GameObject.FindGameObjectsWithTag("PlayerInput")[0];
-            inputManagerP2 = GameObject.FindGameObjectsWithTag("PlayerInput")[1];
-        }       
+             
     }
 
-    private void SendReverseCommand()
+    public void SendReverseCommand()
     {
-        inputManagerP1.GetComponent<PlayerInputHandler>().SwapRoles();
-        inputManagerP2.GetComponent<PlayerInputHandler>().SwapRoles();
+        if (GameObject.FindGameObjectsWithTag("PlayerInput").Count() > 0) {
+            Debug.Log("FOUND ! SWAP");
+            inputManagerP1 = GameObject.FindGameObjectsWithTag("PlayerInput")[0];
+            inputManagerP2 = GameObject.FindGameObjectsWithTag("PlayerInput")[1];
+            inputManagerP1.GetComponent<PlayerInputHandler>().SwapRoles();
+            inputManagerP2.GetComponent<PlayerInputHandler>().SwapRoles();
+        }  
+        
     }
 
     private void Update()
