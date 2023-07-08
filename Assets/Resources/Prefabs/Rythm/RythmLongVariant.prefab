@@ -716,6 +716,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Long
       objectReference: {fileID: 0}
+    - target: {fileID: 5655570735100468381, guid: a2bcc0d10c5c9f741a7b5d4ab682febb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5655570735100468381, guid: a2bcc0d10c5c9f741a7b5d4ab682febb, type: 3}
+      propertyPath: relativeSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5854882139835141485, guid: a2bcc0d10c5c9f741a7b5d4ab682febb, type: 3}
       propertyPath: m_Radius
       value: 0.08260904
@@ -864,7 +872,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

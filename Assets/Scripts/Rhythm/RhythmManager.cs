@@ -23,7 +23,7 @@ public class RhythmManager : MonoBehaviour
 
     public void GenerateRhythm()
     {
-        float inBetweenDistance = Mathf.Pow(1.05f, -this.gameManager.wave) + Constants.MIN_BASE_CIRCLE_RHYTHM_DISTANCE;
+        float inBetweenDistance = Mathf.Pow(3f, -this.gameManager.wave) + Constants.MIN_BASE_CIRCLE_RHYTHM_DISTANCE;
         this.GenerateRhythmRow(circleTargetTransforms[0], inBetweenDistance);
         this.GenerateRhythmRow(circleTargetTransforms[1], inBetweenDistance);
     }
@@ -50,10 +50,12 @@ public class RhythmManager : MonoBehaviour
                     new Vector3(x + 5, 0) + targetTransform.position,
                     Quaternion.identity,
                     targetTransform));
+
                 // And then set x to the right of the long circle
                 x += prefab.GetComponent<BoxCollider2D>().size.x / 2 + 0.5f;
                 nbCircles++;
             }
+            
             else {
                 // Make the left of the circle be at x
                 x += GameResources.PREFAB_RYTHM_CIRCLE.width / 2;

@@ -19,8 +19,11 @@ public class Interact : MonoBehaviour
         if (hit.collider != null && !enteringRange) {
             Debug.Log("Start QTE Challenge here !");
             rhythmManager.GenerateRhythm();
+            GameManager.instance.SlowDownTime();
+            GameManager.instance.ZoomCamera();
+            GameManager.instance.ShowVignette();
             enteringRange = true;
-            // gameObject.GetComponent<Inventory>().UseCurrentItem(hit.collider.gameObject);
+            // gameObject.GetComponent<Inventory>().UseCurrentItem(hit.collider.gameObject);    
         }
 
         totalScore = circleTargetBottom.score + circleTargetTop.score;
@@ -30,11 +33,27 @@ public class Interact : MonoBehaviour
                 waveManager.SpawnWave();
             }
             if (totalScore == rhythmManager.nbCircles) {
+                //Kill the enemy
+                Debug.Log("enemy kill");
+                Destroy(waveManager.obstacles[0]);
+                waveManager.obstacles.RemoveAt(0);
+                enteringRange = false;
+                rhythmManager.nbCircles = 0;
+                circlesHit = 0;
+                circleTargetBottom.score = 0;
+                circleTargetTop.score = 0;
+                circleTargetBottom.failed = 0;
+                circleTargetTop.failed = 0;
+                GameManager.instance.ResetTimeSpeed();
+                GameManager.instance.UnZoomCamera();
+                GameManager.instance.HideVignette();
+            } else {
                 // Check if the right ItemCraft is in hand
                 if (gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[waveManager.currentObstacleIndex]))
                 {
                     Debug.Log("enemy kill");
-                    
+                    Destroy(this.gameObject);
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 } else {
                     Destroy(waveManager.obstacles[waveManager.currentObstacleIndex]); 
                 }
