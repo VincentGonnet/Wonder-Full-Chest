@@ -29,17 +29,23 @@ public class PlayerInputHandler : MonoBehaviour
     
     void Start()
     {
-        //if (GameObject.Find("PlayerInput(Clone)") != null) {
-        //    if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 1) {
-        //        index = 0;
-        //        this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
-        //    }
-        //}
+        if (GameObject.Find("PlayerInput(Clone)") != null) {
+           if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 1) {
+               index = 0;
+               this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
+           }
+        }
     }
 
     // Use index to differenciate players.
 
-    public void OnTestJ1(CallbackContext context) {
+    public void SwapRoles()
+    {
+        if (index == 1) index = 0;
+        else index = 1;
+    }
+
+    public void TestIndex(CallbackContext context) {
         Debug.Log(index);
     }
 

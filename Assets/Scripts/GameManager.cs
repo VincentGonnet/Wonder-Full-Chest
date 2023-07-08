@@ -21,11 +21,12 @@ public class GameManager : MonoBehaviour
     private float targetTimeSpeed = 1;
     private float timeDilationSpeed;
     private Vignette vg;
-
     private float currentFieldOfView = 20f;
     private float fovVelocity;
     private float vgVelocity;
     private float currentVignetteIntensity = 0f;
+    private GameObject inputManagerP1;
+    private GameObject inputManagerP2;
 
     private GameManager()
     {
@@ -35,6 +36,15 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GameObject.Find("Terrain").GetComponent<Volume>().profile.TryGet<Vignette>(out vg);
+        inputManagerP1 = GameObject.FindGameObjectsWithTag("PlayerInput")[0];
+        inputManagerP2 = GameObject.FindGameObjectsWithTag("PlayerInput")[1];
+        
+    }
+
+    private void SendReverseCommand()
+    {
+        inputManagerP1.GetComponent<PlayerInputHandler>().SwapRoles();
+        inputManagerP2.GetComponent<PlayerInputHandler>().SwapRoles();
     }
 
     private void Update()
@@ -79,7 +89,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Took damage");
         this.playerHearts -= 1;
         if (this.playerHearts <= 0) {
-
+            
         }
     }
 
