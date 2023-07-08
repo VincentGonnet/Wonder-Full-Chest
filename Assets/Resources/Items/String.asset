@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: String
   m_EditorClassIdentifier: 
   itemName: string
-  texture: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  texture: {fileID: 21300000, guid: f5dbf9e7829ff0e4cac03f825abd7580, type: 3}
   gridPosition: 11

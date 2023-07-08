@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Stick
   m_EditorClassIdentifier: 
   itemName: stick
-  texture: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  texture: {fileID: 21300000, guid: 21e44e4f7886f2e428ac6322316b7fa5, type: 3}
   gridPosition: 10
