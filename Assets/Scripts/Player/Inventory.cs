@@ -5,45 +5,47 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public ItemType currentItem;
-    public ItemType nextItem;
+    public ItemCraft currentItem;
+    public ItemCraft nextItem;
 
     private void Start()
     {
-        this.currentItem = Resources.Load<ItemType>("Items/Sword");
+        this.currentItem = Resources.Load<ItemCraft>("Items/Sword");
 
     }
-    public void SetNextItem(ItemType nextItem)
+    public void SetNextItem(ItemCraft nextItem)
     {
         this.nextItem = nextItem;
     }
-    public void UseCurrentItem(GameObject obstacleGO)
+    public bool UseCurrentItem(GameObject obstacleGO)
     {
         
         if (this.currentItem == null)
         {
             Debug.LogError("Couldn't get current item : not defined");
-            return;
+            return false;
         }
 
         // TODO: Kill/Pass enemy
-        CheckPassEnemy(obstacleGO);
+        return CheckPassEnemy(obstacleGO);
 
         // this.currentItem = this.nextItem;
         // this.nextItem = null;
     }
 
-    private void CheckPassEnemy(GameObject obstacleGO)
+    private bool CheckPassEnemy(GameObject obstacleGO)
     {
         Obstacle obstacle = obstacleGO.GetComponent<Obstacle>();
         string[] resolvers = obstacle.data.resolvers;
-        if (resolvers.Any(this.currentItem.itemName.Contains))
+        if (resolvers.Any(this.currentItem.name.Contains))
         {
             // TODO: Properly kill the enemy, unlock next craft.
             Destroy(obstacleGO);
+            return true;
         } else {
             // TODO: Make player take one hit. 
             GameObject.Find("GameManager").GetComponent<GameManager>().DamagePlayer();
+            return false;
         }
     }
 }

@@ -9,6 +9,7 @@ public class WaveManager : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     public List<GameObject> obstacles = new();
+    public int currentObstacleIndex = 0;
     private Random random = new();
 
     [SerializeField] private int obstaclesPerWave;
@@ -29,7 +30,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    private void SpawnWave()
+    public void SpawnWave()
     {
         this.gameManager.wave++;
         foreach(GameObject obstacle in obstacles)
@@ -37,6 +38,8 @@ public class WaveManager : MonoBehaviour
             Object.Destroy(obstacle);
         }
         this.obstacles.Clear();
+        this.currentObstacleIndex = 0;
+
         ObstacleMetadata[] obstacleMetadatas = this.GenerateObstacleOrder(this.gameManager.wave + 5);
         for (int i = 0; i < this.obstaclesPerWave; i++) {
             obstacles.Add(obstacleMetadatas[i].Spawn(new Vector3(11 + i*3, 1) + this.transform.position, this.transform));

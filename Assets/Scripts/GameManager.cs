@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,9 +11,10 @@ public class GameManager : MonoBehaviour
 
     public void DamagePlayer()
     {
+        Debug.Log("Took damage");
         this.playerHearts -= 1;
         if (this.playerHearts <= 0) {
-            // TODO: Game Over
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
