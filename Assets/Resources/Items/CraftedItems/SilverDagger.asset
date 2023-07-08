@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SilverDagger
   m_EditorClassIdentifier: 
   itemName: silverdagger
-  texture: {fileID: 0}
+  texture: {fileID: 21300000, guid: 63491e4c0fb678542b09d1ab885afe93, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Slime
   m_EditorClassIdentifier: 
   itemName: slime
-  texture: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  texture: {fileID: 21300000, guid: 157aa5c4aae6b284d9bb9cc046ad6b0b, type: 3}
   gridPosition: 5
