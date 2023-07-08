@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3007281605890329097}
   - component: {fileID: 3381617262358641100}
   m_Layer: 0
-  m_Name: InventoryGridCell
+  m_Name: CraftInventoryCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
