@@ -1338,6 +1338,134 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "CraftTest",
+            "id": "3033e9c4-bc4c-4385-bdca-001d4c3c4a9e",
+            "actions": [
+                {
+                    "name": "Modifier1",
+                    "type": "Button",
+                    "id": "0fec5771-3ddb-4026-a150-70b90717919f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Modifer2",
+                    "type": "Button",
+                    "id": "7e30a19b-4200-4a02-8ad2-2b302fa0bf87",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BtnS",
+                    "type": "Button",
+                    "id": "13492a24-de67-4c57-ba4e-b71553b34ea5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BtnE",
+                    "type": "Button",
+                    "id": "879709be-1e9b-4041-9899-314e55a7692a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BtnW",
+                    "type": "Button",
+                    "id": "42fba123-52f7-413a-a601-dfb32da37bc9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BtnN",
+                    "type": "Button",
+                    "id": "b1fbef3a-ad12-4a72-86cb-24f06918d1dc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "56fb7528-54be-491c-bd6e-9045222f23bc",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Modifier1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "40656b46-ceeb-4a37-b0f5-1f2d977ac5d8",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Modifer2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d60d195-6c07-4958-8e5a-044536928252",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "BtnS",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d4ae6db7-80a8-4789-9df0-95c140483a3e",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "BtnE",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3af80840-1638-4b86-8088-111074aa2c53",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "BtnW",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a886d2b2-4c79-4672-97f2-42075ad6d863",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "BtnN",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

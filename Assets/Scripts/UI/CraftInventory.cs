@@ -84,93 +84,60 @@ public class CraftInventory : MonoBehaviour
         currentHightlight = column;
     }
 
-    public void OnCase1(InputAction.CallbackContext context) {
-        if(context.performed) {
-            HighlightGridCell(0, 0);
-        }
+    public void OnCase1() {
+        HighlightGridCell(0, 0);
     }
 
-    public void OnCase2(InputAction.CallbackContext context) {
-        if(context.performed) {
-            HighlightGridCell(0, 1);
-        }
+    public void OnCase2() {
+         HighlightGridCell(0, 1);
     }
 
-    public void OnCase3(InputAction.CallbackContext context) {
-        if(context.performed) {
-            HighlightGridCell(0, 2);
-        }
+    public void OnCase3() {
+        HighlightGridCell(0, 2);
     }
 
-    public void OnCase4(InputAction.CallbackContext context)
+    public void OnCase4()
     {
-        if (context.performed)
-        {
-            HighlightGridCell(1, 0);
-        }
+        HighlightGridCell(1, 0);
     }
 
-    public void OnCase5(InputAction.CallbackContext context)
+    public void OnCase5()
     {
-        if (context.performed)
-        {
-            HighlightGridCell(1, 1);
-        }
+        HighlightGridCell(1, 1);
     }
 
-    public void OnCase6(InputAction.CallbackContext context)
+    public void OnCase6()
     {
-        if (context.performed)
-        {
-            HighlightGridCell(1, 2);
-        }
+        HighlightGridCell(1, 2);
     }
 
-    public void OnCase7(InputAction.CallbackContext context)
+    public void OnCase7()
     {
-        if (context.performed)
-        {
-            HighlightGridCell(2, 0);
-        }
+        HighlightGridCell(2, 0);
     }
 
-    public void OnCase8(InputAction.CallbackContext context)
+    public void OnCase8()
     {
-        if (context.performed)
-        {
-            HighlightGridCell(2, 1);
-        }
+        HighlightGridCell(2, 1);
     }
 
-    public void OnCase9(InputAction.CallbackContext context)
+    public void OnCase9()
     {
-        if (context.performed)
-        {
-            HighlightGridCell(2, 2);
-        }
+        HighlightGridCell(2, 2);
     }
 
-    public void OnCase10(InputAction.CallbackContext context)
+    public void OnCase10()
     {
-        if (context.performed)
-        {
-            HighlightGridCell(3, 0);
-        }
+        HighlightGridCell(3, 0);
     }
 
-    public void OnCase11(InputAction.CallbackContext context)
+    public void OnCase11()
     {
-        if (context.performed)
-        {
-            HighlightGridCell(3, 1);
-        }
+        HighlightGridCell(3, 1);
     }
 
-    public void OnCase12(InputAction.CallbackContext context)
+    public void OnCase12()
     {
-        if (context.performed)
-        {
-            HighlightGridCell(3, 2);
-        }
+        HighlightGridCell(3, 2);
     }
 }
