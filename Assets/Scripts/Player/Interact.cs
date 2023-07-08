@@ -10,6 +10,7 @@ public class Interact : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(this.transform.position, Vector2.right, this.detectionDistance, LayerMask.GetMask("Obstacles"));
         if (hit.collider != null) {
             Debug.Log("Start QTE Challenge here !");
+            gameObject.GetComponent<Inventory>().UseCurrentItem(hit.collider.gameObject);
         }
     }
 
