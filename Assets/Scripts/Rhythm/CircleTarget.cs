@@ -56,7 +56,8 @@ public class CircleTarget : MonoBehaviour
         // Animate as failed
         skipFail = true;
         this.rhythmManager.DeleteCircle(circle);
-        Destroy(circle);
+        Destroy(circle, 4);
+        circle?.GetComponent<Animator>()?.SetTrigger("Destroy");
         circle = null;
         isActivated = false;
         failed++;
@@ -67,7 +68,8 @@ public class CircleTarget : MonoBehaviour
         // Animate as succeeded
         skipFail = true;
         this.rhythmManager.DeleteCircle(circle);
-        Destroy(circle);
+        Destroy(circle, 4);
+        circle?.GetComponent<Animator>()?.SetTrigger("Success");
         circle = null;
         isActivated = false;
         score++;
