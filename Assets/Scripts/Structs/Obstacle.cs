@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+public class Obstacle : MovingObject
 {
     private ObstacleScriptable data;
     public static Obstacle Instanciate(string name, Vector2 worldPos)
     {
         GameObject gameObject = Object.Instantiate(Resources.Load("Prefabs/Obstacle") as GameObject, worldPos, Quaternion.identity);
         Obstacle obstacle = gameObject.GetComponent<Obstacle>();
-        obstacle.data = Resources.Load<ObstacleScriptable>("ScriptableObjects/"+name);;
+        obstacle.data = Resources.Load<ObstacleScriptable>("ScriptableObjects/"+name);
         return obstacle;
     }
 
@@ -17,8 +15,8 @@ public class Obstacle : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = data.sprite;
         gameObject.transform.localScale = data.spriteSize;
-        // GetComponent<BoxCollider2D>().size = data.spriteSize;
-        GetComponent<Rigidbody2D>().gravityScale = 0;
+        GetComponent<Animator>().SetInteger("EnemyId", data.enemyId);
+        GetComponent<Rigidbody2D>().gravityScale = 5;
         gameObject.name = data.name;
     }
 }
