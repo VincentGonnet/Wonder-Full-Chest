@@ -4,4 +4,6 @@ using UnityEngine;
 public class ItemBase : ScriptableObject {
     public string itemName;
     public Sprite texture;
+    public Vector2 positionInHand;
+    public float orientationInHand;
 }
