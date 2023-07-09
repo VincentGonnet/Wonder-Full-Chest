@@ -365,6 +365,17 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &281277231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7526996982022685430, guid: 45c547c7d9eb26b4cba16c9aada168b9, type: 3}
+  m_PrefabInstance: {fileID: 1797609505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &334563944
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +964,30 @@ PrefabInstance:
       propertyPath: prefabGridArrow
       value: 
       objectReference: {fileID: 3942230964726143408, guid: 7c05903b5ebe2ac418cd201a63a34668, type: 3}
+    - target: {fileID: 5634810729946054604, guid: 45c547c7d9eb26b4cba16c9aada168b9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634810729946054604, guid: 45c547c7d9eb26b4cba16c9aada168b9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634810729946054604, guid: 45c547c7d9eb26b4cba16c9aada168b9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634810729946054604, guid: 45c547c7d9eb26b4cba16c9aada168b9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634810729946054604, guid: 45c547c7d9eb26b4cba16c9aada168b9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634810729946054604, guid: 45c547c7d9eb26b4cba16c9aada168b9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -31.800003
+      objectReference: {fileID: 0}
     - target: {fileID: 6362942918565148630, guid: 45c547c7d9eb26b4cba16c9aada168b9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1178,6 +1213,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1627829273}
+    - target: {fileID: 1775250360028389523, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
+      propertyPath: waveCounterText
+      value: 
+      objectReference: {fileID: 281277231}
     - target: {fileID: 4616664547781848996, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
       propertyPath: m_Name
       value: GameManager

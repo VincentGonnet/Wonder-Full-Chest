@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Profiling;
@@ -12,14 +13,25 @@ using static UnityEngine.GraphicsBuffer;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    
+
     [SerializeField] public int playerHearts = 3;
     [SerializeField] public float obstacleSpeed = 1f;
     [SerializeField] public float osuSpeed = 2;
     [SerializeField] public Camera terrainCamera;
     [SerializeField] public Transform playerTransform;
     [SerializeField] public GameObject inputPrefab;
-    public int wave;
+    [SerializeField] private TextMeshProUGUI waveCounterText;
+
+    public int wave {
+        get => _wave;
+        set {
+            this.waveCounterText.SetText("Wave : " + value);
+            _wave = value;
+        }
+    }
+    // NEVER TOUCH THAT, IT SHOULD BE CHANGED WITH THE PROPERTY DEFINED ABOVE
+    private int _wave;
+
     public bool scroll = true;
     public float timeDilation = 1;
     private float targetTimeSpeed = 1;
