@@ -761,7 +761,7 @@
                 {
                     "name": "",
                     "id": "b144962a-0fb7-45dd-87b5-9d63a3d173b3",
-                    "path": "<Keyboard>/rightShift",
+                    "path": "<Keyboard>/rightCtrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard2",

@@ -91,17 +91,17 @@ public class PlayerInputHandler : MonoBehaviour
     {
         CraftInventory cI = craftInventory.GetComponent<CraftInventory>();
         if (btnS && modifier1) cI.OnCase1();
-        else if (btnS) cI.OnCase2();
         else if (btnS && modifier2) cI.OnCase3();
+        else if (btnS) cI.OnCase2();
         else if (btnE && modifier1) cI.OnCase4();
-        else if (btnE) cI.OnCase5();
         else if (btnE && modifier2) cI.OnCase6();
+        else if (btnE) cI.OnCase5();
         else if (btnN && modifier1) cI.OnCase7();
-        else if (btnN) cI.OnCase8();
         else if (btnN && modifier2) cI.OnCase9();
+        else if (btnN) cI.OnCase8();
         else if (btnW && modifier1) cI.OnCase10();
-        else if (btnW) cI.OnCase11();
         else if (btnW && modifier2) cI.OnCase12();
+        else if (btnW) cI.OnCase11();
     }
     
     IEnumerator Unpress(string key)
