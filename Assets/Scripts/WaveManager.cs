@@ -42,7 +42,7 @@ public class WaveManager : MonoBehaviour
 
         ObstacleMetadata[] obstacleMetadatas = this.GenerateObstacleOrder(this.gameManager.wave + 5);
         for (int i = 0; i < this.obstaclesPerWave; i++) {
-            obstacles.Add(obstacleMetadatas[i].Spawn(new Vector3(11 + i*3, 1) + this.transform.position, this.transform));
+            obstacles.Add(obstacleMetadatas[i].Spawn(new Vector3(11 + i*Constants.DISTANCE_BETWEEN_OBSTACLE, 0) + this.transform.position, this.transform));
         }
     }
 

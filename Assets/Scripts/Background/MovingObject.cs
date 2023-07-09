@@ -27,10 +27,6 @@ public class MovingObject : MonoBehaviour
             return;
         }
         float speed = Constants.SCROLLING_SPEED * relativeSpeed * (isAffectedBySlowdown ? GameManager.instance.timeDilation : 1);
-        if (this.TryGetComponent<Rigidbody2D>(out Rigidbody2D component)) {
-            component.velocity = speed * Vector3.left;
-        } else {
-            this.transform.position += speed * Time.fixedDeltaTime * Vector3.left;
-        }
+        this.transform.position += speed * Time.fixedDeltaTime * Vector3.left;
     }
 }

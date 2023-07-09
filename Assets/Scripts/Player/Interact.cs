@@ -5,13 +5,13 @@ using System.Linq;
 
 public class Interact : MonoBehaviour
 {
-    public float detectionDistance = 10f;
     [SerializeField] private RhythmManager rhythmManager;
     [SerializeField] private CircleTarget circleTargetFirst;
     [SerializeField] private CircleTarget circleTargetSecond;
     [SerializeField] private CircleTarget circleTargetThird;
     [SerializeField] private CircleTarget circleTargetFourth;
     [SerializeField] private WaveManager waveManager;
+    private readonly float detectionDistance = Constants.DISTANCE_BETWEEN_OBSTACLE + 2;
     public int totalScore = 0;
     public int circlesHit = 0;
     private bool enteringRange = false;
