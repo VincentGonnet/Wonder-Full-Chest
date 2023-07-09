@@ -13,6 +13,7 @@ public class PlayerSelectionHandler : MonoBehaviour
 
     private int nbKeyboard = 0;
     private int nbGamepad = 0;
+    private List<int> deviceIds = new List<int>(); 
 
     // Start is called before the first frame update
     void OnEnable()
@@ -29,9 +30,13 @@ public class PlayerSelectionHandler : MonoBehaviour
                 nbKeyboard += 1;
                 GameObject.Find("Player" + (nbKeyboard + nbGamepad).ToString() + "Input").GetComponent<TextMeshProUGUI>().text = "Keyboard";
             } else if(device is Gamepad) {
-                PlayerInput.Instantiate(m_PlayerPrefab, controlScheme: "Gamepad", pairWithDevice: device);
-                nbGamepad += 1;
-                GameObject.Find("Player" + (nbKeyboard + nbGamepad).ToString() + "Input").GetComponent<TextMeshProUGUI>().text = "Gamepad";
+                if(!deviceIds.Contains(device.deviceId)) {
+                    PlayerInput.Instantiate(m_PlayerPrefab, controlScheme: "Gamepad", pairWithDevice: device);
+                    nbGamepad += 1;
+                    Debug.Log("Player" + (nbKeyboard + nbGamepad).ToString() + "Input");
+                    GameObject.Find("Player" + (nbKeyboard + nbGamepad).ToString() + "Input").GetComponent<TextMeshProUGUI>().text = "Gamepad";
+                    deviceIds.Add(device.deviceId);
+                }
             }
 
             if(nbKeyboard + nbGamepad == 2) {

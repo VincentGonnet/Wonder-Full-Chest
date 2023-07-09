@@ -58,15 +58,7 @@ public class GameManager : MonoBehaviour
         GameManager.instance = this;
         
     }
-
-    private void Awake()
-    {
-        if (onSameKeyboard){
-            PlayerInput.Instantiate(inputPrefab, controlScheme: "Keyboard1", pairWithDevice: Keyboard.current);
-            PlayerInput.Instantiate(inputPrefab, controlScheme: "Keyboard2", pairWithDevice: Keyboard.current);
-        }
-    }
-
+    
     private void Start()
     {
         GameObject.Find("Terrain").GetComponent<Volume>().profile.TryGet<Vignette>(out vg);
