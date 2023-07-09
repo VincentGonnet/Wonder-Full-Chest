@@ -89,6 +89,7 @@ public class CraftInventory : MonoBehaviour
         currentRecipe.Append(objs[gridRow*3 + gridColumn]);
 
         // Set recipe on screen
+        // TODO
 
         // Set last time action
         StopAllCoroutines();
@@ -103,6 +104,9 @@ public class CraftInventory : MonoBehaviour
 
         if(currentRecipe != null && currentRecipe.Length > 0) {
             currentRecipe = new ItemType[] {};
+
+            // Set recipe on screen
+            // TODO
 
             // Update recipes
             GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
@@ -119,6 +123,9 @@ public class CraftInventory : MonoBehaviour
             }
 
             currentRecipe = new ItemType[] {};
+
+            // Set recipe on screen
+            // TODO
 
             // Update recipes
             GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
