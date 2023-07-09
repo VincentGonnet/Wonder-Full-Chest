@@ -42,7 +42,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-
+        if (onSameKeyboard){
+            PlayerInput.Instantiate(inputPrefab, controlScheme: "Keyboard1", pairWithDevice: Keyboard.current);
+            PlayerInput.Instantiate(inputPrefab, controlScheme: "Keyboard2", pairWithDevice: Keyboard.current);
+        }
     }
 
     private void Start()

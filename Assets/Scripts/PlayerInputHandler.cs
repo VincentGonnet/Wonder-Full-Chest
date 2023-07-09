@@ -8,8 +8,10 @@ using static UnityEngine.InputSystem.InputAction;
 public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] public int index = 1;
-    private GameObject topCircleTargetOSU;
-    private GameObject bottomCircleTargetOSU;
+    private GameObject targetOSU1;
+    private GameObject targetOSU2;
+    private GameObject targetOSU3;
+    private GameObject targetOSU4;
     private GameObject craftInventory;
     private bool modifier1;
     private bool modifier2;
@@ -22,9 +24,10 @@ public class PlayerInputHandler : MonoBehaviour
     void Awake()
     {
         // Cannot use GameObject serialize field bc of type mismatch.
-        topCircleTargetOSU = GameObject.Find("CircleTargetTop");
-        bottomCircleTargetOSU = GameObject.Find("CircleTargetBottom");
-
+        targetOSU1 = GameObject.Find("CircleTarget1");
+        targetOSU2 = GameObject.Find("CircleTarget2");
+        targetOSU3 = GameObject.Find("CircleTarget3");
+        targetOSU4 = GameObject.Find("CircleTarget4");
         craftInventory = GameObject.Find("CraftInventory");
     }
     
@@ -35,12 +38,15 @@ public class PlayerInputHandler : MonoBehaviour
             PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
             PlayerInput.all[0].actions.FindActionMap(currentInputScheme[0]).Enable();
             PlayerInput.all[1].actions.FindActionMap(currentInputScheme[1]).Enable();
+            SwapRoles();
         }
     }
 
     void SwapRoles() {
         PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
         PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
+        PlayerInput.all[0].actions.FindActionMap(currentInputScheme[1]).Enable();
+        PlayerInput.all[1].actions.FindActionMap(currentInputScheme[0]).Enable();
         currentInputScheme = new string[] { currentInputScheme[1], currentInputScheme[0] };
     }
 
@@ -48,16 +54,24 @@ public class PlayerInputHandler : MonoBehaviour
         Debug.Log(index);
     }
 
-    public void OSUButton2(CallbackContext context)
+    public void RhythmButton1(CallbackContext context)
     {
-        // topCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
-        Debug.Log("OSU TOP");
+        targetOSU1.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
-    public void OSUButton1(CallbackContext context)
+    public void RhythmButton2(CallbackContext context)
     {
-       // bottomCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
-        Debug.Log("OSU BOT");
+       targetOSU2.GetComponent<CircleTarget>().OnButtonPressed(context);
+    }
+
+    public void RhythmButton3(CallbackContext context)
+    {
+       targetOSU3.GetComponent<CircleTarget>().OnButtonPressed(context);
+    }
+
+    public void RhythmButton4(CallbackContext context)
+    {
+       targetOSU4.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     private void PerformAction()
