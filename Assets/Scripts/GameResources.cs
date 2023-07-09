@@ -4,9 +4,11 @@ using UnityEngine;
 public static class GameResources
 {
     public static readonly PrefabWithWidth[] PREFAB_BACKGROUND_LAYERS = {
-        new PrefabWithWidth("Prefabs/Background/Layer0"),
-        new PrefabWithWidth("Prefabs/Background/Layer1"),
-        new PrefabWithWidth("Prefabs/Background/Layer2")
+        new PrefabWithWidth("Prefabs/Background/Ground"),
+        new PrefabWithWidth("Prefabs/Background/Shadows"),
+        new PrefabWithWidth("Prefabs/Background/Trees"),
+        new PrefabWithWidth("Prefabs/Background/Mountains"),
+        new PrefabWithWidth("Prefabs/Background/Sky")
     };
 
     public static GameObject PREFAB_OBSTACLE_RABBIT = Resources.Load<GameObject>("Prefabs/Obstacles/Rabbit");

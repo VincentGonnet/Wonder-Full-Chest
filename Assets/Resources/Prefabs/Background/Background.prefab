@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &777289993033780844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1523927982064325122}
+  - component: {fileID: 3700156867784355064}
+  m_Layer: 0
+  m_Name: Sky Layer Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1523927982064325122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777289993033780844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8196783312032239781}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3700156867784355064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777289993033780844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072379b7416dff2179e6cad6350da8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerId: 4
 --- !u!1 &1226315864101719898
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +56,7 @@ GameObject:
   - component: {fileID: 7234752781916085256}
   - component: {fileID: 893057400785423397}
   m_Layer: 0
-  m_Name: Layer 0 Manager
+  m_Name: Ground Layer Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +101,7 @@ GameObject:
   - component: {fileID: 8997842943793214171}
   - component: {fileID: 738933527913042752}
   m_Layer: 0
-  m_Name: Layer 2 Manager
+  m_Name: Mountains Layer Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3960934406197732810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.32, z: 0.3}
+  m_LocalPosition: {x: 0, y: -0.82, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89,7 +134,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072379b7416dff2179e6cad6350da8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerId: 2
+  layerId: 3
+--- !u!1 &4656934648946837897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228582719470133892}
+  - component: {fileID: 8476344354099686011}
+  m_Layer: 0
+  m_Name: Shadows Layer Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228582719470133892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656934648946837897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.27, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8196783312032239781}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8476344354099686011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656934648946837897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072379b7416dff2179e6cad6350da8fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerId: 1
 --- !u!1 &6019813235988115129
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +191,7 @@ GameObject:
   - component: {fileID: 1524126620659717766}
   - component: {fileID: 7359689763208049020}
   m_Layer: 0
-  m_Name: Layer 1 Manager
+  m_Name: Trees Layer Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6019813235988115129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.34, z: 0.2}
+  m_LocalPosition: {x: 0, y: -0.93, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -134,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 072379b7416dff2179e6cad6350da8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerId: 1
+  layerId: 2
 --- !u!1 &8852444254884108995
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,8 +254,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7234752781916085256}
+  - {fileID: 228582719470133892}
   - {fileID: 1524126620659717766}
   - {fileID: 8997842943793214171}
+  - {fileID: 1523927982064325122}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

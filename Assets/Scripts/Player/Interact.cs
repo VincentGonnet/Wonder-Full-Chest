@@ -21,9 +21,9 @@ public class Interact : MonoBehaviour
             Transform firstEnemyTransform = waveManager.obstacles.First().transform;
             if (firstEnemyTransform.position.x - this.transform.position.x < detectionDistance) {
                 rhythmManager.GenerateRhythm();
-                GameManager.instance.SlowDownTime();
-                GameManager.instance.ZoomCamera();
-                GameManager.instance.ShowVignette();
+                //GameManager.instance.SlowDownTime();
+                //GameManager.instance.ZoomCamera();
+                //GameManager.instance.ShowVignette();
                 enteringRange = true;
                 // gameObject.GetComponent<Inventory>().UseCurrentItem(hit.collider.gameObject);
             }
