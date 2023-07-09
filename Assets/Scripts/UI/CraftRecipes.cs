@@ -35,7 +35,9 @@ public class CraftRecipes : MonoBehaviour
 
     public void SwitchPage(int value, ItemType[] filter = null)
     {
-        objsFiltered = filterItems(filter);
+        ItemType it1 = Resources.Load<ItemType>("Items/String");
+        ItemType it2 = Resources.Load<ItemType>("Items/Leather");
+        objsFiltered = filterItems(new ItemType[] { it1, it2 });
 
         position += value;
 
