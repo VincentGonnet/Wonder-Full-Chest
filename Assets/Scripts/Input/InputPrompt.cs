@@ -7,6 +7,7 @@ using System.Linq;
 public class InputPrompt : MonoBehaviour
 {
     [SerializeField] float keySize = 0.7f;
+    [SerializeField] float keySize2 = 0.3f;
     [SerializeField] Sprite Q;
     [SerializeField] Sprite A;
     [SerializeField] Sprite S;
@@ -34,6 +35,10 @@ public class InputPrompt : MonoBehaviour
     private int countStart = 0;
     public void Generate()
     {
+        void FixedUpdate()
+        {
+            
+        }
         PlayerInput input1 = PlayerInput.all[0];
         PlayerInput input2 = PlayerInput.all[1];
 
@@ -53,6 +58,9 @@ public class InputPrompt : MonoBehaviour
         GameObject CSlot5 = GameObject.Find("CSlot5");
         GameObject CSlot6 = GameObject.Find("CSlot6");
         GameObject CSlot7 = GameObject.Find("CSlot7");
+
+        GameObject inputRow = GameObject.Find("InputRow");
+        GameObject inputColumn = GameObject.Find("InputColumn");
 
         // There is a controller, we replace keyboard2 by keyboard1 keys
         if (input1.currentControlScheme.Contains("Gamepad") || input2.currentControlScheme.Contains("Gamepad"))
@@ -141,7 +149,11 @@ public class InputPrompt : MonoBehaviour
         tr3.transform.localScale = new Vector3(keySize, keySize, 1);
         tr4.transform.localScale = new Vector3(keySize, keySize, 1);
 
-        CSlot1.transform.position = GameObject.Find("CircleTarget0").transform.position;
-
+        CSlot1.transform.localScale = new Vector3(keySize2, keySize2, 1);
+        CSlot2.transform.localScale = new Vector3(keySize2, keySize2, 1);
+        CSlot3.transform.localScale = new Vector3(keySize2, keySize2, 1);
+        CSlot4.transform.localScale = new Vector3(keySize2, keySize2, 1);
+        CSlot5.transform.localScale = new Vector3(keySize2, keySize2, 1);
+        CSlot6.transform.localScale = new Vector3(keySize2, keySize2, 1);
     }
 }
