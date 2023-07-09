@@ -83,9 +83,7 @@ public class CraftRecipes : MonoBehaviour
     {
         ItemType[] filter = GameObject.Find("CraftInventory").GetComponent<CraftInventory>().currentRecipe.ToArray();
         
-        ItemType it1 = Resources.Load<ItemType>("Items/Stick");
-        ItemType it2 = Resources.Load<ItemType>("Items/Leather");
-        objsFiltered = filterItems(new ItemType[] { it1, it2 });
+        objsFiltered = filterItems(filter);
 
         position += value;
 
