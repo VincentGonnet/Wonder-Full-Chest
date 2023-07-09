@@ -174,7 +174,7 @@ public class GameManager : MonoBehaviour
         // Get current heart
         GameObject health = GameObject.Find("Health");
         health.transform.GetChild(--this.playerHearts).GetComponent<Animator>().SetBool("full", false);
-        TODO :if (this.playerHearts < 1) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //TODO :if (this.playerHearts < 1) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void FixedUpdate()
