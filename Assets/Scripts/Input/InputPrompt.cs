@@ -32,6 +32,10 @@ public class InputPrompt : MonoBehaviour
     [SerializeField] Sprite xb_B;
     [SerializeField] Sprite xb_Gachette_L;
     [SerializeField] Sprite xb_Gachette_R;
+    [SerializeField] Sprite xb_71;
+    [SerializeField] Sprite xb_72;
+    [SerializeField] Sprite xb_73;
+    [SerializeField] Sprite xb_74;
     private int countStart = 0;
 
     GameObject inputRow;
@@ -42,7 +46,10 @@ public class InputPrompt : MonoBehaviour
     GameObject CSlot4;
     GameObject CSlot5;
     GameObject CSlot6;
- 
+    GameObject CSlot71;
+    GameObject CSlot72;
+    GameObject CSlot73;
+    GameObject CSlot74;
     private void Start()
     {
         CSlot1 = GameObject.Find("CSlot1");
@@ -51,6 +58,10 @@ public class InputPrompt : MonoBehaviour
         CSlot4 = GameObject.Find("CSlot4");
         CSlot5 = GameObject.Find("CSlot5");
         CSlot6 = GameObject.Find("CSlot6");
+        CSlot71 = GameObject.Find("CSlot71");
+        CSlot72 = GameObject.Find("CSlot72");
+        CSlot73 = GameObject.Find("CSlot73");
+        CSlot74 = GameObject.Find("CSlot74");
     }
     public void Generate()
     {
@@ -120,7 +131,10 @@ public class InputPrompt : MonoBehaviour
             CSlot3.GetComponent<SpriteRenderer>().sprite = S;
             CSlot4.GetComponent<SpriteRenderer>().sprite = D;
             CSlot5.GetComponent<SpriteRenderer>().sprite = LeftCtrl;
-            CSlot6.GetComponent<SpriteRenderer>().sprite = Space;
+            CSlot71.GetComponent<SpriteRenderer>().sprite = Space;
+            CSlot72.GetComponent<SpriteRenderer>().sprite = Space;
+            CSlot73.GetComponent<SpriteRenderer>().sprite = Space;
+            CSlot74.GetComponent<SpriteRenderer>().sprite = Space;
         }
         if (input2.currentActionMap.name == input2.actions.FindActionMap("Craft").name && input2.currentControlScheme.Contains("Keyboard")) {
             CSlot1.GetComponent<SpriteRenderer>().sprite = I;
@@ -129,6 +143,10 @@ public class InputPrompt : MonoBehaviour
             CSlot4.GetComponent<SpriteRenderer>().sprite = L;
             CSlot5.GetComponent<SpriteRenderer>().sprite = B;
             CSlot6.GetComponent<SpriteRenderer>().sprite = RightCrtl;
+            CSlot71.GetComponent<SpriteRenderer>().sprite = xb_71;
+            CSlot72.GetComponent<SpriteRenderer>().sprite = xb_72;
+            CSlot73.GetComponent<SpriteRenderer>().sprite = xb_73;
+            CSlot74.GetComponent<SpriteRenderer>().sprite = xb_74;
         }
 
         if (input1.currentActionMap.name == input1.actions.FindActionMap("Craft").name && input1.currentControlScheme.Contains("Gamepad")) {
@@ -138,6 +156,10 @@ public class InputPrompt : MonoBehaviour
             CSlot4.GetComponent<SpriteRenderer>().sprite = xb_X;
             CSlot5.GetComponent<SpriteRenderer>().sprite = xb_Gachette_L;
             CSlot6.GetComponent<SpriteRenderer>().sprite = xb_Gachette_R;
+            CSlot71.GetComponent<SpriteRenderer>().sprite = xb_71;
+            CSlot72.GetComponent<SpriteRenderer>().sprite = xb_72;
+            CSlot73.GetComponent<SpriteRenderer>().sprite = xb_73;
+            CSlot74.GetComponent<SpriteRenderer>().sprite = xb_74;
         }
         if (input2.currentActionMap.name == input2.actions.FindActionMap("Craft").name && input2.currentControlScheme.Contains("Gamepad")) {
             CSlot1.GetComponent<SpriteRenderer>().sprite = xb_A;
@@ -146,6 +168,10 @@ public class InputPrompt : MonoBehaviour
             CSlot4.GetComponent<SpriteRenderer>().sprite = xb_X;
             CSlot5.GetComponent<SpriteRenderer>().sprite = xb_Gachette_L;
             CSlot6.GetComponent<SpriteRenderer>().sprite = xb_Gachette_R;
+            CSlot71.GetComponent<SpriteRenderer>().sprite = xb_71;
+            CSlot72.GetComponent<SpriteRenderer>().sprite = xb_72;
+            CSlot73.GetComponent<SpriteRenderer>().sprite = xb_73;
+            CSlot74.GetComponent<SpriteRenderer>().sprite = xb_74;
         }
 
 
@@ -165,6 +191,10 @@ public class InputPrompt : MonoBehaviour
         CSlot4.transform.localScale = new Vector3(keySize2, keySize2, 1);
         CSlot5.transform.localScale = new Vector3(keySize2, keySize2, 1);
         CSlot6.transform.localScale = new Vector3(keySize2, keySize2, 1);
+        CSlot71.transform.localScale = new Vector3(keySize2, keySize2, 1);
+        CSlot72.transform.localScale = new Vector3(keySize2, keySize2, 1);
+        CSlot73.transform.localScale = new Vector3(keySize2, keySize2, 1);
+        CSlot74.transform.localScale = new Vector3(keySize2, keySize2, 1);
     }
 
     public void SwapCslotLoc(bool swapped)
