@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Transform playerTransform;
     [SerializeField] public GameObject inputPrefab;
     [SerializeField] private TextMeshProUGUI waveCounterText;
+    [SerializeField] public int lastTutoStepIndex;
 
     public int wave {
         get => _wave;
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     public GameObject tutoUi;
     private bool uiswapped = false;
+    private GameObject persistentData;
 
     private GameManager()
     {
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour
         tutoUi = GameObject.FindWithTag("TutoUI");
         tutoUi.SetActive(false);
         SoundManager.instance.StartGameMusic();
+        persistentData = GameObject.Find("PersistentData");
     }
 
     private void Update()
@@ -150,7 +153,7 @@ public class GameManager : MonoBehaviour
         // Get current heart
         GameObject health = GameObject.Find("Health");
         health.transform.GetChild(--this.playerHearts).GetComponent<Animator>().SetBool("full", false);
-        //if (this.playerHearts < 1) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (this.playerHearts < 1) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void FixedUpdate()
@@ -160,10 +163,13 @@ public class GameManager : MonoBehaviour
 
     public void PlayTutorialStep()
     {
+        if (persistentData.GetComponent<PersistentData>().hasFinishedTutorial) return;
         tutoUi.SetActive(true);
         tutoUi.transform.GetChild(tutoStep).gameObject.SetActive(true);
         isPaused = true;
         isInTuto = true;
+
+        if (tutoStep == lastTutoStepIndex) persistentData.GetComponent<PersistentData>().hasFinishedTutorial = true;
     }
 
     public void StopTutorialStep()

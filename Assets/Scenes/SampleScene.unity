@@ -1239,6 +1239,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 253937500}
     - target: {fileID: 1775250360028389523, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
+      propertyPath: persistentData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775250360028389523, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1627829273}
@@ -1246,6 +1250,10 @@ PrefabInstance:
       propertyPath: waveCounterText
       value: 
       objectReference: {fileID: 131112462}
+    - target: {fileID: 1775250360028389523, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
+      propertyPath: lastTutoStepIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4616664547781848996, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
       propertyPath: m_Name
       value: GameManager
