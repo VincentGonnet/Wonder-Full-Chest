@@ -17,6 +17,7 @@ public class PlayerInputHandler : MonoBehaviour
     private bool btnE;
     private bool btnN;
     private bool btnW;
+    private string[] currentInputScheme = {"Rhythm", "Craft"};
 
     void Awake()
     {
@@ -29,15 +30,19 @@ public class PlayerInputHandler : MonoBehaviour
     
     void Start()
     {
-        //if (GameObject.Find("PlayerInput(Clone)") != null) {
-        //    if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 1) {
-        //        index = 0;
-        //        this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
-        //    }
-        //}
+        if (PlayerInput.all.Count == 2) {
+            PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
+            PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
+            PlayerInput.all[0].actions.FindActionMap(currentInputScheme[0]).Enable();
+            PlayerInput.all[1].actions.FindActionMap(currentInputScheme[1]).Enable();
+        }
     }
 
-    // Use index to differenciate players.
+    void SwapRoles() {
+        PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
+        PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
+        currentInputScheme = new string[] { currentInputScheme[1], currentInputScheme[0] };
+    }
 
     public void OnTestJ1(CallbackContext context) {
         Debug.Log(index);
@@ -45,36 +50,31 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OSUButton2(CallbackContext context)
     {
-        if (index == 0)
-        {
-            topCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
-            // Debug.Log("OSU TOP");
-        }
+        // topCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
+        Debug.Log("OSU TOP");
     }
 
     public void OSUButton1(CallbackContext context)
     {
-        if (index == 0)
-        {
-            bottomCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
-            // Debug.Log("OSU BOT");
-        }
+       // bottomCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
+        Debug.Log("OSU BOT");
     }
 
     private void PerformAction()
     {
-        if (btnS && modifier1) craftInventory.GetComponent<CraftInventory>().OnCase1();
-        else if (btnS && modifier2) craftInventory.GetComponent<CraftInventory>().OnCase3();
-        else if (btnS) craftInventory.GetComponent<CraftInventory>().OnCase2();
-        else if (btnE && modifier1) craftInventory.GetComponent<CraftInventory>().OnCase4();
-        else if (btnE && modifier2) craftInventory.GetComponent<CraftInventory>().OnCase6();
-        else if (btnE) craftInventory.GetComponent<CraftInventory>().OnCase5();
-        else if (btnW && modifier1) craftInventory.GetComponent<CraftInventory>().OnCase10();
-        else if (btnW && modifier2) craftInventory.GetComponent<CraftInventory>().OnCase12();
-        else if (btnW) craftInventory.GetComponent<CraftInventory>().OnCase11();
-        else if (btnN && modifier1) craftInventory.GetComponent<CraftInventory>().OnCase7();
-        else if (btnN && modifier2) craftInventory.GetComponent<CraftInventory>().OnCase9();
-        else if (btnN) craftInventory.GetComponent<CraftInventory>().OnCase8();
+        CraftInventory cI = craftInventory.GetComponent<CraftInventory>();
+        if (btnS && modifier1) cI.OnCase1();
+        else if (btnS) cI.OnCase2();
+        else if (btnS && modifier2) cI.OnCase3();
+        else if (btnE && modifier1) cI.OnCase4();
+        else if (btnE) cI.OnCase5();
+        else if (btnE && modifier2) cI.OnCase6();
+        else if (btnN && modifier1) cI.OnCase7();
+        else if (btnN) cI.OnCase8();
+        else if (btnN && modifier2) cI.OnCase9();
+        else if (btnW && modifier1) cI.OnCase10();
+        else if (btnW) cI.OnCase11();
+        else if (btnW && modifier2) cI.OnCase12();
     }
     
     IEnumerator Unpress(string key)
@@ -114,8 +114,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void Modifier1Input(CallbackContext context)
     {
-        if (index != 1) return;
-
         if (context.canceled) {
             StartCoroutine(Unpress("md1"));
         }
@@ -126,8 +124,6 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void Modifier2Input(CallbackContext context)
     {
-        if (index != 1) return;
-
         if (context.canceled) {
             StartCoroutine(Unpress("md2"));
         }
@@ -139,7 +135,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void BtnS(CallbackContext context)
     {
-        if (index != 1) return;
         if (context.canceled) {
             StartCoroutine(Unpress("btnS"));
         } else if(context.started){
@@ -150,7 +145,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void BtnE(CallbackContext context)
     {
-        if (index != 1) return;
         if (context.canceled) {
             StartCoroutine(Unpress("btnE"));
         } else if(context.started){
@@ -161,7 +155,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void BtnW(CallbackContext context)
     {
-        if (index != 1) return;
         if (context.canceled) {
             StartCoroutine(Unpress("btnW"));
         } else if(context.started){
@@ -172,7 +165,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void BtnN(CallbackContext context)
     {
-        if (index != 1) return;
         if (context.canceled) {
             StartCoroutine(Unpress("btnN"));
         } else if(context.started){

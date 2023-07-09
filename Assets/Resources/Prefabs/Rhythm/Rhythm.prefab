@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 6059899613840863616}
   - component: {fileID: 2920480785959265116}
   m_Layer: 7
-  m_Name: Rythm
+  m_Name: Rhythm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

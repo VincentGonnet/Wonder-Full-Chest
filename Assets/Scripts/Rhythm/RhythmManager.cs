@@ -52,8 +52,8 @@ public class RhythmManager : MonoBehaviour
             x += Constants.MIN_BASE_CIRCLE_RHYTHM_DISTANCE * offset / 10;
             double randomDouble = this.random.NextDouble();
             if (this.random.NextDouble() < 0.4) {
-                GameObject prefab = randomDouble < 0.1 ? GameResources.PREFAB_RYTHM_HOLD_CIRCLE_LONG : randomDouble < 0.2 ?
-                    GameResources.PREFAB_RYTHM_HOLD_CIRCLE : GameResources.PREFAB_RYTHM_HOLD_CIRCLE_SHORT;
+                GameObject prefab = randomDouble < 0.1 ? GameResources.PREFAB_RHYTHM_HOLD_CIRCLE_LONG : randomDouble < 0.2 ?
+                    GameResources.PREFAB_RHYTHM_HOLD_CIRCLE : GameResources.PREFAB_RHYTHM_HOLD_CIRCLE_SHORT;
                 // Make the left of the long circle be at x
                 x += prefab.GetComponent<BoxCollider2D>().size.x / 2 + 0.5f;
                 GameObject circle = Object.Instantiate(
@@ -72,16 +72,16 @@ public class RhythmManager : MonoBehaviour
             
             else {
                 // Make the left of the circle be at x
-                x += GameResources.PREFAB_RYTHM_CIRCLE.width / 2;
+                x += GameResources.PREFAB_RHYTHM_CIRCLE.width / 2;
                 GameObject circle = Object.Instantiate(
-                    GameResources.PREFAB_RYTHM_CIRCLE.gameObject,
+                    GameResources.PREFAB_RHYTHM_CIRCLE.gameObject,
                     new Vector3(x + 5, 0) + targetTransform.position + new Vector3(startFrom + 10, 0),
                     Quaternion.identity,
                     targetTransform);
                 circle.GetComponent<MovingObject>().relativeSpeed = speed;
                 wave.Add(circle);
                 // And then set x to the right of the circle
-                x += GameResources.PREFAB_RYTHM_CIRCLE.width / 2;
+                x += GameResources.PREFAB_RHYTHM_CIRCLE.width / 2;
                 circlesCount++;
             }
         }

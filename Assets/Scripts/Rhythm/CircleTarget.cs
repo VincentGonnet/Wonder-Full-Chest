@@ -18,13 +18,13 @@ public class CircleTarget : MonoBehaviour
         skipFail = false;
         if (other.gameObject.CompareTag("Circle")) {
             canBeActivated = canBeDeactivated = true;
-        } else if (other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RythmCircleTrigger")) {
+        } else if (other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RhythmCircleTrigger")) {
             canBeActivated = true;
-        } else if (!other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RythmCircleTrigger")) {
+        } else if (!other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RhythmCircleTrigger")) {
             canBeDeactivated = true;
         }
 
-        if (other.gameObject.layer == LayerMask.NameToLayer("RythmCircle")) {
+        if (other.gameObject.layer == LayerMask.NameToLayer("RhythmCircle")) {
             circle = other.gameObject;
         }
     }
@@ -34,9 +34,9 @@ public class CircleTarget : MonoBehaviour
             canBeActivated = canBeDeactivated = false;
             if (!skipFail) OnFail();
             else skipFail = false;
-        } else if (!other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RythmCircleTrigger")) {
+        } else if (!other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RhythmCircleTrigger")) {
             canBeDeactivated = false;
-        } else if (other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RythmCircleTrigger")) {
+        } else if (other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RhythmCircleTrigger")) {
             canBeActivated = false;
             if (!isActivated) OnFail();
         }

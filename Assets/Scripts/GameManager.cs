@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -17,8 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float osuSpeed = 2;
     [SerializeField] public Camera terrainCamera;
     [SerializeField] public Transform playerTransform;
+    [SerializeField] public GameObject inputPrefab;
     public int wave;
-
     public bool scroll = true;
     public float timeDilation = 1;
     private float targetTimeSpeed = 1;
@@ -32,10 +33,16 @@ public class GameManager : MonoBehaviour
     private float currentCameraYPosition = 0.52f;
     private float cameraYPositionVelocity = 0.52f;
     private bool cameraZoomed = false;
+    private bool onSameKeyboard = true;
 
     private GameManager()
     {
         GameManager.instance = this;
+    }
+
+    private void Awake()
+    {
+
     }
 
     private void Start()
