@@ -52,4 +52,10 @@ public class SoundManager : MonoBehaviour
         gameMenuTrack.Play();
         currentTrack = gameMenuTrack;
     }
+
+    public void GameOver()
+    {
+        gameMenuTrack.Stop();
+        currentTrack = null;
+    }
 }

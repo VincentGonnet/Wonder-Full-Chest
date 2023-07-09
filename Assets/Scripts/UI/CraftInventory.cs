@@ -16,10 +16,11 @@ public class CraftInventory : MonoBehaviour
     [SerializeField] public GameObject prefabGridText;
 
     [SerializeField] public GameObject prefabGridImage;
+    [SerializeField] public InventoryCraftingTable craftingTablePreview;
 
     private ItemType[] objs;
     private Transform currentHightlight;
-    public ItemType[] currentRecipe = new ItemType[] {};
+    public List<ItemType> currentRecipe = new();
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +66,7 @@ public class CraftInventory : MonoBehaviour
                 image.name = "Image";
                 image.transform.SetParent(item.transform);
                 RectTransform rt4 = image.GetComponent<RectTransform>();
-                rt4.anchoredPosition = new Vector2(0, -26);
+                rt4.anchoredPosition = new Vector2(0, 0);
                 image.GetComponent<Image>().sprite = foundItem.texture;
             }
         }
@@ -86,10 +87,12 @@ public class CraftInventory : MonoBehaviour
         currentHightlight = column;
 
         // Add To Current Recipe
-        currentRecipe.Append(objs[gridRow*3 + gridColumn]);
+        currentRecipe.Add(objs[gridRow*3 + gridColumn]);
 
         // Set recipe on screen
-        // TODO
+        Debug.Log("on vient d'ajouter un élément");
+        Debug.Log(currentRecipe.Count);
+        craftingTablePreview.DrawRecipe(this.currentRecipe.ToArray());
 
         // Set last time action
         StopAllCoroutines();
@@ -102,11 +105,11 @@ public class CraftInventory : MonoBehaviour
     IEnumerator DismissRecipe() {
         yield return new WaitForSeconds(3f);
 
-        if(currentRecipe != null && currentRecipe.Length > 0) {
-            currentRecipe = new ItemType[] {};
+        if(currentRecipe != null && currentRecipe.Count > 0) {
+            currentRecipe.Clear();
 
             // Set recipe on screen
-            // TODO
+            craftingTablePreview.DrawRecipe(this.currentRecipe.ToArray());
 
             // Update recipes
             GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
@@ -115,17 +118,17 @@ public class CraftInventory : MonoBehaviour
 
     public void ValidateRecipe(InputAction.CallbackContext context) {
         if(context.performed) {
-            ItemCraft itemCraft = GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().validateItems(currentRecipe);
+            ItemCraft itemCraft = GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().validateItems(currentRecipe.ToArray());
             if(itemCraft != null) {
                 //TODO: send item to hand
             }else{
                 //TODO: Indicate incorrect
             }
 
-            currentRecipe = new ItemType[] {};
+            currentRecipe.Clear();
 
             // Set recipe on screen
-            // TODO
+            craftingTablePreview.DrawRecipe(this.currentRecipe.ToArray());
 
             // Update recipes
             GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);

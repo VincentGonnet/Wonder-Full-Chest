@@ -15,3 +15,4 @@ MonoBehaviour:
   inputs:
   - {fileID: 11400000, guid: d4570d0f810a5a64ba24fe875d1888c0, type: 2}
   output: {fileID: 11400000, guid: 0bff139bb11afb64599aa786e9557907, type: 2}
+  bubbleInfo: {fileID: 21300000, guid: 7cbf436b30662df499d8f4a2a22e39dc, type: 3}

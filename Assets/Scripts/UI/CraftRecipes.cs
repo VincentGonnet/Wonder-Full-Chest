@@ -16,6 +16,8 @@ public class CraftRecipes : MonoBehaviour
 
     [SerializeField] public GameObject prefabGridArrow;
 
+    [SerializeField] public GameObject prefabEnemyType;
+
     [SerializeField] public Sprite spriteSelectedCell;
 
     [SerializeField] public int maxRow = 7;
@@ -79,7 +81,7 @@ public class CraftRecipes : MonoBehaviour
 
     public void SwitchPage(int value)
     {
-        ItemType[] filter = GameObject.Find("CraftInventory").GetComponent<CraftInventory>().currentRecipe;
+        ItemType[] filter = GameObject.Find("CraftInventory").GetComponent<CraftInventory>().currentRecipe.ToArray();
         
         ItemType it1 = Resources.Load<ItemType>("Items/Stick");
         ItemType it2 = Resources.Load<ItemType>("Items/Leather");
@@ -134,7 +136,7 @@ public class CraftRecipes : MonoBehaviour
             rt.anchorMin = new Vector2(0.5f, 1);
             rt.anchorMax = new Vector2(0.5f, 1);
             rt.anchoredPosition = new Vector2(0, (-(scaleY / 2) - scaleY * i));
-            if(((Math.Min(objs.Length, maxRow) - 1) / 2) == i) item.GetComponent<Image>().sprite = spriteSelectedCell;
+            if (((Math.Min(objs.Length, maxRow) - 1) / 2) == i) item.GetComponent<Image>().sprite = spriteSelectedCell;
 
             for (int j = 0; j < foundItem.inputs.Length; j++)
             {
@@ -148,7 +150,8 @@ public class CraftRecipes : MonoBehaviour
                 image2.GetComponent<Image>().sprite = foundItem.inputs[j].texture;
                 image2.transform.localScale = new Vector2(0.8f, 0.8f);
 
-                if (j != (foundItem.inputs.Length - 1)) {
+                if (j != (foundItem.inputs.Length - 1))
+                {
                     GameObject image3 = Instantiate(prefabGridArrow);
                     image3.name = "Arrow";
                     image3.transform.SetParent(item.transform);
@@ -169,6 +172,15 @@ public class CraftRecipes : MonoBehaviour
             rt2.anchoredPosition = new Vector2(-35, 0);
             image.GetComponent<Image>().sprite = foundItem.output.texture;
             image.transform.localScale = new Vector2(0.8f, 0.8f);
+
+            GameObject enemyTypeBubble = Instantiate(this.prefabEnemyType, Vector2.zero, Quaternion.identity, item.transform);
+            enemyTypeBubble.transform.GetChild(0).GetComponent<Image>().sprite = foundItem.bubbleInfo;
+            enemyTypeBubble.transform.GetChild(0).GetComponent<Animator>().SetFloat("offset", (float)(i * 0.4 - Math.Truncate(i * 0.4)));
+            RectTransform rect = enemyTypeBubble.GetComponent<RectTransform>();
+            rect.anchorMin = new Vector2(1, 0.5f);
+            rect.anchorMax = new Vector2(1, 0.5f);
+            rect.anchoredPosition = new Vector2(-5, 15);
+            enemyTypeBubble.transform.localScale = new Vector2(0.8f, 0.8f);
         }
 
     }

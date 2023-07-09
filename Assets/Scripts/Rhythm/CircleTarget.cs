@@ -27,6 +27,7 @@ public class CircleTarget : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("RhythmCircle")) {
             circle = other.gameObject;
         }
+        Debug.Log("enter");
     }
 
     private void OnTriggerExit2D(Collider2D other) {
@@ -40,17 +41,20 @@ public class CircleTarget : MonoBehaviour
             canBeActivated = false;
             if (!isActivated) OnFail();
         }
+        Debug.Log("exit");
     }
 
     public void OnButtonPressed(InputAction.CallbackContext context) {
         if (context.started) {
             if (canBeActivated) isActivated = true;
+                Debug.Log("started");
             // else {
             //     Debug.Log("started");
             //     OnFail();
             // }
         } else if (context.canceled) {
             if (canBeDeactivated) OnSuccess();
+                Debug.Log("canceled");
             // else if (isActivated) {
             //     Debug.Log("canceled");
             //     OnFail();
