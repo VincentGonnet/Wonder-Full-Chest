@@ -17,9 +17,11 @@ public class Interact : MonoBehaviour
     private bool enteringRange = false;
     private void LateUpdate()
     {
-        if (waveManager.obstacles.Count != 0 && !enteringRange) {
+        GameManager.instance.scroll = true;
+        if (waveManager.obstacles.Count != 0) {
             Transform firstEnemyTransform = waveManager.obstacles.First().transform;
-            if (firstEnemyTransform.position.x - this.transform.position.x < detectionDistance) {
+            GameManager.instance.scroll = firstEnemyTransform.position.x - this.transform.position.x > 2;
+            if (firstEnemyTransform.position.x - this.transform.position.x < detectionDistance && !enteringRange) {
                 rhythmManager.GenerateRhythm();
                 GameManager.instance.SlowDownTime();
                 GameManager.instance.ZoomCamera();
@@ -32,7 +34,7 @@ public class Interact : MonoBehaviour
         totalScore = circleTargetFirst.score + circleTargetSecond.score + circleTargetThird.score + circleTargetFourth.score;
         circlesHit = totalScore + circleTargetFirst.failed + circleTargetSecond.failed + circleTargetThird.failed + circleTargetFourth.failed;
         if (rhythmManager.nbCircles.Count != 0 && circlesHit == rhythmManager.nbCircles.First()) {
-            if (waveManager.obstacles[waveManager.currentObstacleIndex] == waveManager.obstacles.Last()){
+            if (waveManager.obstacles[0] == waveManager.obstacles.Last()){
                 waveManager.SpawnWave();
             }
             if (totalScore == rhythmManager.nbCircles.First()) {
@@ -42,7 +44,7 @@ public class Interact : MonoBehaviour
                 GameManager.instance.UnZoomCamera();
                 GameManager.instance.HideVignette();
                 // Check if the right ItemCraft is in hand
-                if (gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[waveManager.currentObstacleIndex]))
+                if (gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[0]))
                 {
                     Debug.Log("enemy kill");
                 } else {
@@ -57,7 +59,6 @@ public class Interact : MonoBehaviour
             enteringRange = false;
             circlesHit = circleTargetFirst.score = circleTargetSecond.score = circleTargetThird.score = circleTargetFourth.score 
                 = circleTargetFirst.failed = circleTargetSecond.failed = circleTargetThird.failed = circleTargetFourth.failed = 0;
-            waveManager.currentObstacleIndex++;
         }
     }
 

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Transform playerTransform;
     public int wave;
 
+    public bool scroll = true;
     public float timeDilation = 1;
     private float targetTimeSpeed = 1;
     private float timeDilationSpeed;

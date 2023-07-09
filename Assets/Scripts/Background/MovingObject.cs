@@ -23,6 +23,9 @@ public class MovingObject : MonoBehaviour
     
     public void FixedUpdate()
     {
+        if (!GameManager.instance.scroll) {
+            return;
+        }
         float speed = Constants.SCROLLING_SPEED * relativeSpeed * (isAffectedBySlowdown ? GameManager.instance.timeDilation : 1);
         if (this.TryGetComponent<Rigidbody2D>(out Rigidbody2D component)) {
             component.velocity = speed * Vector3.left;

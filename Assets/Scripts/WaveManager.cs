@@ -9,7 +9,6 @@ public class WaveManager : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     public List<GameObject> obstacles = new();
-    public int currentObstacleIndex = 0;
     private Random random = new();
 
     [SerializeField] private int obstaclesPerWave;
@@ -40,7 +39,6 @@ public class WaveManager : MonoBehaviour
             Object.Destroy(obstacle);
         }
         this.obstacles.Clear();
-        this.currentObstacleIndex = 0;
 
         ObstacleMetadata[] obstacleMetadatas = this.GenerateObstacleOrder(this.gameManager.wave + 5);
         for (int i = 0; i < this.obstaclesPerWave; i++) {
@@ -49,8 +47,8 @@ public class WaveManager : MonoBehaviour
     }
 
     public void RemoveObstacle() {
-        Destroy(obstacles[currentObstacleIndex]);
-        obstacles.RemoveAt(currentObstacleIndex);
+        Destroy(obstacles[0]);
+        obstacles.RemoveAt(0);
     }
 
     private ObstacleMetadata[] GenerateObstacleOrder(int waveDifficulty)
