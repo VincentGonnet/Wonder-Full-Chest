@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
         tutoUi = GameObject.FindWithTag("TutoUI");
         tutoUi.SetActive(false);
         SoundManager.instance.StartGameMusic();
+        // TODO : uncomment 
         persistentData = GameObject.Find("PersistentData");
     }
 
@@ -163,13 +164,15 @@ public class GameManager : MonoBehaviour
 
     public void PlayTutorialStep()
     {
-        if (persistentData.GetComponent<PersistentData>().hasFinishedTutorial) return;
+        // TODO : uncomment 
+        // if (persistentData.GetComponent<PersistentData>().hasFinishedTutorial) return;
         tutoUi.SetActive(true);
         tutoUi.transform.GetChild(tutoStep).gameObject.SetActive(true);
         isPaused = true;
         isInTuto = true;
 
-        if (tutoStep == lastTutoStepIndex) persistentData.GetComponent<PersistentData>().hasFinishedTutorial = true;
+        // TODO : uncomment
+        // if (tutoStep == lastTutoStepIndex) persistentData.GetComponent<PersistentData>().hasFinishedTutorial = true;
     }
 
     public void StopTutorialStep()
