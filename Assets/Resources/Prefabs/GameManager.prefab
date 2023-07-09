@@ -47,4 +47,14 @@ MonoBehaviour:
   playerHearts: 3
   obstacleSpeed: 1
   osuSpeed: 2
-  wave: 0
+  terrainCamera: {fileID: 0}
+  playerTransform: {fileID: 0}
+  inputPrefab: {fileID: 6753183478533666844, guid: b55fd5b14aa04ee4b8b6fbc9afd97a42, type: 3}
+  waveCounterText: {fileID: 0}
+  scroll: 1
+  timeDilation: 1
+  tutoStep: 0
+  isInTuto: 0
+  onSameKeyboard: 1
+  isPaused: 0
+  tutoUi: {fileID: 0}
