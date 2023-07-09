@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
     private float currentCameraYPosition = 0.52f;
     private float cameraYPositionVelocity = 0.52f;
     private bool cameraZoomed = false;
-    [SerializeField] private bool onSameKeyboard = true;
     public bool isPaused = false;
     public GameObject tutoUi;
     private bool uiswapped = false;
