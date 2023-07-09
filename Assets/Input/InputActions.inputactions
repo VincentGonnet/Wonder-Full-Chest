@@ -705,7 +705,7 @@
                 {
                     "name": "",
                     "id": "6e9f7996-cb41-4929-b8de-958755e0d1f9",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -771,7 +771,7 @@
                 {
                     "name": "",
                     "id": "734f5ad5-acea-4eb2-8c29-6f509955921e",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/#(S)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1020,6 +1020,254 @@
                     "name": "",
                     "id": "bed2b129-af82-49d5-b77a-a33d7d7e8734",
                     "path": "<Keyboard>/rightCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Modifier4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "DbKb2",
+            "id": "79a98c80-4d94-4014-a727-e2d29f84a5eb",
+            "actions": [
+                {
+                    "name": "Modifier1",
+                    "type": "Button",
+                    "id": "6c4aec5e-fa44-48ba-9b48-113724030df2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Modifier3",
+                    "type": "Button",
+                    "id": "538e9d77-7543-4afc-a14f-e348271b13bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Modifier4",
+                    "type": "Button",
+                    "id": "d861d41b-13e2-463b-8981-7274aff711f2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Modifer2",
+                    "type": "Button",
+                    "id": "0fcf5f17-c40f-4c0b-ad59-df7bad725316",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Row1",
+                    "type": "Button",
+                    "id": "253db110-714e-4107-b19b-4c3b827b9452",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Row2",
+                    "type": "Button",
+                    "id": "008a3b82-1a16-48f7-82a8-2c06692ae2a8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Row3",
+                    "type": "Button",
+                    "id": "0d37bd60-dfe2-4ea1-9aa4-27cecee22cfb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Row4",
+                    "type": "Button",
+                    "id": "0c4f6ad9-b046-466a-bd79-499b5c7b60db",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Osu1",
+                    "type": "Button",
+                    "id": "1d3994b5-e8dd-4a2a-81da-f064cdf78d22",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Osu2",
+                    "type": "Button",
+                    "id": "c71dc48e-fb9f-4534-9ffe-9f9e83458559",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Osu3",
+                    "type": "Button",
+                    "id": "92ff14f8-7e17-46db-beb2-055336b8ad2d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Osu4",
+                    "type": "Button",
+                    "id": "c5539f4b-8fc9-496f-8901-b1d20ad6c5c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cf3e3eb5-a581-43c2-80e0-37698dd0080b",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Modifier1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd899b24-45cb-4975-a789-d616ba40253b",
+                    "path": "<Keyboard>/rightCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Modifer2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d47c9be1-9b2e-441c-b12d-706942c107ae",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Row1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7b5c6d7-7379-46e5-8d49-38a41c1fd902",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Row2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c4d9987d-2206-499b-9878-091f4aa23d04",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Row3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d860f135-d158-4392-91b8-172b1fb21269",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Row4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "90434666-1485-4bf4-8a93-37a86ad08203",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Osu1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "632e99b4-0465-4b85-b45a-672552618caa",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Osu2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd33c43b-15cc-4f1b-97ab-4c42da387438",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Osu3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b0684c0e-329d-47e2-98df-afd2dca3f59a",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Osu4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0582c32-1925-4e37-8040-80a3c6f7adec",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Modifier3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44bc472e-3e8c-4d6c-9673-a79f765365e6",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",

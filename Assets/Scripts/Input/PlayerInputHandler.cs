@@ -30,10 +30,9 @@ public class PlayerInputHandler : MonoBehaviour
     
     void Start()
     {
-        if (gameObject.TryGetComponent<MainSettings>(out MainSettings component)) {
-            kb = true;
-        } else {
-            kb = false;
+        GameObject optionsHolder = GameObject.Find("OptionsHolder");
+        kb = optionsHolder.GetComponent<MainSettings>().shareKeyboard;
+        if (!kb) {
             if (GameObject.Find("PlayerInput(Clone)") != null && !kb) {
                 if (GameObject.Find("PlayerInput(Clone)").GetComponent<PlayerInputHandler>().index == 1) {
                     index = 0;
@@ -41,24 +40,39 @@ public class PlayerInputHandler : MonoBehaviour
                     this.GetComponent<PlayerInput>().actions.FindActionMap("Rythm").Enable();
                 }
             }
-        }
-        
+        }        
     }
 
     // Use index to differenciate players.
 
     public void SwapRoles()
     {
+        Debug.Log("Swapping roles");
         if (index == 1) index = 0;
         else index = 1;
 
-        if (index == 0) {
-            this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
-            this.GetComponent<PlayerInput>().actions.FindActionMap("Rythm").Enable();
+        if (kb) {
+            if (index == 0) {
+                this.GetComponent<PlayerInput>().defaultActionMap = "DbKb1";
+                this.GetComponent<PlayerInput>().actions.FindActionMap("DbKb1").Enable();
+                this.GetComponent<PlayerInput>().actions.FindActionMap("DbKb2").Disable();
+                Debug.Log("Switched to KB1");
+            } else {
+                this.GetComponent<PlayerInput>().defaultActionMap = "DbKb2";
+                this.GetComponent<PlayerInput>().actions.FindActionMap("DbKb2").Enable(); 
+                this.GetComponent<PlayerInput>().actions.FindActionMap("DbKb1").Disable(); 
+                Debug.Log("Switched to KB2");
+            } 
         } else {
-            this.GetComponent<PlayerInput>().defaultActionMap = "Craft";
-            this.GetComponent<PlayerInput>().actions.FindActionMap("Craft").Enable(); 
+            if (index == 0) {
+                this.GetComponent<PlayerInput>().defaultActionMap = "Rythm";
+                this.GetComponent<PlayerInput>().actions.FindActionMap("Rythm").Enable();
+            } else {
+                this.GetComponent<PlayerInput>().defaultActionMap = "Craft";
+                this.GetComponent<PlayerInput>().actions.FindActionMap("Craft").Enable(); 
+            } 
         }
+        
     }
 
     public void TestIndex(CallbackContext context) {
@@ -69,15 +83,18 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (index == 1 && !kb) return;
         topCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
-        Debug.Log("OSU TOP");
+        Debug.Log("OSU 2");
     }
 
     public void OSUButton1(CallbackContext context)
     {
         if (index == 1 && !kb) return;
         bottomCircleTargetOSU.GetComponent<CircleTarget>().OnButtonPressed(context);
-        Debug.Log("OSU BOT");
-        GameObject.Find("GameManager").GetComponent<GameManager>().SendReverseCommand();
+        Debug.Log("OSU 1");
+        
+        if (context.canceled) {
+            GameObject.Find("GameManager").GetComponent<GameManager>().SendReverseCommand();
+        }
     }
 
     private void PerformAction()

@@ -47,7 +47,9 @@ public class GameManager : MonoBehaviour
             inputManagerP2 = GameObject.FindGameObjectsWithTag("PlayerInput")[1];
             inputManagerP1.GetComponent<PlayerInputHandler>().SwapRoles();
             inputManagerP2.GetComponent<PlayerInputHandler>().SwapRoles();
-        }  
+        } else {
+            GameObject.Find("InputManager").GetComponent<PlayerInputHandler>().SwapRoles();
+        }
         
     }
 
