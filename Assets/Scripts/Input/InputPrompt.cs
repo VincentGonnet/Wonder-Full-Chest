@@ -33,12 +33,17 @@ public class InputPrompt : MonoBehaviour
     [SerializeField] Sprite xb_Gachette_L;
     [SerializeField] Sprite xb_Gachette_R;
     private int countStart = 0;
+
+    GameObject inputRow;
+    GameObject inputColumn;
+    GameObject CSlot1 = GameObject.Find("CSlot1");
+    GameObject CSlot2 = GameObject.Find("CSlot2");
+    GameObject CSlot3 = GameObject.Find("CSlot3");
+    GameObject CSlot4 = GameObject.Find("CSlot4");
+    GameObject CSlot5 = GameObject.Find("CSlot5");
+    GameObject CSlot6 = GameObject.Find("CSlot6");
     public void Generate()
     {
-        void FixedUpdate()
-        {
-            
-        }
         PlayerInput input1 = PlayerInput.all[0];
         PlayerInput input2 = PlayerInput.all[1];
 
@@ -51,16 +56,15 @@ public class InputPrompt : MonoBehaviour
         Transform tr3 = GameObject.Find("CircleTarget2").transform.GetChild(0);
         Transform tr4 = GameObject.Find("CircleTarget3").transform.GetChild(0);
 
-        GameObject CSlot1 = GameObject.Find("CSlot1");
-        GameObject CSlot2 = GameObject.Find("CSlot2");
-        GameObject CSlot3 = GameObject.Find("CSlot3");
-        GameObject CSlot4 = GameObject.Find("CSlot4");
-        GameObject CSlot5 = GameObject.Find("CSlot5");
-        GameObject CSlot6 = GameObject.Find("CSlot6");
-        GameObject CSlot7 = GameObject.Find("CSlot7");
+        CSlot1 = GameObject.Find("CSlot1");
+        CSlot2 = GameObject.Find("CSlot2");
+        CSlot3 = GameObject.Find("CSlot3");
+        CSlot4 = GameObject.Find("CSlot4");
+        CSlot5 = GameObject.Find("CSlot5");
+        CSlot6 = GameObject.Find("CSlot6");
 
-        GameObject inputRow = GameObject.Find("InputRow");
-        GameObject inputColumn = GameObject.Find("InputColumn");
+        inputRow = GameObject.Find("InputRow");
+        inputColumn = GameObject.Find("InputColumn");
 
         // There is a controller, we replace keyboard2 by keyboard1 keys
         if (input1.currentControlScheme.Contains("Gamepad") || input2.currentControlScheme.Contains("Gamepad"))
@@ -155,5 +159,16 @@ public class InputPrompt : MonoBehaviour
         CSlot4.transform.localScale = new Vector3(keySize2, keySize2, 1);
         CSlot5.transform.localScale = new Vector3(keySize2, keySize2, 1);
         CSlot6.transform.localScale = new Vector3(keySize2, keySize2, 1);
+    }
+
+    public void SwapCslotLoc(bool swapped)
+    {
+        if (!swapped) {
+            inputColumn.transform.position = new Vector3(-18.21f, 7.21f, 1);
+            inputRow.transform.position = new Vector3(-21.21f, 3.5f, 1);
+        } else {
+            inputColumn.transform.position = new Vector3(-35.27f, 7.21f, 1);
+            inputRow.transform.position = new Vector3(-34.4f, 3.5f, 1);
+        }
     }
 }
