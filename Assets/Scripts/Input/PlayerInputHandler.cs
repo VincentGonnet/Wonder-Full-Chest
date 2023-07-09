@@ -33,7 +33,6 @@ public class PlayerInputHandler : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("Count : " + PlayerInput.all.Count);
         if (PlayerInput.all.Count == 2) {
             PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
             PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
@@ -48,14 +47,9 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    private int countTKtsupprimePas = 0;
     public void SwapRoles() {
-        if (countTKtsupprimePas == 0) {
-            countTKtsupprimePas++;
-            return;
-        } else {
-            countTKtsupprimePas = 0;
-        }
+        Debug.Log("Swapped roles");
+
         PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
         PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
         PlayerInput.all[0].actions.FindActionMap(currentInputScheme[1]).Enable();
@@ -81,18 +75,20 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void RhythmButton2(CallbackContext context)
     {
-       targetOSU2.GetComponent<CircleTarget>().OnButtonPressed(context);
+        Debug.Log("OSU2");
+        targetOSU2.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     public void RhythmButton3(CallbackContext context)
     {
-        SwapRoles();
-       targetOSU3.GetComponent<CircleTarget>().OnButtonPressed(context);
+        Debug.Log("OSU3");
+        // TODO targetOSU3.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     public void RhythmButton4(CallbackContext context)
     {
-       targetOSU4.GetComponent<CircleTarget>().OnButtonPressed(context);
+        Debug.Log("OSU4");
+    // TODO:    targetOSU4.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     private void PerformAction()
