@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
     private float cameraYPositionVelocity = 0.52f;
     private bool cameraZoomed = false;
     private bool onSameKeyboard = true;
+    private bool uiswapped = false;
 
     private GameManager()
     {
@@ -112,13 +114,35 @@ public class GameManager : MonoBehaviour
         this.targetTimeSpeed = 1;
     }
     
+    public void SwapRoles()
+    {
+        StartCoroutine(SwapRolesAnimation());
+    }
+
+    IEnumerator SwapRolesAnimation() {
+        GameObject.Find("Swap").GetComponent<SwapUIManager>().StartAnimation();
+        yield return new WaitForSeconds(0.9f);
+        PlayerInput.all[0].gameObject.GetComponent<PlayerInputHandler>().SwapRoles();
+        
+        // TODO: Make UI bg rotate as well and also, make sure that we adapt to other values
+        GameObject.Find("Rhythm").transform.localPosition = new Vector2(uiswapped ? 8.6f : 0.1f, GameObject.Find("Rhythm").transform.localPosition.y);
+        RectTransform rt = GameObject.Find("CraftInventoryContainer").GetComponent<RectTransform>();
+        rt.anchorMin = uiswapped ? new Vector2(0,0) : new Vector2(1,0);
+        rt.anchorMax = uiswapped ? new Vector2(0,0) : new Vector2(1,0);
+        rt.anchoredPosition = uiswapped ? new Vector3(120f, 165f, 0): new Vector3(-120f, 165f, 0);
+        RectTransform rt2 = GameObject.Find("CraftAvailableRecipesContainer").GetComponent<RectTransform>();
+        rt2.anchorMin = uiswapped ? new Vector2(0,0) : new Vector2(1,0);
+        rt2.anchorMax = uiswapped ? new Vector2(0,0) : new Vector2(1,0);
+        rt2.anchoredPosition = uiswapped ? new Vector3(350f, 165f, 0): new Vector3(-350f, 165f, 0);
+    }
+
     public void DamagePlayer()
     {
         Debug.Log("Took damage");
         // Get current heart
         GameObject health = GameObject.Find("Health");
         health.transform.GetChild(--this.playerHearts).GetComponent<Animator>().SetBool("full", false);
-        if (this.playerHearts < 1) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //if (this.playerHearts < 1) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void FixedUpdate()
