@@ -457,6 +457,15 @@
                     "processors": "",
                     "interactions": "Hold(duration=0.01)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "TutoResume",
+                    "type": "Button",
+                    "id": "12a33f2e-6937-4e2d-a24a-51701259121e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -545,6 +554,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Rhythm4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7242ae0e-7aa7-41b8-b1f7-a93b626f8a2a",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard1",
+                    "action": "TutoResume",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b8ddc12b-5d32-4108-a547-3ef5813552e3",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "TutoResume",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

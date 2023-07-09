@@ -22,6 +22,7 @@ public class Interact : MonoBehaviour
             Transform firstEnemyTransform = waveManager.obstacles.First().transform;
             GameManager.instance.scroll = firstEnemyTransform.position.x - this.transform.position.x > 2;
             if (firstEnemyTransform.position.x - this.transform.position.x < detectionDistance && !enteringRange) {
+                if (GameManager.instance.tutoStep == 0) GameManager.instance.PlayTutorialStep();
                 rhythmManager.GenerateRhythm();
                 GameManager.instance.SlowDownTime();
                 GameManager.instance.ZoomCamera();
