@@ -18,8 +18,10 @@ public class CircleTarget : MonoBehaviour
         skipFail = false;
         if (other.gameObject.CompareTag("Circle")) {
             canBeActivated = canBeDeactivated = true;
+            circle = other.gameObject;
         } else if (other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RhythmCircleTrigger")) {
             canBeActivated = true;
+            circle = other.transform.parent.gameObject;
         } else if (!other.gameObject.CompareTag("Long") && other.gameObject.layer == LayerMask.NameToLayer("RhythmCircleTrigger")) {
             canBeDeactivated = true;
         }
@@ -44,7 +46,10 @@ public class CircleTarget : MonoBehaviour
 
     public void OnButtonPressed(InputAction.CallbackContext context) {
         if (context.started) {
-            if (canBeActivated) isActivated = true;
+            if (canBeActivated) {
+                isActivated = true;
+                OnPress();
+            }
             // else {
             //     Debug.Log("started");
             //     OnFail();
@@ -56,6 +61,10 @@ public class CircleTarget : MonoBehaviour
             //     OnFail();
             // } 
         }
+    }
+
+    public void OnPress() {
+        circle?.GetComponent<Animator>()?.SetTrigger("Press");
     }
 
     public void OnFail() {
