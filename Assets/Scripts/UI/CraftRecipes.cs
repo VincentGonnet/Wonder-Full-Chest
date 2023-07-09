@@ -86,7 +86,7 @@ public class CraftRecipes : MonoBehaviour
             rt.anchorMin = new Vector2(0.5f, 1);
             rt.anchorMax = new Vector2(0.5f, 1);
             rt.anchoredPosition = new Vector2(0, (-(scaleY / 2) - scaleY * i));
-            if(((objs.Length - 1) / 2) == i) item.GetComponent<Image>().sprite = spriteSelectedCell;
+            if(((Math.Min(objs.Length, maxRow) - 1) / 2) == i) item.GetComponent<Image>().sprite = spriteSelectedCell;
 
             GameObject image = Instantiate(prefabGridImage);
             image.name = "Image";
