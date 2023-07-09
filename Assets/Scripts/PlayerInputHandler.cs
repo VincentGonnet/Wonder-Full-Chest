@@ -38,11 +38,10 @@ public class PlayerInputHandler : MonoBehaviour
             PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
             PlayerInput.all[0].actions.FindActionMap(currentInputScheme[0]).Enable();
             PlayerInput.all[1].actions.FindActionMap(currentInputScheme[1]).Enable();
-            SwapRoles();
         }
     }
 
-    void SwapRoles() {
+    public void SwapRoles() {
         PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
         PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
         PlayerInput.all[0].actions.FindActionMap(currentInputScheme[1]).Enable();
