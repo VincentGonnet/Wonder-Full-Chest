@@ -14,4 +14,12 @@ public class MenuScripts : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
+
+    public void OpenCredits() {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void OpenMainMenu() {
+        SceneManager.LoadScene("Menu");
+    }
 }
