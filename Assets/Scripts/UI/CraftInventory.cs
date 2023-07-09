@@ -93,9 +93,6 @@ public class CraftInventory : MonoBehaviour
         // Set recipe on screen
         craftingTablePreview.DrawRecipe(this.currentRecipe.ToArray());
 
-        // Update recipes
-        GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
-
         Debug.Log(GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().filterItems(currentRecipe.ToArray()).Length);
        if(GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().filterItems(currentRecipe.ToArray()).Length == 0){ 
            craftingTablePreview.ShowError(); 
@@ -103,13 +100,13 @@ public class CraftInventory : MonoBehaviour
 
            // Set recipe on screen
            craftingTablePreview.DrawRecipe(this.currentRecipe.ToArray());
-
-           // Update recipes
-           GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
        }
-       
-       // Set last time action
-       StopAllCoroutines();
+
+        // Update recipes
+        GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
+
+        // Set last time action
+        StopAllCoroutines();
        StartCoroutine(DismissRecipe());
     }
 
