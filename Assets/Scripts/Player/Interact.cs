@@ -37,6 +37,8 @@ public class Interact : MonoBehaviour
         if (rhythmManager.nbCircles.Count != 0 && circlesHit == rhythmManager.nbCircles.First()) {
             if (waveManager.obstacles[0] == waveManager.obstacles.Last()){
                 waveManager.SpawnWave();
+                GameManager.instance.SwapRoles();
+                StartCoroutine(GameManager.instance.UnzoomCameraCoroutine());
             }
             if (totalScore == rhythmManager.nbCircles.First()) {
                 //Kill the enemy

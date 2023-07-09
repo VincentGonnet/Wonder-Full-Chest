@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 452273650620587698, guid: ddf7dda49941b184b9bb816de63023ba, type: 3}
+      propertyPath: m_Size.x
+      value: 7.0234547
+      objectReference: {fileID: 0}
+    - target: {fileID: 452273650620587698, guid: ddf7dda49941b184b9bb816de63023ba, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.007360816
+      objectReference: {fileID: 0}
     - target: {fileID: 536115542082708548, guid: ddf7dda49941b184b9bb816de63023ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -70,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6922017798672076274, guid: ddf7dda49941b184b9bb816de63023ba, type: 3}
       propertyPath: m_Name
-      value: RythmLongVariant Variant
+      value: RhythmLongVariant Long
       objectReference: {fileID: 0}
     - target: {fileID: 7060185712979514007, guid: ddf7dda49941b184b9bb816de63023ba, type: 3}
       propertyPath: m_LocalScale.x

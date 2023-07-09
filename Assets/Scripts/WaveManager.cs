@@ -21,16 +21,6 @@ public class WaveManager : MonoBehaviour
         this.SpawnWave();
     }
 
-    private void FixedUpdate()
-    {
-        if (this.obstacles == null) {
-            // Spawn wave if the last one is finished
-            if (this.obstacles.Last().transform.position.x < -11) {
-                this.SpawnWave();
-            }
-        }
-    }
-
     public void SpawnWave()
     {
         this.gameManager.wave++;

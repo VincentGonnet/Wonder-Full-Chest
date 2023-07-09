@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] public int playerHearts = 3;
+    [SerializeField] public int playerHearts;
     [SerializeField] public float obstacleSpeed = 1f;
     [SerializeField] public float osuSpeed = 2;
     [SerializeField] public Camera terrainCamera;
@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     private GameManager()
     {
         GameManager.instance = this;
+        
     }
 
     private void Awake()
@@ -106,6 +107,13 @@ public class GameManager : MonoBehaviour
         cameraZoomed = false;
     }
 
+    public IEnumerator UnzoomCameraCoroutine()
+    {
+        yield return new WaitForSeconds(2);
+        this.UnZoomCamera();
+        this.ResetTimeSpeed();
+    }
+
     public void ShowVignette()
     {
         currentVignetteIntensity = 0.1f;
@@ -146,6 +154,7 @@ public class GameManager : MonoBehaviour
         rt2.anchorMin = uiswapped ? new Vector2(0,0) : new Vector2(1,0);
         rt2.anchorMax = uiswapped ? new Vector2(0,0) : new Vector2(1,0);
         rt2.anchoredPosition = uiswapped ? new Vector3(350f, 165f, 0): new Vector3(-350f, 165f, 0);
+        uiswapped = !uiswapped;
     }
 
     public void DamagePlayer()

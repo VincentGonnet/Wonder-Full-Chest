@@ -706,7 +706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3676965312464392602, guid: a2bcc0d10c5c9f741a7b5d4ab682febb, type: 3}
       propertyPath: m_Name
-      value: RythmLongVariant
+      value: RhythmLongVariant
       objectReference: {fileID: 0}
     - target: {fileID: 3676965312464392602, guid: a2bcc0d10c5c9f741a7b5d4ab682febb, type: 3}
       propertyPath: m_Layer
@@ -868,7 +868,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0015809536, y: 0.0018110275}
+  m_Offset: {x: -0.0021282434, y: 0.0018110275}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -879,5 +879,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.010297, y: 0.99008465}
+  m_Size: {x: 5.008877, y: 0.99008465}
   m_EdgeRadius: 0
