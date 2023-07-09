@@ -44,6 +44,9 @@ public static class GameResources
     public static Sprite SPRITE_ITEM_BLOOD_VIAL = Resources.Load<Sprite>("Sprites/Items/Poison_bouteille");
     public static Sprite SPRITE_ITEM_SPEAR = Resources.Load<Sprite>("Sprites/Items/javelot");
     public static Sprite SPRITE_ITEM_SWORD = Resources.Load<Sprite>("Sprites/Items/sword");
+
+    public static GameObject PREFAB_CRAFT_INVENTORY_PREVIEW =
+        Resources.Load<GameObject>("Prefabs/Inventory/CraftInventoryPreview");
 }
 
 public class PrefabWithWidth

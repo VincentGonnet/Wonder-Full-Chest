@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: spear
   texture: {fileID: 21300000, guid: 1a7395f02e716314c9a6970778c856fc, type: 3}
+  positionInHand: {x: 0.689, y: 0.129}
+  orientationInHand: 378.326
