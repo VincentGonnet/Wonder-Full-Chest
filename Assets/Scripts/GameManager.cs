@@ -10,6 +10,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.InputSystem.InputAction;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,6 +40,8 @@ public class GameManager : MonoBehaviour
     private float timeDilationSpeed;
     private Vignette vg;
 
+    public int tutoStep = 0;
+    public bool isInTuto = false;
     private float currentFieldOfView = 38f;
     private float fovVelocity;
     private float vgVelocity;
@@ -47,6 +50,8 @@ public class GameManager : MonoBehaviour
     private float cameraYPositionVelocity = 0.52f;
     private bool cameraZoomed = false;
     private bool onSameKeyboard = true;
+    public bool isPaused = false;
+    public GameObject tutoUi;
     private bool uiswapped = false;
 
     private GameManager()
@@ -65,6 +70,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GameObject.Find("Terrain").GetComponent<Volume>().profile.TryGet<Vignette>(out vg);
+        tutoUi = GameObject.FindWithTag("TutoUI");
+        tutoUi.SetActive(false);
         SoundManager.instance.StartGameMusic();
     }
 
@@ -149,5 +156,52 @@ public class GameManager : MonoBehaviour
     public void FixedUpdate()
     {
         this.timeDilation = Mathf.SmoothDamp(this.timeDilation, this.targetTimeSpeed, ref timeDilationSpeed, 1.0f);
+    }
+
+    public void PlayTutorialStep()
+    {
+        tutoUi.SetActive(true);
+        tutoUi.transform.GetChild(tutoStep).gameObject.SetActive(true);
+        isPaused = true;
+        isInTuto = true;
+    }
+
+    public void StopTutorialStep()
+    {
+        int oldStep = GameManager.instance.tutoStep;
+        if (!GameManager.instance.isInTuto) return;
+        GameObject localTutoUi = GameManager.instance.tutoUi;
+        localTutoUi.transform.GetChild(GameManager.instance.tutoStep).gameObject.SetActive(false);
+        localTutoUi.SetActive(false);
+        GameManager.instance.tutoStep++;
+        GameManager.instance.EndTuto();
+        GameManager.instance.isInTuto = false;
+    }
+
+    public void EndTuto() {
+        StartCoroutine(TutoCd());
+    }
+
+    // StopTutoStep is executed twice per press otherwise.
+    private IEnumerator TutoCd()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameManager.instance.isPaused = false;
+        switch (GameManager.instance.tutoStep) {
+            case 1:
+                GameManager.instance.PlayTutorialStep();
+                break;
+            case 2:
+                GameManager.instance.PlayTutorialStep();
+                break;
+            case 3:
+                GameManager.instance.PlayTutorialStep();
+                break;
+            // case 4:
+            //     GameManager.instance.PlayTutorialStep();
+            //     break;
+            default:
+                break;
+        }
     }
 }

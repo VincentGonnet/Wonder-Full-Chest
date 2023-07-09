@@ -26,7 +26,7 @@ public class MovingObject : MonoBehaviour
         if (!GameManager.instance.scroll && isAffectedBySlowdown) {
             return;
         }
-        float speed = Constants.SCROLLING_SPEED * relativeSpeed * (isAffectedBySlowdown ? GameManager.instance.timeDilation : 1);
+        float speed = GameManager.instance.isPaused ? 0 : Constants.SCROLLING_SPEED * relativeSpeed * (isAffectedBySlowdown ? GameManager.instance.timeDilation : 1);
         this.transform.position += speed * Time.fixedDeltaTime * Vector3.left;
     }
 }
