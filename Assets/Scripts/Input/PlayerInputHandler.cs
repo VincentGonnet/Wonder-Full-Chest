@@ -48,7 +48,6 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
     public void SwapRoles(bool swapped) {
-        Debug.Log("Swapped roles");
 
         PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
         PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
@@ -107,7 +106,6 @@ public class PlayerInputHandler : MonoBehaviour
     
     IEnumerator Unpress(string key)
     {
-        Debug.Log(key);
         yield return new WaitForSeconds(0.1f);
         switch (key)
         {

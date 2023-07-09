@@ -57,10 +57,6 @@ public class InputPrompt : MonoBehaviour
         PlayerInput input1 = PlayerInput.all[0];
         PlayerInput input2 = PlayerInput.all[1];
 
-        Debug.Log(input1.currentActionMap.name);
-        Debug.Log(input2.currentActionMap.name);
-
-
         Transform tr1 = GameObject.Find("CircleTarget0").transform.GetChild(0);
         Transform tr2 = GameObject.Find("CircleTarget1").transform.GetChild(0);
         Transform tr3 = GameObject.Find("CircleTarget2").transform.GetChild(0);
