@@ -64,8 +64,7 @@ public class GameManager : MonoBehaviour
         tutoUi = GameObject.FindWithTag("TutoUI");
         tutoUi.SetActive(false);
         SoundManager.instance.StartGameMusic();
-        // TODO : uncomment 
-        // persistentData = GameObject.Find("PersistentData");
+        //persistentData = GameObject.Find("PersistentData");
 
         
         // StartCoroutine(Swap());
@@ -165,11 +164,10 @@ public class GameManager : MonoBehaviour
         // Get current heart
         GameObject health = GameObject.Find("Health");
         health.transform.GetChild(--this.playerHearts).GetComponent<Animator>().SetBool("full", false);
-        // TODO : uncomment
-        /*if (this.playerHearts < 1) {
+        if (this.playerHearts < 1) {
             SoundManager.instance.GameOver();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }*/
+        }
     }
 
     public void FixedUpdate()
