@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 549142094980929363}
   - component: {fileID: 5655570735100468381}
   - component: {fileID: 6757174679733404946}
-  - component: {fileID: 1987073874838516779}
+  - component: {fileID: 4649568523845695917}
   m_Layer: 8
   m_Name: RhythmCircle
   m_TagString: Circle
@@ -150,8 +150,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!68 &1987073874838516779
-EdgeCollider2D:
+--- !u!58 &4649568523845695917
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -179,15 +179,9 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0, y: 0.15900363}
-  - {x: 0, y: -0.16185573}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: -0.003638357, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.40540227
