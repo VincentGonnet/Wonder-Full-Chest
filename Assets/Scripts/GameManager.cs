@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     public int wave {
         get => _wave;
         set {
-            this.waveCounterText.SetText("Wave : " + value);
+            this.waveCounterText.SetText("Wave : " + (value == 100 ? "Vivaldi" : value));
             _wave = value;
         }
     }
