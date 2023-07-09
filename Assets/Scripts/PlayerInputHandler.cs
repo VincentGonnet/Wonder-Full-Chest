@@ -186,4 +186,14 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+    public void Navigate(CallbackContext context)
+    {
+        GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().Navigate(context);
+    }
+
+    public void Validate(CallbackContext context)
+    {
+        GameObject.Find("CraftInventory").GetComponent<CraftInventory>().ValidateRecipe(context);
+    }
+
 }

@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using System;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class CraftRecipes : MonoBehaviour
 {
@@ -28,14 +30,58 @@ public class CraftRecipes : MonoBehaviour
         SwitchPage(0);
     }
 
-    public ItemCraft[] filterItems(ItemType[] it){
-        // TODO: make it work for more than 1 it item
-        return it != null ? objs.Where(b => b.inputs.Where(c => it.All(d => d.itemName == c.itemName)).ToArray().Length > 0).OrderBy(c => c.inputs.Length).ToArray() : objs;
+    public ItemCraft validateItems(ItemType[] it){
+        if(it == null || it.Length == 0) return null;
+        List<ItemCraft> objectsFound = new List<ItemCraft>();
+        foreach (ItemCraft obj in objs) {
+            if (obj.inputs.Length != it.Length)
+            continue;
+            bool found = true;
+            for (int i = 0; i < it.Length; i++) {
+                if (it[i] != obj.inputs[i]) {
+                    found = false;
+                    break;
+                }
+            }
+            if (found) {
+                return obj;
+            }
+        }
+        return null;
     }
 
-    public void SwitchPage(int value, ItemType[] filter = null)
+    public ItemCraft[] filterItems(ItemType[] it){
+        if(it == null || it.Length == 0) return objs;
+        List<ItemCraft> objectsFound = new List<ItemCraft>();
+        foreach (ItemCraft obj in objs) {
+            bool found = true;
+            if(obj.inputs.Length >= it.Length) {
+                for (int i = 0; i < it.Length; i++) {
+                    if (it[i] != obj.inputs[i]) {
+                        found = false;
+                    }
+                }
+            } else {
+                found = false;
+            }
+
+            if (found) {
+                objectsFound.Add(obj);
+            }
+        }
+        return objectsFound.OrderBy(c => c.inputs.Length).ToArray();
+    }
+
+    public void Navigate(InputAction.CallbackContext value)  {
+        Debug.Log(Math.Round(value.ReadValue<float>()));
+        if (value.performed) SwitchPage((int) Math.Floor(value.ReadValue<float>()));
+    }
+
+    public void SwitchPage(int value)
     {
-        ItemType it1 = Resources.Load<ItemType>("Items/String");
+        ItemType[] filter = GameObject.Find("CraftInventory").GetComponent<CraftInventory>().currentRecipe;
+        
+        ItemType it1 = Resources.Load<ItemType>("Items/Stick");
         ItemType it2 = Resources.Load<ItemType>("Items/Leather");
         objsFiltered = filterItems(new ItemType[] { it1, it2 });
 
@@ -90,25 +136,15 @@ public class CraftRecipes : MonoBehaviour
             rt.anchoredPosition = new Vector2(0, (-(scaleY / 2) - scaleY * i));
             if(((Math.Min(objs.Length, maxRow) - 1) / 2) == i) item.GetComponent<Image>().sprite = spriteSelectedCell;
 
-            GameObject image = Instantiate(prefabGridImage);
-            image.name = "Image";
-            image.transform.SetParent(item.transform);
-            RectTransform rt2 = image.GetComponent<RectTransform>();
-            rt2.anchorMin = new Vector2(0, 0.5f);
-            rt2.anchorMax = new Vector2(0, 0.5f);
-            rt2.anchoredPosition = new Vector2(30, 0);
-            image.GetComponent<Image>().sprite = foundItem.output.texture;
-            image.transform.localScale = new Vector2(0.8f, 0.8f);
-
             for (int j = 0; j < foundItem.inputs.Length; j++)
             {
                 GameObject image2 = Instantiate(prefabGridImage);
                 image2.name = "Image";
                 image2.transform.SetParent(item.transform);
                 RectTransform rt3 = image2.GetComponent<RectTransform>();
-                rt3.anchorMin = new Vector2(1, 0.5f);
-                rt3.anchorMax = new Vector2(1, 0.5f);
-                rt3.anchoredPosition = new Vector2(- 20 - (44 * (foundItem.inputs.Length - j - 1)) - 10, 0);
+                rt3.anchorMin = new Vector2(0, 0.5f);
+                rt3.anchorMax = new Vector2(0, 0.5f);
+                rt3.anchoredPosition = new Vector2(20 + (44 * (foundItem.inputs.Length - j - 1)) + 10, 0);
                 image2.GetComponent<Image>().sprite = foundItem.inputs[j].texture;
                 image2.transform.localScale = new Vector2(0.8f, 0.8f);
 
@@ -117,12 +153,22 @@ public class CraftRecipes : MonoBehaviour
                     image3.name = "Arrow";
                     image3.transform.SetParent(item.transform);
                     RectTransform rt4 = image3.GetComponent<RectTransform>();
-                    rt4.anchorMin = new Vector2(1, 0.5f);
-                    rt4.anchorMax = new Vector2(1, 0.5f);
-                    rt4.anchoredPosition = new Vector2(-43 * (foundItem.inputs.Length - j - 1) - 10, 0);
+                    rt4.anchorMin = new Vector2(0, 0.5f);
+                    rt4.anchorMax = new Vector2(0, 0.5f);
+                    rt4.anchoredPosition = new Vector2(43 * (foundItem.inputs.Length - j - 1) + 10, 0);
                     image3.transform.localScale = new Vector2(0.8f, 0.8f);
                 }
             }
+
+            GameObject image = Instantiate(prefabGridImage);
+            image.name = "Image";
+            image.transform.SetParent(item.transform);
+            RectTransform rt2 = image.GetComponent<RectTransform>();
+            rt2.anchorMin = new Vector2(1, 0.5f);
+            rt2.anchorMax = new Vector2(1, 0.5f);
+            rt2.anchoredPosition = new Vector2(-35, 0);
+            image.GetComponent<Image>().sprite = foundItem.output.texture;
+            image.transform.localScale = new Vector2(0.8f, 0.8f);
         }
 
     }
