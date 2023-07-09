@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba5dbd16786c7448b3899d8b9a1798e, type: 3}
   m_Name: Fish
   m_EditorClassIdentifier: 
-  resolvers: []
-  drops: []
+  resolvers:
+  - {fileID: 11400000, guid: 19662e99c29cd104ea4628eddea14c10, type: 2}
   sprite: {fileID: 222696194, guid: 8518584bd50d6fa438fe724a7376b53e, type: 3}
   spriteSize: {x: 1, y: 1, z: 0}
   enemyId: 0

@@ -36,8 +36,8 @@ public class Inventory : MonoBehaviour
     private bool CheckPassEnemy(GameObject obstacleGO)
     {
         Obstacle obstacle = obstacleGO.GetComponent<Obstacle>();
-        string[] resolvers = obstacle.data.resolvers;
-        if (resolvers.Any(this.currentItem.name.Contains))
+        ItemBase[] resolvers = obstacle.data.resolvers;
+        if (resolvers.Any(this.currentItem.name.Equals))
         {
             // TODO: Properly kill the enemy, unlock next craft.
             Destroy(obstacleGO);

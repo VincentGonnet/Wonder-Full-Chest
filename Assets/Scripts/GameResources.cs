@@ -14,6 +14,15 @@ public static class GameResources
     public static GameObject PREFAB_OBSTACLE_RABBIT = Resources.Load<GameObject>("Prefabs/Obstacles/Rabbit");
     public static GameObject PREFAB_OBSTACLE_FISH = Resources.Load<GameObject>("Prefabs/Obstacles/Fish");
     public static GameObject PREFAB_OBSTACLE_SLIME = Resources.Load<GameObject>("Prefabs/Obstacles/Slime");
+    public static GameObject PREFAB_OBSTACLE_FARMER = Resources.Load<GameObject>("Prefabs/Obstacles/Farmer");
+    public static GameObject PREFAB_OBSTACLE_ANGEL = Resources.Load<GameObject>("Prefabs/Obstacles/Angel");
+    public static GameObject PREFAB_OBSTACLE_DEMON = Resources.Load<GameObject>("Prefabs/Obstacles/Demon");
+    public static GameObject PREFAB_OBSTACLE_DINOSAUR = Resources.Load<GameObject>("Prefabs/Obstacles/Dinosaur");
+    public static GameObject PREFAB_OBSTACLE_FAIRY = Resources.Load<GameObject>("Prefabs/Obstacles/Fairy");
+    public static GameObject PREFAB_OBSTACLE_GHOST = Resources.Load<GameObject>("Prefabs/Obstacles/Ghost");
+    public static GameObject PREFAB_OBSTACLE_SNAKE = Resources.Load<GameObject>("Prefabs/Obstacles/Snake");
+    public static GameObject PREFAB_OBSTACLE_SOLDIER = Resources.Load<GameObject>("Prefabs/Obstacles/Soldier");
+    public static GameObject PREFAB_OBSTACLE_WEREWOLF = Resources.Load<GameObject>("Prefabs/Obstacles/Werewolf");
     
     public static PrefabWithWidth PREFAB_RYTHM_CIRCLE = new PrefabWithWidth("Prefabs/Rythm/RythmCircle");
     public static GameObject PREFAB_RYTHM_HOLD_CIRCLE = Resources.Load<GameObject>("Prefabs/Rythm/RythmLongVariant");

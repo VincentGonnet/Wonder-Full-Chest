@@ -48,6 +48,11 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    public void RemoveObstacle() {
+        Destroy(obstacles[currentObstacleIndex]);
+        obstacles.RemoveAt(currentObstacleIndex);
+    }
+
     private ObstacleMetadata[] GenerateObstacleOrder(int waveDifficulty)
     {
         ObstacleMetadata[] possibleObstacles = ObstacleMetadata.OBSTACLES.Where(obstacle => obstacle.minWaveSpawn <= this.gameManager.wave).ToArray();

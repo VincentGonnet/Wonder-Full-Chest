@@ -941,6 +941,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 4259113836184933928, guid: 45c547c7d9eb26b4cba16c9aada168b9, type: 3}
+      propertyPath: prefabGridArrow
+      value: 
+      objectReference: {fileID: 3942230964726143408, guid: 7c05903b5ebe2ac418cd201a63a34668, type: 3}
     - target: {fileID: 6362942918565148630, guid: 45c547c7d9eb26b4cba16c9aada168b9, type: 3}
       propertyPath: m_Pivot.x
       value: 0

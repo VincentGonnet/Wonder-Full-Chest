@@ -38,8 +38,7 @@ public class Interact : MonoBehaviour
             if (totalScore == rhythmManager.nbCircles) {
                 //Kill the enemy
                 Debug.Log("enemy kill");
-                Destroy(waveManager.obstacles[0]);
-                waveManager.obstacles.RemoveAt(0);
+                waveManager.RemoveObstacle();
                 enteringRange = false;
                 rhythmManager.nbCircles = circlesHit = circleTargetFirst.score = circleTargetSecond.score = circleTargetThird.score = circleTargetFourth.score
                     = circleTargetFirst.failed = circleTargetSecond.failed = circleTargetThird.failed = circleTargetFourth.failed = 0;
@@ -52,11 +51,11 @@ public class Interact : MonoBehaviour
                 {
                     Debug.Log("enemy kill");
                 } else {
-                    Destroy(waveManager.obstacles[waveManager.currentObstacleIndex]); 
+                     waveManager.RemoveObstacle();
                 }
             } else {
                 GameManager.instance.DamagePlayer();
-                Destroy(waveManager.obstacles[waveManager.currentObstacleIndex]);
+                waveManager.RemoveObstacle();
             }
 
             enteringRange = false;
