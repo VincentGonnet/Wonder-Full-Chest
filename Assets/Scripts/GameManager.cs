@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Transform playerTransform;
     [SerializeField] public GameObject inputPrefab;
     [SerializeField] private TextMeshProUGUI waveCounterText;
-    [SerializeField] public int lastTutoStepIndex;
 
     public int wave {
         get => _wave;
@@ -215,9 +214,12 @@ public class GameManager : MonoBehaviour
             case 3:
                 GameManager.instance.PlayTutorialStep();
                 break;
-            // case 4:
-            //     GameManager.instance.PlayTutorialStep();
-            //     break;
+            case 4:
+                GameManager.instance.PlayTutorialStep();
+                break;
+            case 5:
+                GameManager.instance.PlayTutorialStep();
+                break;
             default:
                 break;
         }

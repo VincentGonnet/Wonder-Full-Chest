@@ -10,8 +10,10 @@ public class MovingObject : MonoBehaviour
 
     public void Awake()
     {
-        obstacleSpeed = GameObject.Find("GameManager").GetComponent<GameManager>().obstacleSpeed;
-        osuSpeed = GameObject.Find("GameManager").GetComponent<GameManager>().osuSpeed;
+        //obstacleSpeed = GameObject.Find("GameManager").GetComponent<GameManager>().obstacleSpeed;
+        obstacleSpeed = GameManager.instance == null ? 1 : GameManager.instance.obstacleSpeed;
+        //osuSpeed = GameObject.Find("GameManager").GetComponent<GameManager>().osuSpeed;
+        osuSpeed = GameManager.instance == null ? 1 : GameManager.instance.osuSpeed;
         if (this.TryGetComponent<Rigidbody2D>(out Rigidbody2D component)) {
             if (this.TryGetComponent<Obstacle>(out Obstacle obstacleComp)) {
                 relativeSpeed = obstacleSpeed;
