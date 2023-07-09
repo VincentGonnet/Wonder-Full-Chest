@@ -100,6 +100,16 @@ public class CraftInventory : MonoBehaviour
 
         // Update recipes
         GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
+
+       if(GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().filterItems(currentRecipe.ToArray()).Length == 0){
+            currentRecipe.Clear();
+
+            // Set recipe on screen
+            craftingTablePreview.DrawRecipe(this.currentRecipe.ToArray());
+
+            // Update recipes
+            GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
+       }
     }
 
     IEnumerator DismissRecipe() {
