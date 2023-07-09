@@ -211,10 +211,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0345d3488ff8e0342b63f6fa8d20b3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionDistance: 5
   rhythmManager: {fileID: 0}
-  circleTargetTop: {fileID: 0}
-  circleTargetBottom: {fileID: 0}
+  circleTargetFirst: {fileID: 0}
+  circleTargetSecond: {fileID: 0}
+  circleTargetThird: {fileID: 0}
+  circleTargetFourth: {fileID: 0}
   waveManager: {fileID: 0}
   totalScore: 0
   circlesHit: 0
@@ -250,7 +251,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.030651927, y: 0.0027865171}
+  m_Offset: {x: -0.030651927, y: -0.29212677}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -261,5 +262,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.81608844, y: 1.1226075}
+  m_Size: {x: 0.81608844, y: 1.712434}
   m_EdgeRadius: 0

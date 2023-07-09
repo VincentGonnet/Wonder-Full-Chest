@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (cameraZoomed) {
-            currentCameraYPosition = -1.3f + playerTransform.localPosition.y - -1.213943f;
+            currentCameraYPosition = -1.24f + playerTransform.localPosition.y - -1.213943f;
         }
         terrainCamera.fieldOfView = Mathf.SmoothDamp(terrainCamera.fieldOfView, currentFieldOfView, ref fovVelocity, 0.3f);
         terrainCamera.transform.localPosition = new Vector3(
