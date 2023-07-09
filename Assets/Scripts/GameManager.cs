@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GameObject.Find("Terrain").GetComponent<Volume>().profile.TryGet<Vignette>(out vg);
+        SoundManager.instance.StartGameMusic();
     }
 
     private void Update()
