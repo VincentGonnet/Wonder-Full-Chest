@@ -818,8 +818,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -647.3096, y: -6.3953857}
-  m_SizeDelta: {x: 343.7573, y: 105.8052}
+  m_AnchoredPosition: {x: -647.3096, y: -1.4833069}
+  m_SizeDelta: {x: 343.7573, y: 115.6295}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &659066681140447596
 CanvasRenderer:
@@ -1924,6 +1924,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 53583627025963726}
   - {fileID: 8711624892136969435}
   - {fileID: 3595695951832896694}
   - {fileID: 7934759791799462195}
@@ -2160,8 +2161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -675.70667, y: -23.3127}
-  m_SizeDelta: {x: 400.5515, y: 123.6027}
+  m_AnchoredPosition: {x: -679, y: -11}
+  m_SizeDelta: {x: 400.5515, y: 144.6547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3294034608592115038
 CanvasRenderer:
@@ -2449,8 +2450,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -696, y: 127}
-  m_SizeDelta: {x: -263.5757, y: -154.0954}
+  m_AnchoredPosition: {x: -707.9121, y: 137}
+  m_SizeDelta: {x: -270.1515, y: -154.0954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3351981851536840681
 CanvasRenderer:
@@ -2705,6 +2706,82 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6184112094137906686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53583627025963726}
+  - component: {fileID: 3287842216257889942}
+  - component: {fileID: 8674712633964852317}
+  m_Layer: 0
+  m_Name: CraftContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &53583627025963726
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184112094137906686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2322111127091619146}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -468.66373, y: 71.62216}
+  m_SizeDelta: {x: 342.6725, y: 69.0442}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3287842216257889942
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184112094137906686}
+  m_CullTransparentMesh: 1
+--- !u!114 &8674712633964852317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184112094137906686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8784314}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9d0755b67176ac843a6c444bb25fdc9b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6214701718040942315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2941,10 +3018,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Perform combos to fill out the recipe with ingredients, then perform the
-    craft combo.
+  m_text: 'Navigate through the recipe book with the arrow keys (PC) or D-Pad (controller).
+    Then, perform combos to fill out the recipe with ingredients, then press Enter
+    (PC) or Joystick-Up (Controller) to validate.
 
-    Be quick, the recipe will be cleared after a few seconds !'
+    Be quick, the recipe will
+    be cleared after a few seconds !'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
