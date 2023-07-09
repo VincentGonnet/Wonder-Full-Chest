@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -115,7 +116,12 @@ public class GameManager : MonoBehaviour
     
     public void SwapRoles()
     {
+        StartCoroutine(SwapRolesAnimation());
+    }
+
+    IEnumerator SwapRolesAnimation() {
         GameObject.Find("Swap").GetComponent<SwapUIManager>().StartAnimation();
+        yield return new WaitForSeconds(0.9f);
         PlayerInput.all[0].gameObject.GetComponent<PlayerInputHandler>().SwapRoles();
         
         // TODO: Make UI bg rotate as well and also, make sure that we adapt to other values
