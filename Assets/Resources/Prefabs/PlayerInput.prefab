@@ -276,10 +276,10 @@ MonoBehaviour:
     m_ActionName: Rhythm/TutoResume[/Keyboard/anyKey]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1775250360028389523, guid: 968683532fb7302e1b3cc0a405629198, type: 3}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StopTutorialStep
-        m_Mode: 1
+      - m_Target: {fileID: 6729008430313457792}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: Navigate
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -288,8 +288,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 27a447b9-b821-4342-96e9-c88fdeec8e39
-    m_ActionName: Craft/TutoResume[/Keyboard/anyKey]
+    m_ActionId: 20328037-c3f6-4dae-b788-6eb367727f82
+    m_ActionName: Craft/Navigate[/Keyboard/upArrow,/Keyboard/downArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6729008430313457792}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: Validate
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8375e97d-e7bd-4392-8507-d384c6fb2fb2
+    m_ActionName: Craft/Validate[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Rhythm

@@ -145,7 +145,7 @@ public class CraftRecipes : MonoBehaviour
                 rt3.anchorMin = new Vector2(0, 0.5f);
                 rt3.anchorMax = new Vector2(0, 0.5f);
                 rt3.anchoredPosition = new Vector2(20 + (44 * (foundItem.inputs.Length - j - 1)) + 10, 0);
-                image2.GetComponent<Image>().sprite = foundItem.inputs[j].texture;
+                image2.GetComponent<Image>().sprite = foundItem.inputs[foundItem.inputs.Length - 1 - j].texture;
                 image2.transform.localScale = new Vector2(0.8f, 0.8f);
 
                 if (j != (foundItem.inputs.Length - 1))
