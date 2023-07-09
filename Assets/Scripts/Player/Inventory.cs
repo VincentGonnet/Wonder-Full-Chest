@@ -21,14 +21,6 @@ public class Inventory : MonoBehaviour
     }
     public bool UseCurrentItem(GameObject obstacleGO)
     {
-        
-        if (this.currentItem == null)
-        {
-            Debug.LogError("Couldn't get current item : not defined");
-            return false;
-        }
-
-        // TODO: Kill/Pass enemy
         bool passed = CheckPassEnemy(obstacleGO);
 
         this.currentItem = this.nextItem;
@@ -39,22 +31,25 @@ public class Inventory : MonoBehaviour
 
     private bool CheckPassEnemy(GameObject obstacleGO)
     {
+        if (this.currentItem is null) {
+            return false;
+        }
         Obstacle obstacle = obstacleGO.GetComponent<Obstacle>();
         ItemBase[] resolvers = obstacle.data.resolvers;
         if (resolvers.Any(this.currentItem.name.Equals))
         {
-            // TODO: Properly kill the enemy, unlock next craft.
-            Destroy(obstacleGO);
             return true;
         } else {
-            // TODO: Make player take one hit. 
-            GameObject.Find("GameManager").GetComponent<GameManager>().DamagePlayer();
             return false;
         }
     }
 
     private void RenderItem()
     {
+        if (currentItem is null) {
+            this.itemRenderer.sprite = null;
+            return;
+        }
         this.itemRenderer.sprite = currentItem.output.texture;
         this.itemRenderer.transform.localPosition = currentItem.output.positionInHand;
         this.itemRenderer.transform.localRotation = Quaternion.Euler(0, 0, currentItem.output.orientationInHand);

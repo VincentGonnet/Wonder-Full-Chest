@@ -43,22 +43,19 @@ public class Interact : MonoBehaviour
             }
             if (totalScore == rhythmManager.nbCircles.First()) {
                 //Kill the enemy
-                Debug.Log("enemy kill");
                 GameManager.instance.ResetTimeSpeed();
                 GameManager.instance.UnZoomCamera();
                 GameManager.instance.HideVignette();
                 // Check if the right ItemCraft is in hand
-                if (gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[0]))
+                if (!gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[0]))
                 {
-                    Debug.Log("enemy kill");
-                } else {
-                     waveManager.RemoveObstacle();
+                    GameManager.instance.DamagePlayer();
                 }
             } else {
                 GameManager.instance.DamagePlayer();
             }
-
             waveManager.RemoveObstacle();
+
             rhythmManager.EndWave();
             enteringRange = false;
             circlesHit = circleTargetFirst.score = circleTargetSecond.score = circleTargetThird.score = circleTargetFourth.score 
