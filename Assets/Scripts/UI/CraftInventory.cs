@@ -65,7 +65,7 @@ public class CraftInventory : MonoBehaviour
                 image.name = "Image";
                 image.transform.SetParent(item.transform);
                 RectTransform rt4 = image.GetComponent<RectTransform>();
-                rt4.anchoredPosition = new Vector2(0, -26);
+                rt4.anchoredPosition = new Vector2(0, 0);
                 image.GetComponent<Image>().sprite = foundItem.texture;
             }
         }
