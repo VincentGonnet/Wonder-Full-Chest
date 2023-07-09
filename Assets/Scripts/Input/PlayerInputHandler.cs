@@ -33,20 +33,40 @@ public class PlayerInputHandler : MonoBehaviour
     
     void Start()
     {
+        Debug.Log("Count : " + PlayerInput.all.Count);
         if (PlayerInput.all.Count == 2) {
             PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
             PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
             PlayerInput.all[0].actions.FindActionMap(currentInputScheme[0]).Enable();
+            PlayerInput.all[0].actions.FindActionMap(currentInputScheme[1]).Disable();
+            PlayerInput.all[0].defaultActionMap = currentInputScheme[0];
             PlayerInput.all[1].actions.FindActionMap(currentInputScheme[1]).Enable();
+            PlayerInput.all[1].actions.FindActionMap(currentInputScheme[0]).Disable();
+            PlayerInput.all[1].defaultActionMap = currentInputScheme[1];
+
+            GameObject.Find("InputManager").GetComponent<InputPrompt>().Generate();
         }
     }
 
+    private int countTKtsupprimePas = 0;
     public void SwapRoles() {
+        if (countTKtsupprimePas == 0) {
+            countTKtsupprimePas++;
+            return;
+        } else {
+            countTKtsupprimePas = 0;
+        }
         PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
         PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
         PlayerInput.all[0].actions.FindActionMap(currentInputScheme[1]).Enable();
+        PlayerInput.all[0].actions.FindActionMap(currentInputScheme[0]).Disable();
+        PlayerInput.all[0].defaultActionMap = currentInputScheme[1];
         PlayerInput.all[1].actions.FindActionMap(currentInputScheme[0]).Enable();
+        PlayerInput.all[1].actions.FindActionMap(currentInputScheme[1]).Disable();
+        PlayerInput.all[1].defaultActionMap = currentInputScheme[0];
         currentInputScheme = new string[] { currentInputScheme[1], currentInputScheme[0] };
+
+        GameObject.Find("InputManager").GetComponent<InputPrompt>().Generate();
     }
 
     public void OnTestJ1(CallbackContext context) {
@@ -55,6 +75,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void RhythmButton1(CallbackContext context)
     {
+        Debug.Log("OSU1");
         targetOSU1.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
@@ -65,6 +86,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void RhythmButton3(CallbackContext context)
     {
+        SwapRoles();
        targetOSU3.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
@@ -92,6 +114,7 @@ public class PlayerInputHandler : MonoBehaviour
     
     IEnumerator Unpress(string key)
     {
+        Debug.Log(key);
         yield return new WaitForSeconds(0.1f);
         switch (key)
         {
@@ -121,7 +144,7 @@ public class PlayerInputHandler : MonoBehaviour
     IEnumerator DelayPress()
     {
         yield return new WaitForSeconds(0.1f);
-        Debug.Log("pressed delayed");
+        // Debug.Log("pressed delayed");
         PerformAction();
     }
 

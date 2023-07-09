@@ -209,7 +209,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2222542272819391185, guid: e916448a64b81c70db96469625a62e72, type: 3}
       propertyPath: m_Name
-      value: CircleTarget2
+      value: CircleTarget1
       objectReference: {fileID: 0}
     - target: {fileID: 2920480785959265116, guid: e916448a64b81c70db96469625a62e72, type: 3}
       propertyPath: gameManager
@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 535369732}
     - target: {fileID: 4161287562681827080, guid: e916448a64b81c70db96469625a62e72, type: 3}
       propertyPath: m_Name
-      value: CircleTarget1
+      value: CircleTarget0
       objectReference: {fileID: 0}
     - target: {fileID: 6059899613840863616, guid: e916448a64b81c70db96469625a62e72, type: 3}
       propertyPath: m_RootOrder
@@ -488,7 +488,7 @@ PrefabInstance:
     - target: {fileID: 3756530375049773263, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
       propertyPath: circleTargetTop
       value: 
-      objectReference: {fileID: 662085610}
+      objectReference: {fileID: 0}
     - target: {fileID: 3756530375049773263, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
       propertyPath: circleTargetFirst
       value: 
@@ -500,7 +500,7 @@ PrefabInstance:
     - target: {fileID: 3756530375049773263, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
       propertyPath: circleTargetBottom
       value: 
-      objectReference: {fileID: 634517894}
+      objectReference: {fileID: 0}
     - target: {fileID: 3756530375049773263, guid: 7c42cef003c3ba9ac8910aebe6595d45, type: 3}
       propertyPath: circleTargetFourth
       value: 
@@ -893,6 +893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1428137720}
   - component: {fileID: 1428137721}
+  - component: {fileID: 1428137722}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -959,6 +960,24 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &1428137722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428137718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81995892779e33d488e4b3b761b6f6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionMap:
+    m_Name: Action Map
+    m_Id: 9236d792-b143-4e89-bb19-a0178c18039c
+    m_Asset: {fileID: 0}
+    m_Actions: []
+    m_Bindings: []
 --- !u!4 &1532891677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8196783312032239781, guid: ea85dda844fff5c82a9e5918ada193fd, type: 3}
