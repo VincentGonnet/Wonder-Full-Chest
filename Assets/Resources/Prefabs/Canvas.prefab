@@ -699,6 +699,7 @@ MonoBehaviour:
   prefabGridText: {fileID: 8498115796265630768, guid: 3ffbd9d23663c35449fec5a92babf45b, type: 3}
   prefabGridImage: {fileID: 3942230964726143408, guid: 51a49f16d07e12c4eaa07748738f3d4c, type: 3}
   craftingTablePreview: {fileID: 1102233725155192149}
+  inventory: {fileID: 0}
   currentRecipe: []
 --- !u!1 &1879474608091468666
 GameObject:
@@ -1105,7 +1106,7 @@ MonoBehaviour:
   prefabGridText: {fileID: 8498115796265630768, guid: 3ffbd9d23663c35449fec5a92babf45b, type: 3}
   prefabGridImage: {fileID: 3942230964726143408, guid: 51a49f16d07e12c4eaa07748738f3d4c, type: 3}
   prefabGridArrow: {fileID: 3942230964726143408, guid: 7c05903b5ebe2ac418cd201a63a34668, type: 3}
-  prefabEnemyType: {fileID: 0}
+  prefabEnemyType: {fileID: 4860192514034342596, guid: 416a930199bf8f4428e32ced326913ad, type: 3}
   spriteSelectedCell: {fileID: 21300000, guid: a5cf878faa0ec9e43acc462b6cb29600, type: 3}
   maxRow: 7
   position: 0
