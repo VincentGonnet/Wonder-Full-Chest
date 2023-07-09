@@ -17,13 +17,15 @@ public class CraftInventory : MonoBehaviour
 
     [SerializeField] public GameObject prefabGridImage;
 
+    private ItemType[] objs;
     private Transform currentHightlight;
+    public ItemType[] currentRecipe = new ItemType[] {};
 
     // Start is called before the first frame update
     void Start()
     {
         // Get Obj List to display
-        ItemType[] objs = Resources.LoadAll<ItemType>("Items");
+        objs = Resources.LoadAll<ItemType>("Items").OrderBy(c => c.gridPosition).ToArray();
 
         // Pass from scale to grid 3*4 with all children
         float scaleX = this.GetComponent<RectTransform>().sizeDelta.x / 3;
@@ -69,8 +71,8 @@ public class CraftInventory : MonoBehaviour
         }
     }
 
-    // Highlight Grid Cell (gridRow & gridColumn start at 0)
-    void HighlightGridCell(int gridRow, int gridColumn)
+    // Select Grid Cell (gridRow & gridColumn start at 0)
+    void SelectGridCell(int gridRow, int gridColumn)
     {
         if (currentHightlight)
         {
@@ -82,62 +84,101 @@ public class CraftInventory : MonoBehaviour
 
         column.GetComponent<Image>().color = Color.blue;
         currentHightlight = column;
+
+        // Add To Current Recipe
+        currentRecipe.Append(objs[gridRow*3 + gridColumn]);
+
+        // Set recipe on screen
+
+        // Set last time action
+        StopAllCoroutines();
+        StartCoroutine(DismissRecipe());
+
+        // Update recipes
+        GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
+    }
+
+    IEnumerator DismissRecipe() {
+        yield return new WaitForSeconds(3f);
+
+        if(currentRecipe != null && currentRecipe.Length > 0) {
+            currentRecipe = new ItemType[] {};
+
+            // Update recipes
+            GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
+        }
+    }
+
+    public void ValidateRecipe(InputAction.CallbackContext context) {
+        if(context.performed) {
+            ItemCraft itemCraft = GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().validateItems(currentRecipe);
+            if(itemCraft != null) {
+                //TODO: send item to hand
+            }else{
+                //TODO: Indicate incorrect
+            }
+
+            currentRecipe = new ItemType[] {};
+
+            // Update recipes
+            GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().SwitchPage(0);
+        }
     }
 
     public void OnCase1() {
-        HighlightGridCell(0, 0);
+        SelectGridCell(0, 0);
     }
 
     public void OnCase2() {
-         HighlightGridCell(0, 1);
+        SelectGridCell(0, 1);
     }
 
     public void OnCase3() {
-        HighlightGridCell(0, 2);
+        SelectGridCell(0, 2);
     }
 
     public void OnCase4()
     {
-        HighlightGridCell(1, 0);
+        SelectGridCell(1, 0);
     }
 
     public void OnCase5()
     {
-        HighlightGridCell(1, 1);
+        SelectGridCell(1, 1);
     }
 
     public void OnCase6()
     {
-        HighlightGridCell(1, 2);
+        SelectGridCell(1, 2);
     }
 
     public void OnCase7()
     {
-        HighlightGridCell(2, 0);
+        SelectGridCell(2, 0);
     }
 
     public void OnCase8()
     {
-        HighlightGridCell(2, 1);
+        SelectGridCell(2, 1);
     }
 
     public void OnCase9()
     {
-        HighlightGridCell(2, 2);
+        SelectGridCell(2, 2);
     }
 
     public void OnCase10()
     {
-        HighlightGridCell(3, 0);
+        SelectGridCell(3, 0);
     }
 
     public void OnCase11()
     {
-        HighlightGridCell(3, 1);
+        SelectGridCell(3, 1);
     }
 
     public void OnCase12()
     {
-        HighlightGridCell(3, 2);
+        SelectGridCell(3, 2);
     }
 }

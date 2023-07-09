@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     private float currentCameraYPosition = 0.52f;
     private float cameraYPositionVelocity = 0.52f;
     private bool cameraZoomed = false;
-    private bool onSameKeyboard = true;
+    private bool onSameKeyboard = false;
     private bool uiswapped = false;
 
     private GameManager()

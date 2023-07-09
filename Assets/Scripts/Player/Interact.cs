@@ -48,7 +48,7 @@ public class Interact : MonoBehaviour
                 {
                     Debug.Log("enemy kill");
                 } else {
-                     waveManager.RemoveObstacle();
+                    waveManager.RemoveObstacle();
                 }
             } else {
                 GameManager.instance.DamagePlayer();

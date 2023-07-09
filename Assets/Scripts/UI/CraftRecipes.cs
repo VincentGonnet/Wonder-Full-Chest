@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using System;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class CraftRecipes : MonoBehaviour
 {
@@ -28,14 +30,58 @@ public class CraftRecipes : MonoBehaviour
         SwitchPage(0);
     }
 
-    public ItemCraft[] filterItems(ItemType[] it){
-        // TODO: make it work for more than 1 it item
-        return it != null ? objs.Where(b => b.inputs.Where(c => it.All(d => d.itemName == c.itemName)).ToArray().Length > 0).OrderBy(c => c.inputs.Length).ToArray() : objs;
+    public ItemCraft validateItems(ItemType[] it){
+        if(it == null || it.Length == 0) return null;
+        List<ItemCraft> objectsFound = new List<ItemCraft>();
+        foreach (ItemCraft obj in objs) {
+            if (obj.inputs.Length != it.Length)
+            continue;
+            bool found = true;
+            for (int i = 0; i < it.Length; i++) {
+                if (it[i] != obj.inputs[i]) {
+                    found = false;
+                    break;
+                }
+            }
+            if (found) {
+                return obj;
+            }
+        }
+        return null;
     }
 
-    public void SwitchPage(int value, ItemType[] filter = null)
+    public ItemCraft[] filterItems(ItemType[] it){
+        if(it == null || it.Length == 0) return objs;
+        List<ItemCraft> objectsFound = new List<ItemCraft>();
+        foreach (ItemCraft obj in objs) {
+            bool found = true;
+            if(obj.inputs.Length >= it.Length) {
+                for (int i = 0; i < it.Length; i++) {
+                    if (it[i] != obj.inputs[i]) {
+                        found = false;
+                    }
+                }
+            } else {
+                found = false;
+            }
+
+            if (found) {
+                objectsFound.Add(obj);
+            }
+        }
+        return objectsFound.OrderBy(c => c.inputs.Length).ToArray();
+    }
+
+    public void Navigate(InputAction.CallbackContext value)  {
+        Debug.Log(Math.Round(value.ReadValue<float>()));
+        if (value.performed) SwitchPage((int) Math.Floor(value.ReadValue<float>()));
+    }
+
+    public void SwitchPage(int value)
     {
-        ItemType it1 = Resources.Load<ItemType>("Items/String");
+        ItemType[] filter = GameObject.Find("CraftInventory").GetComponent<CraftInventory>().currentRecipe;
+        
+        ItemType it1 = Resources.Load<ItemType>("Items/Stick");
         ItemType it2 = Resources.Load<ItemType>("Items/Leather");
         objsFiltered = filterItems(new ItemType[] { it1, it2 });
 
