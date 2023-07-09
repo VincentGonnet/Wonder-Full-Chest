@@ -794,7 +794,7 @@
                 {
                     "name": "",
                     "id": "3249da14-d78a-490f-9dcd-0bb50d32c3e4",
-                    "path": "<Keyboard>/k",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard2",
@@ -893,7 +893,7 @@
                 {
                     "name": "",
                     "id": "0c813283-f167-4922-b3db-2f996da8409c",
-                    "path": "<Keyboard>/i",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard2",
