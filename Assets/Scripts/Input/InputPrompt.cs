@@ -36,12 +36,22 @@ public class InputPrompt : MonoBehaviour
 
     GameObject inputRow;
     GameObject inputColumn;
-    GameObject CSlot1 = GameObject.Find("CSlot1");
-    GameObject CSlot2 = GameObject.Find("CSlot2");
-    GameObject CSlot3 = GameObject.Find("CSlot3");
-    GameObject CSlot4 = GameObject.Find("CSlot4");
-    GameObject CSlot5 = GameObject.Find("CSlot5");
-    GameObject CSlot6 = GameObject.Find("CSlot6");
+    GameObject CSlot1;
+    GameObject CSlot2;
+    GameObject CSlot3;
+    GameObject CSlot4;
+    GameObject CSlot5;
+    GameObject CSlot6;
+ 
+    private void Start()
+    {
+        CSlot1 = GameObject.Find("CSlot1");
+        CSlot2 = GameObject.Find("CSlot2");
+        CSlot3 = GameObject.Find("CSlot3");
+        CSlot4 = GameObject.Find("CSlot4");
+        CSlot5 = GameObject.Find("CSlot5");
+        CSlot6 = GameObject.Find("CSlot6");
+    }
     public void Generate()
     {
         PlayerInput input1 = PlayerInput.all[0];
