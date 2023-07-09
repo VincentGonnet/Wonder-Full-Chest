@@ -47,7 +47,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    public void SwapRoles() {
+    public void SwapRoles(bool swapped) {
         Debug.Log("Swapped roles");
 
         PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
@@ -61,6 +61,7 @@ public class PlayerInputHandler : MonoBehaviour
         currentInputScheme = new string[] { currentInputScheme[1], currentInputScheme[0] };
 
         GameObject.Find("InputManager").GetComponent<InputPrompt>().Generate();
+        GameObject.Find("InputManager").GetComponent<InputPrompt>().SwapCslotLoc(swapped);
     }
 
     public void OnTestJ1(CallbackContext context) {
