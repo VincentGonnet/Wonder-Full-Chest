@@ -31,21 +31,16 @@ public class Interact : MonoBehaviour
 
         totalScore = circleTargetFirst.score + circleTargetSecond.score + circleTargetThird.score + circleTargetFourth.score;
         circlesHit = totalScore + circleTargetFirst.failed + circleTargetSecond.failed + circleTargetThird.failed + circleTargetFourth.failed;
-        if (circlesHit == rhythmManager.nbCircles && rhythmManager.nbCircles != 0) {
+        if (rhythmManager.nbCircles.Count != 0 && circlesHit == rhythmManager.nbCircles.First()) {
             if (waveManager.obstacles[waveManager.currentObstacleIndex] == waveManager.obstacles.Last()){
                 waveManager.SpawnWave();
             }
-            if (totalScore == rhythmManager.nbCircles) {
+            if (totalScore == rhythmManager.nbCircles.First()) {
                 //Kill the enemy
                 Debug.Log("enemy kill");
-                waveManager.RemoveObstacle();
-                enteringRange = false;
-                rhythmManager.nbCircles = circlesHit = circleTargetFirst.score = circleTargetSecond.score = circleTargetThird.score = circleTargetFourth.score
-                    = circleTargetFirst.failed = circleTargetSecond.failed = circleTargetThird.failed = circleTargetFourth.failed = 0;
                 GameManager.instance.ResetTimeSpeed();
                 GameManager.instance.UnZoomCamera();
                 GameManager.instance.HideVignette();
-
                 // Check if the right ItemCraft is in hand
                 if (gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[waveManager.currentObstacleIndex]))
                 {
@@ -55,11 +50,12 @@ public class Interact : MonoBehaviour
                 }
             } else {
                 GameManager.instance.DamagePlayer();
-                waveManager.RemoveObstacle();
             }
 
+            waveManager.RemoveObstacle();
+            rhythmManager.EndWave();
             enteringRange = false;
-            rhythmManager.nbCircles = circlesHit = circleTargetFirst.score = circleTargetSecond.score = circleTargetThird.score = circleTargetFourth.score 
+            circlesHit = circleTargetFirst.score = circleTargetSecond.score = circleTargetThird.score = circleTargetFourth.score 
                 = circleTargetFirst.failed = circleTargetSecond.failed = circleTargetThird.failed = circleTargetFourth.failed = 0;
             waveManager.currentObstacleIndex++;
         }
