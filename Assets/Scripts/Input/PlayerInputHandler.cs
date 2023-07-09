@@ -37,16 +37,30 @@ public class PlayerInputHandler : MonoBehaviour
             PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
             PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
             PlayerInput.all[0].actions.FindActionMap(currentInputScheme[0]).Enable();
+            PlayerInput.all[0].actions.FindActionMap(currentInputScheme[1]).Disable();
+            PlayerInput.all[0].defaultActionMap = currentInputScheme[0];
             PlayerInput.all[1].actions.FindActionMap(currentInputScheme[1]).Enable();
+            PlayerInput.all[1].actions.FindActionMap(currentInputScheme[0]).Disable();
+            PlayerInput.all[1].defaultActionMap = currentInputScheme[1];
+
+            GameObject.Find("InputManager").GetComponent<InputPrompt>().Generate();
         }
     }
 
     public void SwapRoles() {
+        Debug.Log("Swapped roles");
+
         PlayerInput.all[0].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[1]);
         PlayerInput.all[1].currentActionMap = this.GetComponent<PlayerInput>().actions.FindActionMap(currentInputScheme[0]);
         PlayerInput.all[0].actions.FindActionMap(currentInputScheme[1]).Enable();
+        PlayerInput.all[0].actions.FindActionMap(currentInputScheme[0]).Disable();
+        PlayerInput.all[0].defaultActionMap = currentInputScheme[1];
         PlayerInput.all[1].actions.FindActionMap(currentInputScheme[0]).Enable();
+        PlayerInput.all[1].actions.FindActionMap(currentInputScheme[1]).Disable();
+        PlayerInput.all[1].defaultActionMap = currentInputScheme[0];
         currentInputScheme = new string[] { currentInputScheme[1], currentInputScheme[0] };
+
+        GameObject.Find("InputManager").GetComponent<InputPrompt>().Generate();
     }
 
     public void OnTestJ1(CallbackContext context) {
@@ -55,22 +69,26 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void RhythmButton1(CallbackContext context)
     {
+        Debug.Log("OSU1");
         targetOSU1.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     public void RhythmButton2(CallbackContext context)
     {
-       targetOSU2.GetComponent<CircleTarget>().OnButtonPressed(context);
+        Debug.Log("OSU2");
+        targetOSU2.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     public void RhythmButton3(CallbackContext context)
     {
-       targetOSU3.GetComponent<CircleTarget>().OnButtonPressed(context);
+        Debug.Log("OSU3");
+        // TODO targetOSU3.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     public void RhythmButton4(CallbackContext context)
     {
-       targetOSU4.GetComponent<CircleTarget>().OnButtonPressed(context);
+        Debug.Log("OSU4");
+    // TODO:    targetOSU4.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     private void PerformAction()
@@ -92,6 +110,7 @@ public class PlayerInputHandler : MonoBehaviour
     
     IEnumerator Unpress(string key)
     {
+        Debug.Log(key);
         yield return new WaitForSeconds(0.1f);
         switch (key)
         {
@@ -121,7 +140,7 @@ public class PlayerInputHandler : MonoBehaviour
     IEnumerator DelayPress()
     {
         yield return new WaitForSeconds(0.1f);
-        Debug.Log("pressed delayed");
+        // Debug.Log("pressed delayed");
         PerformAction();
     }
 
@@ -184,6 +203,16 @@ public class PlayerInputHandler : MonoBehaviour
             btnN = true;
             StartCoroutine(DelayPress());
         }
+    }
+
+    public void Navigate(CallbackContext context)
+    {
+        GameObject.Find("CraftAvailableRecipes").GetComponent<CraftRecipes>().Navigate(context);
+    }
+
+    public void Validate(CallbackContext context)
+    {
+        GameObject.Find("CraftInventory").GetComponent<CraftInventory>().ValidateRecipe(context);
     }
 
 }

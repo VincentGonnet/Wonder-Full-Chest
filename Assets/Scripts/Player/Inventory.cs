@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer itemRenderer;
+    
     public ItemCraft currentItem;
     public ItemCraft nextItem;
 
     private void Start()
     {
-        this.currentItem = Resources.Load<ItemCraft>("Items/Sword");
-
+        this.currentItem = Resources.Load<ItemCraft>("Recipes/Sword");
+        this.RenderItem();
     }
     public void SetNextItem(ItemCraft nextItem)
     {
@@ -27,10 +29,12 @@ public class Inventory : MonoBehaviour
         }
 
         // TODO: Kill/Pass enemy
-        return CheckPassEnemy(obstacleGO);
+        bool passed = CheckPassEnemy(obstacleGO);
 
-        // this.currentItem = this.nextItem;
-        // this.nextItem = null;
+        this.currentItem = this.nextItem;
+        this.RenderItem();
+        this.nextItem = null;
+        return passed;
     }
 
     private bool CheckPassEnemy(GameObject obstacleGO)
@@ -47,5 +51,12 @@ public class Inventory : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<GameManager>().DamagePlayer();
             return false;
         }
+    }
+
+    private void RenderItem()
+    {
+        this.itemRenderer.sprite = currentItem.output.texture;
+        this.itemRenderer.transform.localPosition = currentItem.output.positionInHand;
+        this.itemRenderer.transform.localRotation = Quaternion.Euler(0, 0, currentItem.output.orientationInHand);
     }
 }

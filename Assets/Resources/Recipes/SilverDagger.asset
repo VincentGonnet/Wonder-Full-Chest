@@ -16,3 +16,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4570d0f810a5a64ba24fe875d1888c0, type: 2}
   - {fileID: 11400000, guid: 5bfcedce4993f5b45964a32cac01018b, type: 2}
   output: {fileID: 11400000, guid: a3ccea1ea1a3f3d459a434103a0e1313, type: 2}
+  bubbleInfo: {fileID: 21300000, guid: 619f9a58e2c5fb241ad94a288aeac354, type: 3}

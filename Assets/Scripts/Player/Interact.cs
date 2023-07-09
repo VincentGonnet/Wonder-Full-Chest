@@ -31,6 +31,7 @@ public class Interact : MonoBehaviour
                 // gameObject.GetComponent<Inventory>().UseCurrentItem(hit.collider.gameObject);
             }
         }
+        GetComponent<Animator>().SetBool("walking", GameManager.instance.scroll && !GameManager.instance.isPaused);
 
         totalScore = circleTargetFirst.score + circleTargetSecond.score + circleTargetThird.score + circleTargetFourth.score;
         circlesHit = totalScore + circleTargetFirst.failed + circleTargetSecond.failed + circleTargetThird.failed + circleTargetFourth.failed;

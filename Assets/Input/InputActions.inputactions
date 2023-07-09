@@ -475,7 +475,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1;Keyboard2",
+                    "groups": "Keyboard1",
                     "action": "Rhythm2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -493,11 +493,22 @@
                 },
                 {
                     "name": "",
+                    "id": "369ee482-e73b-47f1-9953-fc8e9eb40bd6",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
+                    "action": "Rhythm2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2c0a29af-dd86-44bb-bd09-61bc109a05b4",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1;Keyboard2",
+                    "groups": "Keyboard1",
                     "action": "Rhythm1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -515,11 +526,22 @@
                 },
                 {
                     "name": "",
+                    "id": "3a258acb-c69c-4b5d-b23a-a9524cfdcb3f",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
+                    "action": "Rhythm1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f5e4e8a3-7ac0-450b-89a2-a0e55b249400",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1;Keyboard2",
+                    "groups": "Keyboard1",
                     "action": "Rhythm3",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -537,11 +559,22 @@
                 },
                 {
                     "name": "",
+                    "id": "06827ac1-0590-4464-836a-bf58691aad6c",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
+                    "action": "Rhythm3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3d85ad7d-1e9a-4e60-b557-d473719e86f0",
                     "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1;Keyboard2",
+                    "groups": "Keyboard1",
                     "action": "Rhythm4",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -559,11 +592,22 @@
                 },
                 {
                     "name": "",
+                    "id": "a3d77174-8565-4449-a9be-68601d3c7659",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
+                    "action": "Rhythm4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7242ae0e-7aa7-41b8-b1f7-a93b626f8a2a",
                     "path": "<Keyboard>/anyKey",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1",
+                    "groups": "Keyboard1;Keyboard2",
                     "action": "TutoResume",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -658,7 +702,18 @@
                     "path": "<Keyboard>/leftCtrl",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1;Keyboard2",
+                    "groups": "Keyboard1",
+                    "action": "Modifier1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4047d0f2-2b86-49c7-a6b3-eede02f15791",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
                     "action": "Modifier1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -680,7 +735,18 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1;Keyboard2",
+                    "groups": "Keyboard1",
+                    "action": "Modifer2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b144962a-0fb7-45dd-87b5-9d63a3d173b3",
+                    "path": "<Keyboard>/rightCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
                     "action": "Modifer2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -702,7 +768,18 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1;Keyboard2",
+                    "groups": "Keyboard1",
+                    "action": "BtnS",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3249da14-d78a-490f-9dcd-0bb50d32c3e4",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
                     "action": "BtnS",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -724,7 +801,18 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1;Keyboard2",
+                    "groups": "Keyboard1",
+                    "action": "BtnE",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8181df62-92f2-4c46-8972-b12df64757a9",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
                     "action": "BtnE",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -746,7 +834,18 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1;Keyboard2",
+                    "groups": "Keyboard1",
+                    "action": "BtnW",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "320c9a8a-0f39-445d-913d-978fb7a702bf",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
                     "action": "BtnW",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -765,10 +864,21 @@
                 {
                     "name": "",
                     "id": "734f5ad5-acea-4eb2-8c29-6f509955921e",
-                    "path": "<Keyboard>/#(S)",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1;Keyboard2",
+                    "groups": "Keyboard1",
+                    "action": "BtnN",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c813283-f167-4922-b3db-2f996da8409c",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard2",
                     "action": "BtnN",
                     "isComposite": false,
                     "isPartOfComposite": false
