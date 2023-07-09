@@ -52,6 +52,7 @@ public class Interact : MonoBehaviour
                     GameManager.instance.DamagePlayer();
                 }
             } else {
+                gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[0]); // Destroy item
                 GameManager.instance.DamagePlayer();
             }
             waveManager.RemoveObstacle();
