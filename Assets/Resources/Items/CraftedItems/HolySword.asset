@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Holy Sword
   texture: {fileID: 21300000, guid: 2a624a7f9d1609e4d8231999e4745423, type: 3}
+  positionInHand: {x: 0.928, y: 0.323}
+  orientationInHand: 9.769

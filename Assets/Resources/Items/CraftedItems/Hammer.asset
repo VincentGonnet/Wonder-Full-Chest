@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Hammer
   texture: {fileID: 21300000, guid: 628084d4a16dd2148bf02f1dffee387c, type: 3}
+  positionInHand: {x: 0.805, y: 0.217}
+  orientationInHand: -44.502
