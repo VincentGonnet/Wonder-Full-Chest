@@ -24,10 +24,10 @@ public class PlayerInputHandler : MonoBehaviour
     void Awake()
     {
         // Cannot use GameObject serialize field bc of type mismatch.
-        targetOSU1 = GameObject.Find("CircleTarget1");
-        targetOSU2 = GameObject.Find("CircleTarget2");
-        targetOSU3 = GameObject.Find("CircleTarget3");
-        targetOSU4 = GameObject.Find("CircleTarget4");
+        targetOSU1 = GameObject.Find("CircleTarget0");
+        targetOSU2 = GameObject.Find("CircleTarget1");
+        targetOSU3 = GameObject.Find("CircleTarget2");
+        targetOSU4 = GameObject.Find("CircleTarget3");
         craftInventory = GameObject.Find("CraftInventory");
     }
     
@@ -70,26 +70,22 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void RhythmButton1(CallbackContext context)
     {
-        Debug.Log("OSU1");
         targetOSU1.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     public void RhythmButton2(CallbackContext context)
     {
-        Debug.Log("OSU2");
         targetOSU2.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     public void RhythmButton3(CallbackContext context)
     {
-        Debug.Log("OSU3");
-        // TODO targetOSU3.GetComponent<CircleTarget>().OnButtonPressed(context);
+        targetOSU3.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     public void RhythmButton4(CallbackContext context)
     {
-        Debug.Log("OSU4");
-    // TODO:    targetOSU4.GetComponent<CircleTarget>().OnButtonPressed(context);
+        targetOSU4.GetComponent<CircleTarget>().OnButtonPressed(context);
     }
 
     private void PerformAction()
