@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6757174679733404946}
   - component: {fileID: 1987073874838516779}
   m_Layer: 8
-  m_Name: RythmCircle
+  m_Name: RhythmCircle
   m_TagString: Circle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -24,10 +24,10 @@ public static class GameResources
     public static GameObject PREFAB_OBSTACLE_SOLDIER = Resources.Load<GameObject>("Prefabs/Obstacles/Soldier");
     public static GameObject PREFAB_OBSTACLE_WEREWOLF = Resources.Load<GameObject>("Prefabs/Obstacles/Werewolf");
     
-    public static PrefabWithWidth PREFAB_RYTHM_CIRCLE = new PrefabWithWidth("Prefabs/Rythm/RythmCircle");
-    public static GameObject PREFAB_RYTHM_HOLD_CIRCLE = Resources.Load<GameObject>("Prefabs/Rythm/RythmLongVariant");
-    public static GameObject PREFAB_RYTHM_HOLD_CIRCLE_SHORT = Resources.Load<GameObject>("Prefabs/Rythm/RythmLongVariant Short");
-    public static GameObject PREFAB_RYTHM_HOLD_CIRCLE_LONG = Resources.Load<GameObject>("Prefabs/Rythm/RythmLongVariant Long");
+    public static PrefabWithWidth PREFAB_RHYTHM_CIRCLE = new PrefabWithWidth("Prefabs/Rhythm/RhythmCircle");
+    public static GameObject PREFAB_RHYTHM_HOLD_CIRCLE = Resources.Load<GameObject>("Prefabs/Rhythm/RhythmLongVariant");
+    public static GameObject PREFAB_RHYTHM_HOLD_CIRCLE_SHORT = Resources.Load<GameObject>("Prefabs/Rhythm/RhythmLongVariant Short");
+    public static GameObject PREFAB_RHYTHM_HOLD_CIRCLE_LONG = Resources.Load<GameObject>("Prefabs/Rhythm/RhythmLongVariant Long");
 }
 
 public class PrefabWithWidth
