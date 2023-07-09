@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     private float currentCameraYPosition = 0.52f;
     private float cameraYPositionVelocity = 0.52f;
     private bool cameraZoomed = false;
-    private bool onSameKeyboard = true;
+    [SerializeField] private bool onSameKeyboard = true;
     public bool isPaused = false;
     public GameObject tutoUi;
     private bool uiswapped = false;
@@ -77,8 +77,20 @@ public class GameManager : MonoBehaviour
         tutoUi.SetActive(false);
         SoundManager.instance.StartGameMusic();
         // TODO : uncomment 
-        persistentData = GameObject.Find("PersistentData");
+        // persistentData = GameObject.Find("PersistentData");
+
+        
+        // StartCoroutine(Swap());
+
     }
+
+    // private IEnumerator Swap()
+    // {
+    //     yield return new WaitForSeconds(7);
+    //     SwapRoles();
+    //     StartCoroutine(Swap());
+
+    // }
 
     private void Update()
     {
@@ -163,7 +175,7 @@ public class GameManager : MonoBehaviour
         // Get current heart
         GameObject health = GameObject.Find("Health");
         health.transform.GetChild(--this.playerHearts).GetComponent<Animator>().SetBool("full", false);
-        if (this.playerHearts < 1) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        TODO :if (this.playerHearts < 1) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void FixedUpdate()
