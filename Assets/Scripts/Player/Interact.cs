@@ -15,6 +15,7 @@ public class Interact : MonoBehaviour
     public int totalScore = 0;
     public int circlesHit = 0;
     private bool enteringRange = false;
+    private bool killedOneEnemy = false;
     private void LateUpdate()
     {
         GameManager.instance.scroll = true;
@@ -47,11 +48,12 @@ public class Interact : MonoBehaviour
                 GameManager.instance.UnZoomCamera();
                 GameManager.instance.HideVignette();
                 // Check if the right ItemCraft is in hand
-                if (!gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[0]))
+                if (!gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[0]) && killedOneEnemy)
                 {
                     GameManager.instance.DamagePlayer();
                 }
             } else {
+                gameObject.GetComponent<Inventory>().UseCurrentItem(waveManager.obstacles[0]); // Destroy item
                 GameManager.instance.DamagePlayer();
             }
             waveManager.RemoveObstacle();
@@ -60,6 +62,7 @@ public class Interact : MonoBehaviour
             enteringRange = false;
             circlesHit = circleTargetFirst.score = circleTargetSecond.score = circleTargetThird.score = circleTargetFourth.score 
                 = circleTargetFirst.failed = circleTargetSecond.failed = circleTargetThird.failed = circleTargetFourth.failed = 0;
+            killedOneEnemy = true;
         }
     }
 
