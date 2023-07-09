@@ -423,7 +423,7 @@
             "id": "5286b918-9915-45ec-9774-7343b2dcaa14",
             "actions": [
                 {
-                    "name": "1",
+                    "name": "Rhythm1",
                     "type": "Button",
                     "id": "2e86b500-f76c-47e1-ae60-a199b16e59d0",
                     "expectedControlType": "Button",
@@ -432,9 +432,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "2",
+                    "name": "Rhythm2",
                     "type": "Button",
                     "id": "ca82ece8-d76d-4642-9afa-7edb8df8d22c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Rhythm3",
+                    "type": "Button",
+                    "id": "8d6a594f-a83e-4f58-ba96-2f008b5d3b39",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold(duration=0.01)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Rhythm4",
+                    "type": "Button",
+                    "id": "665e3748-44fc-4d52-8921-7f1f857d6e14",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Hold(duration=0.01)",
@@ -448,8 +466,8 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1",
-                    "action": "2",
+                    "groups": "Keyboard1;Keyboard2",
+                    "action": "Rhythm2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -460,7 +478,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "2",
+                    "action": "Rhythm2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -470,8 +488,8 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1",
-                    "action": "1",
+                    "groups": "Keyboard1;Keyboard2",
+                    "action": "Rhythm1",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -482,7 +500,51 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "1",
+                    "action": "Rhythm1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5e4e8a3-7ac0-450b-89a2-a0e55b249400",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard1;Keyboard2",
+                    "action": "Rhythm3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5d9c324a-91da-43df-9339-65e56392e6d9",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Rhythm3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d85ad7d-1e9a-4e60-b557-d473719e86f0",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard1;Keyboard2",
+                    "action": "Rhythm4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9a854180-262a-48f6-8a04-75c7ea8359cc",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Rhythm4",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -565,7 +627,7 @@
                     "path": "<Keyboard>/leftCtrl",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1",
+                    "groups": "Keyboard1;Keyboard2",
                     "action": "Modifier1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -587,7 +649,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1",
+                    "groups": "Keyboard1;Keyboard2",
                     "action": "Modifer2",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -609,7 +671,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1",
+                    "groups": "Keyboard1;Keyboard2",
                     "action": "BtnS",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -631,7 +693,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1",
+                    "groups": "Keyboard1;Keyboard2",
                     "action": "BtnE",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -653,7 +715,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1",
+                    "groups": "Keyboard1;Keyboard2",
                     "action": "BtnW",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -675,7 +737,7 @@
                     "path": "<Keyboard>/#(S)",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard1",
+                    "groups": "Keyboard1;Keyboard2",
                     "action": "BtnN",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -701,6 +763,17 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Keyboard2",
+            "bindingGroup": "Keyboard2",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
                     "isOptional": false,
                     "isOR": false
                 }

@@ -102,7 +102,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6729008430313457792}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: OSUButton1
+        m_MethodName: RhythmButton1
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6729008430313457792}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: OSUButton2
+        m_MethodName: RhythmButton2
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -226,6 +226,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b1fbef3a-ad12-4a72-86cb-24f06918d1dc
     m_ActionName: CraftTest/BtnN[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6729008430313457792}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: RhythmButton3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8d6a594f-a83e-4f58-ba96-2f008b5d3b39
+    m_ActionName: Rhythm/Rhythm3[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6729008430313457792}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: RhythmButton4
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 665e3748-44fc-4d52-8921-7f1f857d6e14
+    m_ActionName: Rhythm/Rhythm4[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Rhythm
