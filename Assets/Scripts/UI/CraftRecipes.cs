@@ -16,6 +16,8 @@ public class CraftRecipes : MonoBehaviour
 
     [SerializeField] public Sprite spriteSelectedCell;
 
+    [SerializeField] public int maxRow = 7;
+
     public int position = 0;
     private ItemCraft[] objs;
     private ItemCraft[] objsFiltered;
@@ -69,10 +71,10 @@ public class CraftRecipes : MonoBehaviour
 
         // Pass from scale to grid 1 * 7 with all children
         float scaleX = this.GetComponent<RectTransform>().sizeDelta.x;
-        float scaleY = this.GetComponent<RectTransform>().sizeDelta.y / 7;
+        float scaleY = this.GetComponent<RectTransform>().sizeDelta.y / maxRow;
 
         // Create column items
-        for (int i = 0; i < objs.Length; i++)
+        for (int i = 0; i < Math.Min(objs.Length, maxRow); i++)
         {
             ItemCraft foundItem = objs[(position + i) % objs.Length];
 
