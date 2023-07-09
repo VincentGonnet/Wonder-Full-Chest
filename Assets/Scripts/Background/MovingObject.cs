@@ -23,7 +23,7 @@ public class MovingObject : MonoBehaviour
     
     public void FixedUpdate()
     {
-        if (!GameManager.instance.scroll) {
+        if (!GameManager.instance.scroll && isAffectedBySlowdown) {
             return;
         }
         float speed = Constants.SCROLLING_SPEED * relativeSpeed * (isAffectedBySlowdown ? GameManager.instance.timeDilation : 1);

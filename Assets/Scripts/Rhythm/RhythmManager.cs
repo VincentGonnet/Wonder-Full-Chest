@@ -23,7 +23,7 @@ public class RhythmManager : MonoBehaviour
             ? circles.Last().Select((circle) => circle.transform.localPosition.x).Max()
             : 0;
         int circlesCount = 0;
-        float speed = Mathf.Log((gameManager.wave + 6f) / 5f, 2);
+        float speed = 10 - Mathf.Exp((225 - gameManager.wave) / 100f);
         foreach (Transform targetTransform in circleTargetTransforms) {
             this.GenerateRhythmRow(wave, ref circlesCount, targetTransform, inBetweenDistance, speed, startFrom);
         }
