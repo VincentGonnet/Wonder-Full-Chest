@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2df2a81c87c97854da27e4183069506f, type: 3}
-  m_Name: Shoes
+  m_Name: GoldBag
   m_EditorClassIdentifier: 
   inputs:
+  - {fileID: 11400000, guid: df93571eabb604e4fbbaa23a88c2e0a7, type: 2}
   - {fileID: 11400000, guid: cce4d4549dde8774e8530419c75251af, type: 2}
   - {fileID: 11400000, guid: a0ab39fff295ce241b63093df3c6418c, type: 2}
-  output: {fileID: 11400000, guid: 4b6becfdeebb0f444bfdd5a3c6da2b3b, type: 2}
-  bubbleInfo: {fileID: 21300000, guid: 8255ef3af7735e84f985b165809c34fb, type: 3}
+  output: {fileID: 11400000, guid: 3970f553e6feb574d945ce611c6edaa5, type: 2}
+  bubbleInfo: {fileID: 21300000, guid: 8b0910c7045444a499758822b9efaa2d, type: 3}

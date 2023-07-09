@@ -853,6 +853,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 206
       objectReference: {fileID: 0}
+    - target: {fileID: 8229560721271803207, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: prefabEnemyType
+      value: 
+      objectReference: {fileID: 4860192514034342596, guid: 416a930199bf8f4428e32ced326913ad, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

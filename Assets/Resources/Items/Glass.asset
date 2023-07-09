@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Glass
   m_EditorClassIdentifier: 
   itemName: Glass
-  texture: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  texture: {fileID: 21300000, guid: 1deaa03aa7c780d4b990b74ee117f85f, type: 3}
+  positionInHand: {x: 0, y: 0}
+  orientationInHand: 0
   gridPosition: 4
