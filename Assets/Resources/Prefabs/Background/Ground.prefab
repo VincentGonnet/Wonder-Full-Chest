@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   relativeSpeed: 1
-  isAffectedBySlowdown: 0
+  isAffectedBySlowdown: 1
 --- !u!68 &-3676697627714494255
 EdgeCollider2D:
   m_ObjectHideFlags: 0
