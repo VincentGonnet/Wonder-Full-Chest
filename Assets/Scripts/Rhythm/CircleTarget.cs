@@ -51,15 +51,11 @@ public class CircleTarget : MonoBehaviour
                 OnPress();
             }
             // else {
-            //     Debug.Log("started");
             //     OnFail();
             // }
         } else if (context.canceled) {
             if (canBeDeactivated) OnSuccess();
-            // else if (isActivated) {
-            //     Debug.Log("canceled");
-            //     OnFail();
-            // } 
+            else if (isActivated) OnFail();
         }
     }
 
