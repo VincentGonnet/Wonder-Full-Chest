@@ -53,8 +53,6 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     public GameObject tutoUi;
     private bool uiswapped = false;
-    private GameObject persistentData;
-
     private GameManager()
     {
         GameManager.instance = this;
@@ -190,15 +188,10 @@ public class GameManager : MonoBehaviour
 
     public void PlayTutorialStep()
     {
-        // TODO : uncomment 
-        // if (persistentData.GetComponent<PersistentData>().hasFinishedTutorial) return;
         tutoUi.SetActive(true);
         tutoUi.transform.GetChild(tutoStep).gameObject.SetActive(true);
         isPaused = true;
         isInTuto = true;
-
-        // TODO : uncomment
-        // if (tutoStep == lastTutoStepIndex) persistentData.GetComponent<PersistentData>().hasFinishedTutorial = true;
     }
 
     public void StopTutorialStep()
