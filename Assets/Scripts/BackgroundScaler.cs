@@ -11,11 +11,9 @@ public class BackgroundScaler : MonoBehaviour
         if (Camera.main.aspect / heightPercentage > backgroundRatio) {
             float width = Camera.main.orthographicSize * 2f * Camera.main.aspect;
             this.transform.localScale = new Vector3(width, width);
-            Debug.Log($"Using width: {width}");
         } else {
             float height = Camera.main.orthographicSize * 2f * heightPercentage * backgroundRatio;
             this.transform.localScale = new Vector3(height, height);
-            Debug.Log($"Using height: {height}");
         }
     }
 }

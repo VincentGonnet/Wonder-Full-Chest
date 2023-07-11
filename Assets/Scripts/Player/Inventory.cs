@@ -36,7 +36,7 @@ public class Inventory : MonoBehaviour
         }
         Obstacle obstacle = obstacleGO.GetComponent<Obstacle>();
         ItemBase[] resolvers = obstacle.data.resolvers;
-        if (resolvers.Any(this.currentItem.name.Equals))
+        if (resolvers.Any((item) => item.itemName == this.currentItem.output.itemName))
         {
             return true;
         } else {
