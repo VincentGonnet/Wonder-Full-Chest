@@ -54,7 +54,7 @@ public class CraftInventory : MonoBehaviour
                 item.transform.SetParent(row.transform);
                 RectTransform rt2 = item.GetComponent<RectTransform>();
                 rt2.sizeDelta = new Vector2(scaleX, scaleY);
-                rt2.anchoredPosition = new Vector2((-(scaleX) + scaleX * j), 0);
+                rt2.anchoredPosition = new Vector2((-(scaleX) + (scaleX * j) + ((scaleX + 10) * (j - 1) / 2)), 0);
 
                 GameObject text = Instantiate(prefabGridText);
                 text.name = "Text";

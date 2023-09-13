@@ -739,6 +739,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 191199019856749127, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -160
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954682361347854155, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954682361347854155, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_Color.g
+      value: 0.43464258
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954682361347854155, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_Color.r
+      value: 0.34091312
+      objectReference: {fileID: 0}
     - target: {fileID: 2322111127091619146, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -823,9 +839,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2363242652543234556, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_Color.b
+      value: 0.23349059
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363242652543234556, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_Color.g
+      value: 0.23349059
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363242652543234556, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_Color.r
+      value: 0.31132078
+      objectReference: {fileID: 0}
     - target: {fileID: 3178576435617958892, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -6.3953857
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595695951832896694, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 340
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595695951832896694, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595695951832896694, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 208
       objectReference: {fileID: 0}
     - target: {fileID: 4195147045044189398, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
       propertyPath: m_Name
@@ -835,6 +875,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5778609595923865054, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 624
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214701718040942315, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7660442353950515113, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
       propertyPath: m_text
       value: 'Navigate through the recipe book with the arrow keys (PC) or D-Pad
@@ -843,6 +891,18 @@ PrefabInstance:
 
         Be
         quick, the recipe will be cleared after a few seconds !'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8085897129816155121, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 496
+      objectReference: {fileID: 0}
+    - target: {fileID: 8179892483945344499, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8179892483945344499, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 8357519645408473592, guid: 8f5864ccb2e746645af46889915489ce, type: 3}
       propertyPath: inventory
@@ -1626,6 +1686,7 @@ MonoBehaviour:
   S: {fileID: 1605916471, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
   D: {fileID: 292936885, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
   W: {fileID: 581316767, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
+  Z: {fileID: -1497908587, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
   E: {fileID: 776818688, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
   R: {fileID: 1649831947, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
   U: {fileID: -481313215, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
@@ -1635,7 +1696,7 @@ MonoBehaviour:
   J: {fileID: -346646946, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
   K: {fileID: -1917487778, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
   L: {fileID: -1075471419, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
-  RightCrtl: {fileID: -787635150, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
+  RightCrtl: {fileID: -819502650, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
   LeftCtrl: {fileID: 1193583595, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
   Space: {fileID: 1541180946, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}
   B: {fileID: 775813908, guid: 1bbab6cd45af78f4fba3d460bdb7ab4d, type: 3}

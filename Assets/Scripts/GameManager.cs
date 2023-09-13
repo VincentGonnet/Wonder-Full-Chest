@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] public int playerHearts;
-    [SerializeField] public float obstacleSpeed = 1f;
-    [SerializeField] public float osuSpeed = 2;
+    [SerializeField] public float obstacleSpeed = 0.25f;
+    [SerializeField] public float osuSpeed = 3f;
     [SerializeField] public Camera terrainCamera;
     [SerializeField] public Transform playerTransform;
     [SerializeField] public GameObject inputPrefab;
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     public bool scroll = true;
     public float timeDilation = 1;
-    private float targetTimeSpeed = 1;
+    private float targetTimeSpeed = 0.6f;
     private float timeDilationSpeed;
     private Vignette vg;
 
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 
     public void ZoomCamera()
     {
-        currentFieldOfView = 16.6f;
+        currentFieldOfView = 20f;
         currentCameraYPosition = -1.3f;
         cameraZoomed = true;
     }

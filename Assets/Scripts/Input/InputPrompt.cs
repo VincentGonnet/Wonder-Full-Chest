@@ -13,6 +13,7 @@ public class InputPrompt : MonoBehaviour
     [SerializeField] Sprite S;
     [SerializeField] Sprite D;
     [SerializeField] Sprite W;
+    [SerializeField] Sprite Z;
     [SerializeField] Sprite E;
     [SerializeField] Sprite R;
     [SerializeField] Sprite U;
@@ -88,8 +89,8 @@ public class InputPrompt : MonoBehaviour
 
 
         if (input1.currentActionMap.name == input1.actions.FindActionMap("Rhythm").name && input1.currentControlScheme.Contains("Keyboard")) {
-            tr1.GetComponent<SpriteRenderer>().sprite = Q;
-            tr2.GetComponent<SpriteRenderer>().sprite = W;
+            tr1.GetComponent<SpriteRenderer>().sprite = A;
+            tr2.GetComponent<SpriteRenderer>().sprite = Z;
             tr3.GetComponent<SpriteRenderer>().sprite = E;
             tr4.GetComponent<SpriteRenderer>().sprite = R;
         }
@@ -115,8 +116,8 @@ public class InputPrompt : MonoBehaviour
         }
 
         if (input1.currentActionMap.name == input1.actions.FindActionMap("Craft").name && input1.currentControlScheme.Contains("Keyboard")) {
-            CSlot1.GetComponent<SpriteRenderer>().sprite = W;
-            CSlot2.GetComponent<SpriteRenderer>().sprite = A;
+            CSlot1.GetComponent<SpriteRenderer>().sprite = Z;
+            CSlot2.GetComponent<SpriteRenderer>().sprite = Q;
             CSlot3.GetComponent<SpriteRenderer>().sprite = S;
             CSlot4.GetComponent<SpriteRenderer>().sprite = D;
             CSlot5.GetComponent<SpriteRenderer>().sprite = LeftCtrl;

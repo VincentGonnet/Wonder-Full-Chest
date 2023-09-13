@@ -130,10 +130,10 @@ public class CraftRecipes : MonoBehaviour
             item.name = "Item" + (i + 1).ToString();
             item.transform.SetParent(this.transform);
             RectTransform rt = item.GetComponent<RectTransform>();
-            rt.sizeDelta = new Vector2(scaleX, scaleY);
+            rt.sizeDelta = new Vector2(scaleX, scaleY + 20);
             rt.anchorMin = new Vector2(0.5f, 1);
             rt.anchorMax = new Vector2(0.5f, 1);
-            rt.anchoredPosition = new Vector2(0, (-(scaleY / 2) - scaleY * i));
+            rt.anchoredPosition = new Vector2(0, (-(scaleY / 3) - scaleY * i));
             if (((Math.Min(objs.Length, maxRow) - 1) / 2) == i) item.GetComponent<Image>().sprite = spriteSelectedCell;
 
             for (int j = 0; j < foundItem.inputs.Length; j++)
@@ -144,7 +144,7 @@ public class CraftRecipes : MonoBehaviour
                 RectTransform rt3 = image2.GetComponent<RectTransform>();
                 rt3.anchorMin = new Vector2(0, 0.5f);
                 rt3.anchorMax = new Vector2(0, 0.5f);
-                rt3.anchoredPosition = new Vector2(20 + (44 * (foundItem.inputs.Length - j - 1)) + 10, 0);
+                rt3.anchoredPosition = new Vector2(40 + (60 * (foundItem.inputs.Length - j - 1)) + 10, 0);
                 image2.GetComponent<Image>().sprite = foundItem.inputs[foundItem.inputs.Length - 1 - j].texture;
                 image2.transform.localScale = new Vector2(0.8f, 0.8f);
 
@@ -156,7 +156,7 @@ public class CraftRecipes : MonoBehaviour
                     RectTransform rt4 = image3.GetComponent<RectTransform>();
                     rt4.anchorMin = new Vector2(0, 0.5f);
                     rt4.anchorMax = new Vector2(0, 0.5f);
-                    rt4.anchoredPosition = new Vector2(43 * (foundItem.inputs.Length - j - 1) + 10, 0);
+                    rt4.anchoredPosition = new Vector2(10 + 60 * (foundItem.inputs.Length - j - 1) + 10, 0);
                     image3.transform.localScale = new Vector2(0.8f, 0.8f);
                 }
             }
@@ -167,7 +167,7 @@ public class CraftRecipes : MonoBehaviour
             RectTransform rt2 = image.GetComponent<RectTransform>();
             rt2.anchorMin = new Vector2(1, 0.5f);
             rt2.anchorMax = new Vector2(1, 0.5f);
-            rt2.anchoredPosition = new Vector2(-35, 0);
+            rt2.anchoredPosition = new Vector2(-50, 0);
             image.GetComponent<Image>().sprite = foundItem.output.texture;
             image.transform.localScale = new Vector2(0.8f, 0.8f);
 
